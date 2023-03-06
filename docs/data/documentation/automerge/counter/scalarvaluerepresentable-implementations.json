@@ -1,0 +1,330 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/ScalarValueRepresentable-Implementations"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "Automerge"
+      }
+    ],
+    "role" : "collectionGroup",
+    "title" : "ScalarValueRepresentable Implementations"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/toScalarValue()"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/ConvertError"
+      ],
+      "title" : "Type Aliases"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/fromScalarValue(_:)",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/fromValue(_:)"
+      ],
+      "title" : "Type Methods"
+    }
+  ]
+, 
+"references": {
+"doc://com.github.automerge.automerge-swift/documentation/Automerge": {
+  "abstract" : [
+    {
+      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Automerge",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Counter": {
+  "abstract" : [
+    {
+      "text" : "A type that represents the value of an Automerge counter.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Counter"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Counter"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Counter",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/counter"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Counter/ConvertError": {
+  "abstract" : [
+    {
+      "text" : "The error type associated with failed attempted conversion into or out of Automerge representation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ConvertError"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/ConvertError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ConvertError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Counter.ConvertError",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/counter\/converterror"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Counter/fromScalarValue(_:)": {
+  "abstract" : [
+    {
+      "text" : "Converts the Automerge representation to a local type, or returns a failure.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "fromScalarValue"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge11ScalarValueO",
+      "text" : "ScalarValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s6ResultO",
+      "text" : "Result"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge7CounterV",
+      "text" : "Counter"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge28CounterScalarConversionErrorO",
+      "text" : "CounterScalarConversionError"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/fromScalarValue(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "fromScalarValue(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/counter\/fromscalarvalue(_:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Counter/fromValue(_:)": {
+  "abstract" : [
+    {
+      "text" : "Converts the Automerge representation to a local type, or returns a failure.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "fromValue"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge5ValueO",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s6ResultO",
+      "text" : "Result"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge7CounterV",
+      "text" : "Counter"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge28CounterScalarConversionErrorO",
+      "text" : "CounterScalarConversionError"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/fromValue(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "fromValue(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/counter\/fromvalue(_:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Counter/toScalarValue()": {
+  "abstract" : [
+    {
+      "text" : "Converts a local type into an Automerge scalar value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "toScalarValue"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge11ScalarValueO",
+      "text" : "ScalarValue"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/toScalarValue()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "toScalarValue()",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/counter\/toscalarvalue()"
+}
+}
+}

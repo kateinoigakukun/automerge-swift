@@ -1,0 +1,635 @@
+{
+  "abstract" : [
+    {
+      "text" : "A type that represents the value of an Automerge counter.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:9Automerge7CounterV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "Counter"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Automerge"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "Counter"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "Counter"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "Counter"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValueRepresentable",
+        "doc:\/\/com.github.automerge.automerge-swift\/Se",
+        "doc:\/\/com.github.automerge.automerge-swift\/SE",
+        "doc:\/\/com.github.automerge.automerge-swift\/SQ",
+        "doc:\/\/com.github.automerge.automerge-swift\/SH"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeEncoder",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeDecoder",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AnyCodingKey",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Text",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SchemaStrategy",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/CodingKeyLookupError",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PathParseError"
+      ],
+      "title" : "Reading and Writing Codable Types"
+    }
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/init(_:)-7fbpz",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/init(_:)-8t7n4"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/value"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/Decodable-Implementations",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/Equatable-Implementations",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/ScalarValueRepresentable-Implementations"
+      ],
+      "title" : "Default Implementations"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/automerge\/counter"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://com.github.automerge.automerge-swift/SE": {
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/SE",
+  "title" : "Swift.Encodable",
+  "type" : "unresolvable"
+},
+"doc://com.github.automerge.automerge-swift/SH": {
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/SH",
+  "title" : "Swift.Hashable",
+  "type" : "unresolvable"
+},
+"doc://com.github.automerge.automerge-swift/SQ": {
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://com.github.automerge.automerge-swift/Se": {
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/Se",
+  "title" : "Swift.Decodable",
+  "type" : "unresolvable"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge": {
+  "abstract" : [
+    {
+      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Automerge",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/AnyCodingKey": {
+  "abstract" : [
+    {
+      "text" : "A type that maps provides a coding key value with an enumeration.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AnyCodingKey"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AnyCodingKey",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AnyCodingKey"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AnyCodingKey",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/anycodingkey"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/AutomergeDecoder": {
+  "abstract" : [
+    {
+      "text" : "A decoder that initializes codable-conforming types from an Automerge document.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AutomergeDecoder"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeDecoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AutomergeDecoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AutomergeDecoder",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/automergedecoder"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/AutomergeEncoder": {
+  "abstract" : [
+    {
+      "text" : "An encoder that stores codable-conforming types into an Automerge document.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AutomergeEncoder"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeEncoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AutomergeEncoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AutomergeEncoder",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/automergeencoder"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/CodingKeyLookupError": {
+  "abstract" : [
+    {
+      "text" : "Automerge Encoding errors",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CodingKeyLookupError"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/CodingKeyLookupError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CodingKeyLookupError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CodingKeyLookupError",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/codingkeylookuperror"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Counter": {
+  "abstract" : [
+    {
+      "text" : "A type that represents the value of an Automerge counter.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Counter"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Counter"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Counter",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/counter"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Counter/Decodable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/Decodable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Decodable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/counter\/decodable-implementations"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Counter/Equatable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/Equatable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Equatable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/counter\/equatable-implementations"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Counter/ScalarValueRepresentable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/ScalarValueRepresentable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ScalarValueRepresentable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/counter\/scalarvaluerepresentable-implementations"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Counter/init(_:)-7fbpz": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5Int64V",
+      "text" : "Int64"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/init(_:)-7fbpz",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/counter\/init(_:)-7fbpz"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Counter/init(_:)-8t7n4": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/init(_:)-8t7n4",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/counter\/init(_:)-8t7n4"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Counter/value": {
+  "abstract" : [
+    {
+      "text" : "The value of the counter.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "value"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/value",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "value",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/counter\/value"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/PathParseError": {
+  "abstract" : [
+    {
+      "text" : "Path Parsing Errors",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PathParseError"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PathParseError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PathParseError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PathParseError",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/pathparseerror"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ScalarValueRepresentable": {
+  "abstract" : [
+    {
+      "text" : "A type that can be represented within an Automerge document.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ScalarValueRepresentable"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValueRepresentable",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ScalarValueRepresentable"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ScalarValueRepresentable",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/scalarvaluerepresentable"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/SchemaStrategy": {
+  "abstract" : [
+    {
+      "text" : "A type that represents the encoder strategy to establish or error on differences in existing Automerge documents",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "as compared to expected encoding.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SchemaStrategy"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SchemaStrategy",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SchemaStrategy"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SchemaStrategy",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/schemastrategy"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Text": {
+  "abstract" : [
+    {
+      "text" : "A type that presents a string backed by a Sequential CRDT",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Text",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Text"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Text",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/text"
+}
+}
+}

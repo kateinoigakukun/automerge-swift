@@ -1,0 +1,244 @@
+{
+  "abstract" : [
+    {
+      "text" : "The error type associated with failed attempted conversion into or out of Automerge representation.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/ScalarValueRepresentable-Implementations"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/ConvertError"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "Automerge",
+    "externalID" : "s:9Automerge7CounterV12ConvertErrora",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "typealias"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "ConvertError"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "Automerge"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "ConvertError"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Type Alias",
+    "symbolKind" : "typealias",
+    "title" : "Counter.ConvertError"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "typealias"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "ConvertError"
+            },
+            {
+              "kind" : "text",
+              "text" : " = "
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/CounterScalarConversionError",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:9Automerge28CounterScalarConversionErrorO",
+              "text" : "CounterScalarConversionError"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/automerge\/counter\/converterror"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://com.github.automerge.automerge-swift/documentation/Automerge": {
+  "abstract" : [
+    {
+      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Automerge",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Counter": {
+  "abstract" : [
+    {
+      "text" : "A type that represents the value of an Automerge counter.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Counter"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Counter"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Counter",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/counter"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Counter/ConvertError": {
+  "abstract" : [
+    {
+      "text" : "The error type associated with failed attempted conversion into or out of Automerge representation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ConvertError"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/ConvertError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ConvertError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Counter.ConvertError",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/counter\/converterror"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Counter/ScalarValueRepresentable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/ScalarValueRepresentable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "ScalarValueRepresentable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/counter\/scalarvaluerepresentable-implementations"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/CounterScalarConversionError": {
+  "abstract" : [
+    {
+      "text" : "A failure to convert an Automerge scalar value to or from a signer integer counter representation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CounterScalarConversionError"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/CounterScalarConversionError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CounterScalarConversionError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CounterScalarConversionError",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/counterscalarconversionerror"
+}
+}
+}

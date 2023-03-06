@@ -1,0 +1,3642 @@
+{
+  "abstract" : [
+    {
+      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "Automerge",
+    "modules" : [
+      {
+        "name" : "Automerge"
+      }
+    ],
+    "role" : "collection",
+    "roleHeading" : "Framework",
+    "symbolKind" : "module",
+    "title" : "Automerge"
+  },
+  "primaryContentSections" : [
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The central data type of Automerge is a ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " which presents a data model somewhat similar to JSON, with string keyed maps and sequences which can be nested within one another.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Unlike JSON a ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " is a CRDT which means it can be merged with any other ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " in a manner which preserves user intent as much as possible.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This means that when you have multiple users (or even just multiple devices for one user) working on the same data you can synchronise their changes without necessarily needing a central server.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Being able to merge changes is not much use without some way to transfer changes to other peers.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "You can send the entire document to other devices (and this will be compact and often a good workflow), but Automerge also provides a sync protocol for efficiently getting in sync and staying in sync, which may be more appropriate for real-time collaborative applications and\/or applications with very large data sets.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "As a developer then you will likely have two concerns:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Creating, modifying, and reading data in a ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Saving, loading, and synchronising documents with other devices",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "We’ll get to those in a second, but first let’s introduce the data model.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "This library provides a fairly low level interface to Automerge documents.",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "There are no mappings from complex swift datatypes like structs or classees to the structure of the Automerge document.",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "It is intended that such higher level wrappers be built on top of this one as separate libraries.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "anchor" : "Data-Model",
+          "level" : 2,
+          "text" : "Data Model",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Automerge documents are composed of “objects” - which are composite data structures like a map or a list - and primitive values like booleans and numbers.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Objects have an ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjId",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", which is used to refer to them when making changes to them.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Every Automerge document starts with the “root” object, which is a map identified by ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjId\/ROOT",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The data model (which is represeented in this library by the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Value",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " enum), is the following:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Objects (",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjType",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : "):",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "items" : [
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Maps (",
+                              "type" : "text"
+                            },
+                            {
+                              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjType\/Map",
+                              "isActive" : true,
+                              "type" : "reference"
+                            },
+                            {
+                              "text" : "): string keyed maps",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Lists (",
+                              "type" : "text"
+                            },
+                            {
+                              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjType\/List",
+                              "isActive" : true,
+                              "type" : "reference"
+                            },
+                            {
+                              "text" : "): sequences of other Automerge values",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "Text (",
+                              "type" : "text"
+                            },
+                            {
+                              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjType\/Text",
+                              "isActive" : true,
+                              "type" : "reference"
+                            },
+                            {
+                              "text" : "): sequences of unicode characters",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    }
+                  ],
+                  "type" : "unorderedList"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Primitive values (",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue",
+                      "isActive" : true,
+                      "type" : "reference"
+                    },
+                    {
+                      "text" : ")",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                },
+                {
+                  "items" : [
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "byte arrays (",
+                              "type" : "text"
+                            },
+                            {
+                              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Bytes(_:)",
+                              "isActive" : true,
+                              "type" : "reference"
+                            },
+                            {
+                              "text" : ")",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "strings (",
+                              "type" : "text"
+                            },
+                            {
+                              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/String(_:)",
+                              "isActive" : true,
+                              "type" : "reference"
+                            },
+                            {
+                              "text" : ")",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "unsigned integers (",
+                              "type" : "text"
+                            },
+                            {
+                              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Uint(_:)",
+                              "isActive" : true,
+                              "type" : "reference"
+                            },
+                            {
+                              "text" : ")",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "signed integers (",
+                              "type" : "text"
+                            },
+                            {
+                              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Int(_:)",
+                              "isActive" : true,
+                              "type" : "reference"
+                            },
+                            {
+                              "text" : ")",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "floating point numbers (",
+                              "type" : "text"
+                            },
+                            {
+                              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/F64(_:)",
+                              "isActive" : true,
+                              "type" : "reference"
+                            },
+                            {
+                              "text" : ")",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "counters (",
+                              "type" : "text"
+                            },
+                            {
+                              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Counter(_:)",
+                              "isActive" : true,
+                              "type" : "reference"
+                            },
+                            {
+                              "text" : ")",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "timestamps (",
+                              "type" : "text"
+                            },
+                            {
+                              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Timestamp(_:)",
+                              "isActive" : true,
+                              "type" : "reference"
+                            },
+                            {
+                              "text" : ")",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "booleans (",
+                              "type" : "text"
+                            },
+                            {
+                              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Boolean(_:)",
+                              "isActive" : true,
+                              "type" : "reference"
+                            },
+                            {
+                              "text" : ")",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    },
+                    {
+                      "content" : [
+                        {
+                          "inlineContent" : [
+                            {
+                              "text" : "null (",
+                              "type" : "text"
+                            },
+                            {
+                              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Null",
+                              "isActive" : true,
+                              "type" : "reference"
+                            },
+                            {
+                              "text" : ")",
+                              "type" : "text"
+                            }
+                          ],
+                          "type" : "paragraph"
+                        }
+                      ]
+                    }
+                  ],
+                  "type" : "unorderedList"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "anchor" : "Reading-and-writing-from-a-document",
+          "level" : 2,
+          "text" : "Reading and writing from a document",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Most operations you perform on a document require that you identify a property of an object.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This is either a key of a map, or an index in a sequence.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This is represented by overloaded functions which accept either a ",
+              "type" : "text"
+            },
+            {
+              "code" : "key:",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " parameter or an ",
+              "type" : "text"
+            },
+            {
+              "code" : "index:",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " parameter.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For example, ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/get(obj:key:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " to get a value out of a map and ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/get(obj:index:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " to get a value out of a list.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Methods which insert an object into the document are separate to those which insert primitive values (see ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/put(obj:key:value:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " vs ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/putObject(obj:key:ty:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ").",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This is because methods which insert an object return the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjId",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " of the newly created object which can then be used to modify the contents of the new object.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "See the documentation of ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " for more details on the individual methods.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Saving-loading-and-syncing",
+          "level" : 2,
+          "text" : "Saving, loading, and syncing",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "An Automerge document can be saved using ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/save()",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This will produce a compressed encoding of the document which is extremely efficient and which can be loaded using ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/init(_:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "In many cases you know that the other end already has some set of changes and you just want to send “new” changes.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "You can obtain these changes using ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/encodeNewChanges()",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/encodeChangesSince(heads:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "On the other end of the wire you can apply changes using ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/applyEncodedChanges(encoded:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "As well as these options Automerge also offers a sync protocol.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The sync protocol is intended to be run over a reliable in-order connection between two peers.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "To use the sync protocol you instantiate a ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " representing the peer you are connecting with and then generate messages to send to them using ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/generateSyncMessage(state:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " and receive messages from them using ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/receiveSyncMessage(state:message:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Heads-and-change-hashes",
+          "level" : 2,
+          "text" : "Heads and change hashes",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "An Automerge document is a little like a git repository in that it is composed of a graph of changes which are identified by a hash.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "This means that like a git repository a point in the history of an Automerge document can be referenced by its hash. ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "unlike",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " a git repository an Automerge document can have multiple heads for a given point in time, representing a merge of concurrent changes.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "From time to time you may want to refer to a particular point in the document history - to read values as at that point, or to get the changes since that time.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/heads()",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " can be used to obtain the current heads of the document, and there are families of methods on document which accept ",
+              "type" : "text"
+            },
+            {
+              "code" : "Array[ChangeHash]",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " (which is returned by ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/heads()",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ").",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "anchor" : "Getting-notified-of-remote-changes",
+          "level" : 2,
+          "text" : "Getting notified of remote changes",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "When you apply changes received from a remote document (or merged from a separate local document) you may need to know what changed as a result of those changes so that you can update your UI.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Any document method which accepts remote changes has a ",
+              "type" : "text"
+            },
+            {
+              "code" : "*WithPatches",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " variant which returns an array of ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Patch",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : "es, representing the change.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AddressBookExample",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document"
+      ],
+      "title" : "Essentials"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjType",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjId",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Value",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue"
+      ],
+      "title" : "Representing Objects and Values"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeEncoder",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeDecoder",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AnyCodingKey",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Text",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SchemaStrategy",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/CodingKeyLookupError",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PathParseError"
+      ],
+      "title" : "Reading and Writing Codable Types"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValueRepresentable"
+      ],
+      "title" : "Converting Scalar Values to Local Types"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ActorId",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangeHash",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/DeleteSeq",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Patch",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PathElement",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Prop"
+      ],
+      "title" : "Replicating Documents"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/BooleanScalarConversionError",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/BytesScalarConversionError",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/CounterScalarConversionError",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/IntScalarConversionError",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/FloatingPointScalarConversionError",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/StringScalarConversionError",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/TimestampScalarConversionError",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/UIntScalarConversionError"
+      ],
+      "title" : "Conversion Error Types"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/DecodeSyncStateError",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/DocError",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/LoadError",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ReceiveSyncError"
+      ],
+      "title" : "Error Types"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/automerge"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://com.github.automerge.automerge-swift/documentation/Automerge": {
+  "abstract" : [
+    {
+      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Automerge",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ActorId": {
+  "abstract" : [
+    {
+      "text" : "The identifier for collaborators contributing to an Automerge document.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ActorId"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ActorId",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ActorId"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ActorId",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/actorid"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/AddressBookExample": {
+  "abstract" : [
+    {
+      "text" : "Building a CLI address book application using Automerge.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AddressBookExample",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Address Book Example",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/addressbookexample"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/AnyCodingKey": {
+  "abstract" : [
+    {
+      "text" : "A type that maps provides a coding key value with an enumeration.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AnyCodingKey"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AnyCodingKey",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AnyCodingKey"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AnyCodingKey",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/anycodingkey"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/AutomergeDecoder": {
+  "abstract" : [
+    {
+      "text" : "A decoder that initializes codable-conforming types from an Automerge document.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AutomergeDecoder"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeDecoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AutomergeDecoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AutomergeDecoder",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/automergedecoder"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/AutomergeEncoder": {
+  "abstract" : [
+    {
+      "text" : "An encoder that stores codable-conforming types into an Automerge document.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AutomergeEncoder"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeEncoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AutomergeEncoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AutomergeEncoder",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/automergeencoder"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/BooleanScalarConversionError": {
+  "abstract" : [
+    {
+      "text" : "A failure to convert an Automerge scalar value to or from a Boolean representation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "BooleanScalarConversionError"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/BooleanScalarConversionError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "BooleanScalarConversionError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "BooleanScalarConversionError",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/booleanscalarconversionerror"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/BytesScalarConversionError": {
+  "abstract" : [
+    {
+      "text" : "A failure to convert an Automerge scalar value to or from a byte representation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "BytesScalarConversionError"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/BytesScalarConversionError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "BytesScalarConversionError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "BytesScalarConversionError",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/bytesscalarconversionerror"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ChangeHash": {
+  "abstract" : [
+    {
+      "text" : "An opaque hash that represents a change within an Automerge document.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ChangeHash"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangeHash",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ChangeHash"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChangeHash",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/changehash"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/CodingKeyLookupError": {
+  "abstract" : [
+    {
+      "text" : "Automerge Encoding errors",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CodingKeyLookupError"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/CodingKeyLookupError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CodingKeyLookupError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CodingKeyLookupError",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/codingkeylookuperror"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Counter": {
+  "abstract" : [
+    {
+      "text" : "A type that represents the value of an Automerge counter.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Counter"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Counter"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Counter",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/counter"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/CounterScalarConversionError": {
+  "abstract" : [
+    {
+      "text" : "A failure to convert an Automerge scalar value to or from a signer integer counter representation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CounterScalarConversionError"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/CounterScalarConversionError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CounterScalarConversionError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CounterScalarConversionError",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/counterscalarconversionerror"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/DecodeSyncStateError": {
+  "abstract" : [
+    {
+      "text" : "An error that indicates the synchronisation state could not be decoded.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DecodeSyncStateError"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/DecodeSyncStateError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "DecodeSyncStateError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "DecodeSyncStateError",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/decodesyncstateerror"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/DeleteSeq": {
+  "abstract" : [
+    {
+      "text" : "A sequence of deletions.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DeleteSeq"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/DeleteSeq",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "DeleteSeq"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "DeleteSeq",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/deleteseq"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/DocError": {
+  "abstract" : [
+    {
+      "text" : "An general document error.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DocError"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/DocError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "DocError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "DocError",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/docerror"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Document": {
+  "abstract" : [
+    {
+      "text" : "The entry point to automerge, a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " presents a key\/value interface to",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "the data it contains; as well as methods for loading and saving documents, and",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "taking part in the sync protocol.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Document"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Document"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Document",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/document"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/applyEncodedChanges(encoded:)": {
+  "abstract" : [
+    {
+      "text" : "Apply encoded changes to this document",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "applyEncodedChanges"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "encoded"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation4DataV",
+      "text" : "Data"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/applyEncodedChanges(encoded:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "applyEncodedChanges(encoded:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/document\/applyencodedchanges(encoded:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/encodeChangesSince(heads:)": {
+  "abstract" : [
+    {
+      "text" : "Encode any changes made since ",
+      "type" : "text"
+    },
+    {
+      "code" : "heads",
+      "type" : "codeVoice"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "encodeChangesSince"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "heads"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sh",
+      "text" : "Set"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge10ChangeHashV",
+      "text" : "ChangeHash"
+    },
+    {
+      "kind" : "text",
+      "text" : ">) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation4DataV",
+      "text" : "Data"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/encodeChangesSince(heads:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "encodeChangesSince(heads:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/document\/encodechangessince(heads:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/encodeNewChanges()": {
+  "abstract" : [
+    {
+      "text" : "Encode any changes since the last call to ",
+      "type" : "text"
+    },
+    {
+      "code" : "encodeNewChanges",
+      "type" : "codeVoice"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "encodeNewChanges"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation4DataV",
+      "text" : "Data"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/encodeNewChanges()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "encodeNewChanges()",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/document\/encodenewchanges()"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/generateSyncMessage(state:)": {
+  "abstract" : [
+    {
+      "text" : "Generate a sync message to send to the peer represented by ",
+      "type" : "text"
+    },
+    {
+      "code" : "state",
+      "type" : "codeVoice"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "generateSyncMessage"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "state"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge9SyncStateV",
+      "text" : "SyncState"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation4DataV",
+      "text" : "Data"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/generateSyncMessage(state:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "generateSyncMessage(state:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/document\/generatesyncmessage(state:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/get(obj:index:)": {
+  "abstract" : [
+    {
+      "text" : "Get the value at ",
+      "type" : "text"
+    },
+    {
+      "code" : "index",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " from the list ",
+      "type" : "text"
+    },
+    {
+      "code" : "obj",
+      "type" : "codeVoice"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "get"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "obj"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge5ObjIdV",
+      "text" : "ObjId"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "index"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s6UInt64V",
+      "text" : "UInt64"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge5ValueO",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/get(obj:index:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "get(obj:index:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/document\/get(obj:index:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/get(obj:key:)": {
+  "abstract" : [
+    {
+      "text" : "Get the value at ",
+      "type" : "text"
+    },
+    {
+      "code" : "key",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " from the map ",
+      "type" : "text"
+    },
+    {
+      "code" : "obj",
+      "type" : "codeVoice"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "get"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "obj"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge5ObjIdV",
+      "text" : "ObjId"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "key"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge5ValueO",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/get(obj:key:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "get(obj:key:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/document\/get(obj:key:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/heads()": {
+  "abstract" : [
+    {
+      "text" : "Returns: a sequence of ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangeHash",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " representing the changes which were",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "made to the document as a result of the merge",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "heads"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sh",
+      "text" : "Set"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge10ChangeHashV",
+      "text" : "ChangeHash"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/heads()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "heads()",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/document\/heads()"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/init(_:)": {
+  "abstract" : [
+    {
+      "text" : "Load the document in ",
+      "type" : "text"
+    },
+    {
+      "code" : "bytes",
+      "type" : "codeVoice"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation4DataV",
+      "text" : "Data"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/init(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/document\/init(_:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/put(obj:key:value:)": {
+  "abstract" : [
+    {
+      "text" : "Set or update the  value at ",
+      "type" : "text"
+    },
+    {
+      "code" : "key",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " in the map ",
+      "type" : "text"
+    },
+    {
+      "code" : "obj",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to ",
+      "type" : "text"
+    },
+    {
+      "code" : "value",
+      "type" : "codeVoice"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "put"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "obj"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge5ObjIdV",
+      "text" : "ObjId"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "key"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "value"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge11ScalarValueO",
+      "text" : "ScalarValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/put(obj:key:value:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "put(obj:key:value:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/document\/put(obj:key:value:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/putObject(obj:key:ty:)": {
+  "abstract" : [
+    {
+      "text" : "Set or update ",
+      "type" : "text"
+    },
+    {
+      "code" : "key",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " in map ",
+      "type" : "text"
+    },
+    {
+      "code" : "obj",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : " to a new instance of ",
+      "type" : "text"
+    },
+    {
+      "code" : "ty",
+      "type" : "codeVoice"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "putObject"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "obj"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge5ObjIdV",
+      "text" : "ObjId"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "key"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "ty"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge7ObjTypeO",
+      "text" : "ObjType"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge5ObjIdV",
+      "text" : "ObjId"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/putObject(obj:key:ty:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "putObject(obj:key:ty:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/document\/putobject(obj:key:ty:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/receiveSyncMessage(state:message:)": {
+  "abstract" : [
+    {
+      "text" : "Receive a sync message from the peer represented by ",
+      "type" : "text"
+    },
+    {
+      "code" : "state",
+      "type" : "codeVoice"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "receiveSyncMessage"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "state"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge9SyncStateV",
+      "text" : "SyncState"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "message"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation4DataV",
+      "text" : "Data"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/receiveSyncMessage(state:message:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "receiveSyncMessage(state:message:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/document\/receivesyncmessage(state:message:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/save()": {
+  "abstract" : [
+    {
+      "text" : "Encode this document in a compressed binary format",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "save"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation4DataV",
+      "text" : "Data"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/save()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "save()",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/document\/save()"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/FloatingPointScalarConversionError": {
+  "abstract" : [
+    {
+      "text" : "A failure to convert an Automerge scalar value to or from a 64-bit floating-point value representation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FloatingPointScalarConversionError"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/FloatingPointScalarConversionError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "FloatingPointScalarConversionError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "FloatingPointScalarConversionError",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/floatingpointscalarconversionerror"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/IntScalarConversionError": {
+  "abstract" : [
+    {
+      "text" : "A failure to convert an Automerge scalar value to or from a signed integer representation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "IntScalarConversionError"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/IntScalarConversionError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "IntScalarConversionError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "IntScalarConversionError",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/intscalarconversionerror"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/LoadError": {
+  "abstract" : [
+    {
+      "text" : "An error that indicates a problem loading the document.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "LoadError"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/LoadError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "LoadError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "LoadError",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/loaderror"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ObjId": {
+  "abstract" : [
+    {
+      "text" : "The unique internal identifier for an object stored in an Automerge document.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ObjId"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjId",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ObjId"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ObjId",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/objid"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ObjId/ROOT": {
+  "abstract" : [
+    {
+      "text" : "The root identifier for an Automerge document.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ROOT"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge5ObjIdV",
+      "text" : "ObjId"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjId\/ROOT",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ROOT",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/objid\/root"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ObjType": {
+  "abstract" : [
+    {
+      "text" : "A type that represents an Automerge object.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ObjType"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjType",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ObjType"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ObjType",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/objtype"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ObjType/List": {
+  "abstract" : [
+    {
+      "text" : "A type that represents a sequence of arbitrary Automerge values.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "List"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjType\/List",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ObjType.List",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/objtype\/list"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ObjType/Map": {
+  "abstract" : [
+    {
+      "text" : "A type that represents a map that uses String as keys.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Map"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjType\/Map",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ObjType.Map",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/objtype\/map"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ObjType/Text": {
+  "abstract" : [
+    {
+      "text" : "A type that represents sequence of unicode characters.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjType\/Text",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ObjType.Text",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/objtype\/text"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Patch": {
+  "abstract" : [
+    {
+      "text" : "A collection of updates applied to an Automerge document.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Patch"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Patch",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Patch"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Patch",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/patch"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/PatchAction": {
+  "abstract" : [
+    {
+      "text" : "The type of change the library applied to an Automerge document, along with the data that changed.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PatchAction"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PatchAction"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PatchAction",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/patchaction"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/PathElement": {
+  "abstract" : [
+    {
+      "text" : "A component of the path to an object within a document.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PathElement"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PathElement",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PathElement"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PathElement",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/pathelement"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/PathParseError": {
+  "abstract" : [
+    {
+      "text" : "Path Parsing Errors",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PathParseError"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PathParseError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PathParseError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PathParseError",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/pathparseerror"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Prop": {
+  "abstract" : [
+    {
+      "text" : "A type that represents a property on an object within an Automerge document.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Prop"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Prop",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Prop"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Prop",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/prop"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ReceiveSyncError": {
+  "abstract" : [
+    {
+      "text" : "An error that indicates the received synchronisation could not be applied.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ReceiveSyncError"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ReceiveSyncError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ReceiveSyncError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ReceiveSyncError",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/receivesyncerror"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ScalarValue": {
+  "abstract" : [
+    {
+      "text" : "A type that represents a primitive Automerge value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ScalarValue"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ScalarValue"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ScalarValue",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/scalarvalue"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ScalarValue/Boolean(_:)": {
+  "abstract" : [
+    {
+      "text" : "A Boolean value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Boolean"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Boolean(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ScalarValue.Boolean(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/scalarvalue\/boolean(_:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ScalarValue/Bytes(_:)": {
+  "abstract" : [
+    {
+      "text" : "A byte buffer.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Bytes"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation4DataV",
+      "text" : "Data"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Bytes(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ScalarValue.Bytes(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/scalarvalue\/bytes(_:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ScalarValue/Counter(_:)": {
+  "abstract" : [
+    {
+      "text" : "An integer counter.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Counter"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5Int64V",
+      "text" : "Int64"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Counter(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ScalarValue.Counter(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/scalarvalue\/counter(_:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ScalarValue/F64(_:)": {
+  "abstract" : [
+    {
+      "text" : "A floating point number.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "F64"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sd",
+      "text" : "Double"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/F64(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ScalarValue.F64(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/scalarvalue\/f64(_:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ScalarValue/Int(_:)": {
+  "abstract" : [
+    {
+      "text" : "A signed integer.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5Int64V",
+      "text" : "Int64"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Int(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ScalarValue.Int(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/scalarvalue\/int(_:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ScalarValue/Null": {
+  "abstract" : [
+    {
+      "text" : "A null.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Null"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Null",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ScalarValue.Null",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/scalarvalue\/null"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ScalarValue/String(_:)": {
+  "abstract" : [
+    {
+      "text" : "A string.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/String(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ScalarValue.String(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/scalarvalue\/string(_:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ScalarValue/Timestamp(_:)": {
+  "abstract" : [
+    {
+      "text" : "A timestamp represented by the milliseconds since UNIX epoch (Jan 1st, 1970, 00:00 UTC).",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Timestamp"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s5Int64V",
+      "text" : "Int64"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Timestamp(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ScalarValue.Timestamp(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/scalarvalue\/timestamp(_:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ScalarValue/Uint(_:)": {
+  "abstract" : [
+    {
+      "text" : "An unsigned integer.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Uint"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s6UInt64V",
+      "text" : "UInt64"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Uint(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ScalarValue.Uint(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/scalarvalue\/uint(_:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ScalarValueRepresentable": {
+  "abstract" : [
+    {
+      "text" : "A type that can be represented within an Automerge document.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ScalarValueRepresentable"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValueRepresentable",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ScalarValueRepresentable"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ScalarValueRepresentable",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/scalarvaluerepresentable"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/SchemaStrategy": {
+  "abstract" : [
+    {
+      "text" : "A type that represents the encoder strategy to establish or error on differences in existing Automerge documents",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "as compared to expected encoding.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SchemaStrategy"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SchemaStrategy",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SchemaStrategy"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SchemaStrategy",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/schemastrategy"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/StringScalarConversionError": {
+  "abstract" : [
+    {
+      "text" : "A failure to convert an Automerge scalar value to or from a String representation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "StringScalarConversionError"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/StringScalarConversionError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "StringScalarConversionError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "StringScalarConversionError",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/stringscalarconversionerror"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/SyncState": {
+  "abstract" : [
+    {
+      "text" : "A synchronisation session with another peer",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SyncState"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SyncState"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SyncState",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/syncstate"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Text": {
+  "abstract" : [
+    {
+      "text" : "A type that presents a string backed by a Sequential CRDT",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Text",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Text"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Text",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/text"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/TimestampScalarConversionError": {
+  "abstract" : [
+    {
+      "text" : "A failure to convert an Automerge scalar value to or from a timestamp representation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TimestampScalarConversionError"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/TimestampScalarConversionError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TimestampScalarConversionError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TimestampScalarConversionError",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/timestampscalarconversionerror"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/UIntScalarConversionError": {
+  "abstract" : [
+    {
+      "text" : "A failure to convert an Automerge scalar value to or from an unsigned integer representation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "UIntScalarConversionError"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/UIntScalarConversionError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "UIntScalarConversionError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "UIntScalarConversionError",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/uintscalarconversionerror"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Value": {
+  "abstract" : [
+    {
+      "text" : "A type that represents a value or object managed by Automerge.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Value"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Value",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Value"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Value",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/value"
+}
+}
+}
