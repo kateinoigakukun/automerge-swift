@@ -1,20 +1,8 @@
 {
   "abstract" : [
     {
-      "text" : "Delete ",
+      "text" : "Deletes the key you provide, and its associated value or object, from the dictionary object you specify.",
       "type" : "text"
-    },
-    {
-      "code" : "key",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " from the map ",
-      "type" : "text"
-    },
-    {
-      "code" : "obj",
-      "type" : "codeVoice"
     }
   ],
   "hierarchy" : {
@@ -168,6 +156,39 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The identifier of the dictionary to update.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "obj"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The key to delete.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "key"
+        }
+      ]
     }
   ],
   "schemaVersion" : {
@@ -205,7 +226,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -219,32 +240,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document": {
   "abstract" : [
     {
-      "text" : "The entry point to automerge, a ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : " presents a key\/value interface to",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "the data it contains; as well as methods for loading and saving documents, and",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "taking part in the sync protocol.",
+      "text" : "An Automerge document that provides an interface to the document-structured data it contains.",
       "type" : "text"
     }
   ],
@@ -278,20 +274,8 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/delete(obj:key:)": {
   "abstract" : [
     {
-      "text" : "Delete ",
+      "text" : "Deletes the key you provide, and its associated value or object, from the dictionary object you specify.",
       "type" : "text"
-    },
-    {
-      "code" : "key",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " from the map ",
-      "type" : "text"
-    },
-    {
-      "code" : "obj",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [
@@ -360,28 +344,8 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/put(obj:key:value:)": {
   "abstract" : [
     {
-      "text" : "Set or update the  value at ",
+      "text" : "Set or update a value within a dictionary object you specify.",
       "type" : "text"
-    },
-    {
-      "code" : "key",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " in the map ",
-      "type" : "text"
-    },
-    {
-      "code" : "obj",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " to ",
-      "type" : "text"
-    },
-    {
-      "code" : "value",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [
@@ -467,28 +431,8 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/putObject(obj:key:ty:)": {
   "abstract" : [
     {
-      "text" : "Set or update ",
+      "text" : "Set or update an object within a dictionary object you specify.",
       "type" : "text"
-    },
-    {
-      "code" : "key",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " in map ",
-      "type" : "text"
-    },
-    {
-      "code" : "obj",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " to a new instance of ",
-      "type" : "text"
-    },
-    {
-      "code" : "ty",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [

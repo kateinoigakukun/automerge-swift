@@ -1,15 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Inherited from ",
-      "type" : "text"
-    },
-    {
-      "code" : "Decodable.init(from:)",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "Decodes a counter instance from the decoder instance you provide.",
       "type" : "text"
     }
   ],
@@ -17,8 +9,7 @@
     "paths" : [
       [
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/Decodable-Implementations"
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter"
       ]
     ]
   },
@@ -28,8 +19,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "extendedModule" : "Automerge",
-    "externalID" : "s:9Automerge7CounterV4fromACs7Decoder_p_tKcfc",
+    "externalID" : "s:9Automerge7CounterC4fromACs7Decoder_p_tKcfc",
     "fragments" : [
       {
         "kind" : "identifier",
@@ -84,6 +74,14 @@
           "tokens" : [
             {
               "kind" : "keyword",
+              "text" : "required"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
               "text" : "init"
             },
             {
@@ -123,6 +121,25 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The decoder to read.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "decoder"
+        }
+      ]
     }
   ],
   "schemaVersion" : {
@@ -150,7 +167,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -171,7 +188,7 @@
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "struct"
+      "text" : "class"
     },
     {
       "kind" : "text",
@@ -195,20 +212,12 @@
   "type" : "topic",
   "url" : "\/documentation\/automerge\/counter"
 },
-"doc://com.github.automerge.automerge-swift/documentation/Automerge/Counter/Decodable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter\/Decodable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Decodable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/automerge\/counter\/decodable-implementations"
-},
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Counter/init(from:)": {
   "abstract" : [
-
+    {
+      "text" : "Decodes a counter instance from the decoder instance you provide.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

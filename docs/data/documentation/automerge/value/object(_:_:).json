@@ -10,6 +10,17 @@
       [
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Value"
+      ],
+      [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Value"
+      ],
+      [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Patch",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Value"
       ]
     ]
   },
@@ -127,6 +138,15 @@
   "sections" : [
 
   ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Value\/Scalar(_:)"
+      ],
+      "title" : "Automerge Values"
+    }
+  ],
   "variants" : [
     {
       "paths" : [
@@ -144,7 +164,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -222,6 +242,74 @@
   "title" : "ObjType",
   "type" : "topic",
   "url" : "\/documentation\/automerge\/objtype"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Patch": {
+  "abstract" : [
+    {
+      "text" : "A collection of updates applied to an Automerge document.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Patch"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Patch",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Patch"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Patch",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/patch"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/PatchAction": {
+  "abstract" : [
+    {
+      "text" : "The type of change the library applied to an Automerge document, along with the data that changed.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PatchAction"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PatchAction"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PatchAction",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/patchaction"
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Value": {
   "abstract" : [
@@ -306,6 +394,47 @@
   "title" : "Value.Object(_:_:)",
   "type" : "topic",
   "url" : "\/documentation\/automerge\/value\/object(_:_:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Value/Scalar(_:)": {
+  "abstract" : [
+    {
+      "text" : "A scalar value",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Scalar"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge11ScalarValueO",
+      "text" : "ScalarValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Value\/Scalar(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Value.Scalar(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/value\/scalar(_:)"
 }
 }
 }

@@ -76,6 +76,71 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Use ",
+              "type" : "text"
+            },
+            {
+              "code" : "AutomergeDecoder",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to decode your data from an Automerge document.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The following example illustrates decoding ",
+              "type" : "text"
+            },
+            {
+              "code" : "ColorList",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", a type that conforms to ",
+              "type" : "text"
+            },
+            {
+              "code" : "Codable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", into an Automerge document:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "struct ColorList: Codable {",
+            "    var colors: [String]",
+            "}",
+            "",
+            "let decoder = AutomergeDecoder(doc: doc)",
+            "myColors = try decoder.decode(ColorList.self)"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -91,12 +156,9 @@
       "generated" : true,
       "identifiers" : [
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeEncoder",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AnyCodingKey",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Text",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SchemaStrategy",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/CodingKeyLookupError",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PathParseError"
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/LogVerbosity",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AnyCodingKey"
       ],
       "title" : "Reading and Writing Codable Types"
     }
@@ -106,22 +168,21 @@
       "identifiers" : [
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeDecoder\/init(doc:)"
       ],
-      "title" : "Initializers"
-    },
-    {
-      "identifiers" : [
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeDecoder\/codingPath",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeDecoder\/doc",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeDecoder\/userInfo"
-      ],
-      "title" : "Instance Properties"
+      "title" : "Creating a Decoder"
     },
     {
       "identifiers" : [
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeDecoder\/decode(_:)",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeDecoder\/decode(_:from:)"
       ],
-      "title" : "Instance Methods"
+      "title" : "Decoding"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeDecoder\/doc",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeDecoder\/userInfo"
+      ],
+      "title" : "Inspecting a Decoder"
     }
   ],
   "variants" : [
@@ -141,7 +202,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -220,47 +281,12 @@
   "type" : "topic",
   "url" : "\/documentation\/automerge\/automergedecoder"
 },
-"doc://com.github.automerge.automerge-swift/documentation/Automerge/AutomergeDecoder/codingPath": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "var"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "codingPath"
-    },
-    {
-      "kind" : "text",
-      "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:s9CodingKeyP",
-      "text" : "CodingKey"
-    },
-    {
-      "kind" : "text",
-      "text" : "]"
-    }
-  ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeDecoder\/codingPath",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "codingPath",
-  "type" : "topic",
-  "url" : "\/documentation\/automerge\/automergedecoder\/codingpath"
-},
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/AutomergeDecoder/decode(_:)": {
   "abstract" : [
-
+    {
+      "text" : "Returns the type you specify, decoded from the Automerge document referenced by the decoder.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -319,7 +345,10 @@
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/AutomergeDecoder/decode(_:from:)": {
   "abstract" : [
-
+    {
+      "text" : "Returns the type you specify, decoded from the Automerge document referenced by the decoder.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -395,7 +424,10 @@
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/AutomergeDecoder/doc": {
   "abstract" : [
-
+    {
+      "text" : "The instance of the an Automerge document to decode from.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -429,7 +461,10 @@
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/AutomergeDecoder/init(doc:)": {
   "abstract" : [
-
+    {
+      "text" : "Creates a new instance of an Automerge decoder.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -467,7 +502,10 @@
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/AutomergeDecoder/userInfo": {
   "abstract" : [
-
+    {
+      "text" : "The user info dictionary for the decoder.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -514,7 +552,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/AutomergeEncoder": {
   "abstract" : [
     {
-      "text" : "An encoder that stores codable-conforming types into an Automerge document.",
+      "text" : "An encoder that stores types that conform to the codable protocol into an Automerge document.",
       "type" : "text"
     }
   ],
@@ -545,10 +583,10 @@
   "type" : "topic",
   "url" : "\/documentation\/automerge\/automergeencoder"
 },
-"doc://com.github.automerge.automerge-swift/documentation/Automerge/CodingKeyLookupError": {
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/LogVerbosity": {
   "abstract" : [
     {
-      "text" : "Automerge Encoding errors",
+      "text" : "A type that indicates the amount of logging to be exposed from the Automerge library.",
       "type" : "text"
     }
   ],
@@ -563,89 +601,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "CodingKeyLookupError"
+      "text" : "LogVerbosity"
     }
   ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/CodingKeyLookupError",
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/LogVerbosity",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "CodingKeyLookupError"
+      "text" : "LogVerbosity"
     }
   ],
   "role" : "symbol",
-  "title" : "CodingKeyLookupError",
+  "title" : "LogVerbosity",
   "type" : "topic",
-  "url" : "\/documentation\/automerge\/codingkeylookuperror"
-},
-"doc://com.github.automerge.automerge-swift/documentation/Automerge/Counter": {
-  "abstract" : [
-    {
-      "text" : "A type that represents the value of an Automerge counter.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Counter"
-    }
-  ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Counter",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Counter"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Counter",
-  "type" : "topic",
-  "url" : "\/documentation\/automerge\/counter"
-},
-"doc://com.github.automerge.automerge-swift/documentation/Automerge/PathParseError": {
-  "abstract" : [
-    {
-      "text" : "Path Parsing Errors",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "enum"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "PathParseError"
-    }
-  ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PathParseError",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "PathParseError"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "PathParseError",
-  "type" : "topic",
-  "url" : "\/documentation\/automerge\/pathparseerror"
+  "url" : "\/documentation\/automerge\/logverbosity"
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/SchemaStrategy": {
   "abstract" : [
@@ -688,40 +658,6 @@
   "title" : "SchemaStrategy",
   "type" : "topic",
   "url" : "\/documentation\/automerge\/schemastrategy"
-},
-"doc://com.github.automerge.automerge-swift/documentation/Automerge/Text": {
-  "abstract" : [
-    {
-      "text" : "A type that presents a string backed by a Sequential CRDT",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Text"
-    }
-  ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Text",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Text"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Text",
-  "type" : "topic",
-  "url" : "\/documentation\/automerge\/text"
 }
 }
 }

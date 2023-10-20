@@ -1,12 +1,8 @@
 {
   "abstract" : [
     {
-      "text" : "Receive a sync message from the peer represented by ",
+      "text" : "Apply the sync message to update the sync state and Automerge document with the sync message from a peer.",
       "type" : "text"
-    },
-    {
-      "code" : "state",
-      "type" : "codeVoice"
     }
   ],
   "hierarchy" : {
@@ -162,6 +158,48 @@
       "kind" : "declarations"
     },
     {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The instance of ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " that represents the peer you’re syncing with.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "state"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The message from the peer to update this document and sync state.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "message"
+        }
+      ]
+    },
+    {
       "content" : [
         {
           "anchor" : "discussion",
@@ -182,13 +220,17 @@
                   "type" : "text"
                 },
                 {
-                  "text" : "the message try using ",
+                  "text" : "the message use the function ",
                   "type" : "text"
                 },
                 {
                   "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/receiveSyncMessageWithPatches(state:message:)",
                   "isActive" : true,
                   "type" : "reference"
+                },
+                {
+                  "text" : ".",
+                  "type" : "text"
                 }
               ],
               "type" : "paragraph"
@@ -237,7 +279,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -251,32 +293,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document": {
   "abstract" : [
     {
-      "text" : "The entry point to automerge, a ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : " presents a key\/value interface to",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "the data it contains; as well as methods for loading and saving documents, and",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "taking part in the sync protocol.",
+      "text" : "An Automerge document that provides an interface to the document-structured data it contains.",
       "type" : "text"
     }
   ],
@@ -310,12 +327,8 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/generateSyncMessage(state:)": {
   "abstract" : [
     {
-      "text" : "Generate a sync message to send to the peer represented by ",
+      "text" : "Update the sync state you provide and return a sync message to send to a peer.",
       "type" : "text"
-    },
-    {
-      "code" : "state",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [
@@ -372,12 +385,8 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/receiveSyncMessage(state:message:)": {
   "abstract" : [
     {
-      "text" : "Receive a sync message from the peer represented by ",
+      "text" : "Apply the sync message to update the sync state and Automerge document with the sync message from a peer.",
       "type" : "text"
-    },
-    {
-      "code" : "state",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [
@@ -446,15 +455,15 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/receiveSyncMessageWithPatches(state:message:)": {
   "abstract" : [
     {
-      "text" : "Receive a sync message from the peer represented by ",
+      "text" : "Apply the sync message to update the sync state and Automerge document with the sync message from a peer,",
       "type" : "text"
     },
     {
-      "code" : "state",
-      "type" : "codeVoice"
+      "text" : " ",
+      "type" : "text"
     },
     {
-      "text" : ", returning patches",
+      "text" : "returning a list of patches applied.",
       "type" : "text"
     }
   ],
@@ -537,7 +546,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/SyncState": {
   "abstract" : [
     {
-      "text" : "A synchronisation session with another peer",
+      "text" : "The state of a synchronisation session with another peer.",
       "type" : "text"
     }
   ],

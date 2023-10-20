@@ -4,6 +4,11 @@
       [
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SchemaStrategy"
+      ],
+      [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeEncoder",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SchemaStrategy"
       ]
     ]
   },
@@ -43,7 +48,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -53,6 +58,40 @@
   "title" : "Automerge",
   "type" : "topic",
   "url" : "\/documentation\/automerge"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/AutomergeEncoder": {
+  "abstract" : [
+    {
+      "text" : "An encoder that stores types that conform to the codable protocol into an Automerge document.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AutomergeEncoder"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeEncoder",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AutomergeEncoder"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AutomergeEncoder",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/automergeencoder"
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/SchemaStrategy": {
   "abstract" : [

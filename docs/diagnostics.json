@@ -1,3 +1,62 @@
 [
+  {
+    "notes" : [
 
+    ],
+    "severity" : 2,
+    "source" : "..\/Document+Transferable.swift",
+    "start" : {
+      "column" : 69,
+      "line" : 28
+    },
+    "summary" : "'UniformTypeIdentifiers' doesn't exist at '\/Automerge'"
+  },
+  {
+    "notes" : [
+
+    ],
+    "severity" : 2,
+    "source" : "..\/Document.swift",
+    "start" : {
+      "column" : 19,
+      "line" : 18
+    },
+    "summary" : "'UniformTypeIdentifiers' doesn't exist at '\/Automerge'"
+  },
+  {
+    "notes" : [
+
+    ],
+    "severity" : 2,
+    "source" : "AutomergeType.md",
+    "start" : {
+      "column" : 34,
+      "line" : 7
+    },
+    "summary" : "'UniformTypeIdentifiers' doesn't exist at '\/Automerge'"
+  },
+  {
+    "notes" : [
+
+    ],
+    "severity" : 2,
+    "source" : "AutomergeType.md",
+    "start" : {
+      "column" : 256,
+      "line" : 14
+    },
+    "summary" : "'UniformTypeIdentifiers' doesn't exist at '\/Automerge'"
+  },
+  {
+    "notes" : [
+
+    ],
+    "severity" : 2,
+    "source" : "Curation\/Document.md",
+    "start" : {
+      "column" : 15,
+      "line" : 14
+    },
+    "summary" : "'UniformTypeIdentifiers' doesn't exist at '\/Automerge'"
+  }
 ]

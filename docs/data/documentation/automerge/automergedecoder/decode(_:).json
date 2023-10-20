@@ -1,4 +1,10 @@
 {
+  "abstract" : [
+    {
+      "text" : "Returns the type you specify, decoded from the Automerge document referenced by the decoder.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -166,6 +172,25 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "_ The type of the value to decode from the Automerge document.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "_"
+        }
+      ]
     }
   ],
   "schemaVersion" : {
@@ -175,6 +200,15 @@
   },
   "sections" : [
 
+  ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeDecoder\/decode(_:from:)"
+      ],
+      "title" : "Decoding"
+    }
   ],
   "variants" : [
     {
@@ -193,7 +227,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -240,7 +274,10 @@
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/AutomergeDecoder/decode(_:)": {
   "abstract" : [
-
+    {
+      "text" : "Returns the type you specify, decoded from the Automerge document referenced by the decoder.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -296,6 +333,85 @@
   "title" : "decode(_:)",
   "type" : "topic",
   "url" : "\/documentation\/automerge\/automergedecoder\/decode(_:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/AutomergeDecoder/decode(_:from:)": {
+  "abstract" : [
+    {
+      "text" : "Returns the type you specify, decoded from the Automerge document referenced by the decoder.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "decode"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge0A7DecoderV6decode_4fromxxm_Says9CodingKey_pGtKSeRzlF1TL_xmfp",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ".Type, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "from"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s9CodingKeyP",
+      "text" : "CodingKey"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge0A7DecoderV6decode_4fromxxm_Says9CodingKey_pGtKSeRzlF1TL_xmfp",
+      "text" : "T"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeDecoder\/decode(_:from:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "decode(_:from:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/automergedecoder\/decode(_:from:)"
 }
 }
 }

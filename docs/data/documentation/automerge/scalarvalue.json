@@ -76,6 +76,47 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "code" : "ScalarValue",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " represents an Automerge primitive value as an enumeration with associated data.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "For an overview of working with these values, see ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ModelingData",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "relationshipsSections" : [
@@ -103,9 +144,11 @@
     {
       "generated" : true,
       "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ModelingData",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjType",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjId",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Value"
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Value",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AddressBookExample"
       ],
       "title" : "Representing Objects and Values"
     }
@@ -113,18 +156,18 @@
   "topicSections" : [
     {
       "identifiers" : [
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Boolean(_:)",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Bytes(_:)",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Counter(_:)",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/F64(_:)",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Int(_:)",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Null",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/String(_:)",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Timestamp(_:)",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Boolean(_:)",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Uint(_:)",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Int(_:)",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/F64(_:)",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/String(_:)",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Bytes(_:)",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Timestamp(_:)",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Counter(_:)",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue\/Unknown(typeCode:data:)"
       ],
-      "title" : "Enumeration Cases"
+      "title" : "Automerge Primitives"
     },
     {
       "generated" : true,
@@ -162,7 +205,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -172,6 +215,34 @@
   "title" : "Automerge",
   "type" : "topic",
   "url" : "\/documentation\/automerge"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/AddressBookExample": {
+  "abstract" : [
+    {
+      "text" : "Building a CLI address book application using Automerge.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AddressBookExample",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Address Book Example",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/addressbookexample"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ModelingData": {
+  "abstract" : [
+    {
+      "text" : "Store, read, share, and synchronize complex data in an Automerge document.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ModelingData",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Modeling Data with Automerge",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/modelingdata"
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/ObjId": {
   "abstract" : [
@@ -574,7 +645,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/ScalarValue/Timestamp(_:)": {
   "abstract" : [
     {
-      "text" : "A timestamp represented by the milliseconds since UNIX epoch (Jan 1st, 1970, 00:00 UTC).",
+      "text" : "A timestamp represented by the number of seconds since UNIX epoch (Jan 1st, 1970, 00:00 UTC).",
       "type" : "text"
     }
   ],

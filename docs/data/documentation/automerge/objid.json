@@ -76,6 +76,70 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "An object identifier represents a unique object within an Automerge document.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Use ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/lookupPath(path:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " to look up an existing object id.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "More frequently, methods that add objects to an Automerge Document return an the object Id that references the object added. For example ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/putObject(obj:key:ty:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " adds an object into an existing dictionary, and ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/putObject(obj:index:ty:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " adds an object into an existing list.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "relationshipsSections" : [
@@ -103,9 +167,11 @@
     {
       "generated" : true,
       "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ModelingData",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjType",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Value",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue"
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AddressBookExample"
       ],
       "title" : "Representing Objects and Values"
     }
@@ -115,7 +181,7 @@
       "identifiers" : [
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjId\/ROOT"
       ],
-      "title" : "Type Properties"
+      "title" : "Built-in Object Ids"
     },
     {
       "generated" : true,
@@ -153,7 +219,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -163,6 +229,292 @@
   "title" : "Automerge",
   "type" : "topic",
   "url" : "\/documentation\/automerge"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/AddressBookExample": {
+  "abstract" : [
+    {
+      "text" : "Building a CLI address book application using Automerge.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AddressBookExample",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Address Book Example",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/addressbookexample"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/lookupPath(path:)": {
+  "abstract" : [
+    {
+      "text" : "Looks up the objectId represented by the schema path string you provide.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "lookupPath"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "path"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge5ObjIdV",
+      "text" : "ObjId"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/lookupPath(path:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "lookupPath(path:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/document\/lookuppath(path:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/putObject(obj:index:ty:)": {
+  "abstract" : [
+    {
+      "text" : "Set or update an object within an array object you specify.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "putObject"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "obj"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge5ObjIdV",
+      "text" : "ObjId"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "index"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s6UInt64V",
+      "text" : "UInt64"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "ty"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge7ObjTypeO",
+      "text" : "ObjType"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge5ObjIdV",
+      "text" : "ObjId"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/putObject(obj:index:ty:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "putObject(obj:index:ty:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/document\/putobject(obj:index:ty:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/putObject(obj:key:ty:)": {
+  "abstract" : [
+    {
+      "text" : "Set or update an object within a dictionary object you specify.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "putObject"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "obj"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge5ObjIdV",
+      "text" : "ObjId"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "key"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "ty"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge7ObjTypeO",
+      "text" : "ObjType"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge5ObjIdV",
+      "text" : "ObjId"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/putObject(obj:key:ty:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "putObject(obj:key:ty:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/document\/putobject(obj:key:ty:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ModelingData": {
+  "abstract" : [
+    {
+      "text" : "Store, read, share, and synchronize complex data in an Automerge document.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ModelingData",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Modeling Data with Automerge",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/modelingdata"
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/ObjId": {
   "abstract" : [

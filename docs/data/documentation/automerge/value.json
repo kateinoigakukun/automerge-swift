@@ -9,6 +9,15 @@
     "paths" : [
       [
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge"
+      ],
+      [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction"
+      ],
+      [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Patch",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction"
       ]
     ]
   },
@@ -103,9 +112,11 @@
     {
       "generated" : true,
       "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ModelingData",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjType",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjId",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue"
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AddressBookExample"
       ],
       "title" : "Representing Objects and Values"
     }
@@ -116,7 +127,7 @@
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Value\/Object(_:_:)",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Value\/Scalar(_:)"
       ],
-      "title" : "Enumeration Cases"
+      "title" : "Automerge Values"
     },
     {
       "generated" : true,
@@ -154,7 +165,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -164,6 +175,34 @@
   "title" : "Automerge",
   "type" : "topic",
   "url" : "\/documentation\/automerge"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/AddressBookExample": {
+  "abstract" : [
+    {
+      "text" : "Building a CLI address book application using Automerge.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AddressBookExample",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Address Book Example",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/addressbookexample"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ModelingData": {
+  "abstract" : [
+    {
+      "text" : "Store, read, share, and synchronize complex data in an Automerge document.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ModelingData",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Modeling Data with Automerge",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/modelingdata"
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/ObjId": {
   "abstract" : [
@@ -232,6 +271,74 @@
   "title" : "ObjType",
   "type" : "topic",
   "url" : "\/documentation\/automerge\/objtype"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Patch": {
+  "abstract" : [
+    {
+      "text" : "A collection of updates applied to an Automerge document.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Patch"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Patch",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Patch"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Patch",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/patch"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/PatchAction": {
+  "abstract" : [
+    {
+      "text" : "The type of change the library applied to an Automerge document, along with the data that changed.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "PatchAction"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "PatchAction"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "PatchAction",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/patchaction"
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/ScalarValue": {
   "abstract" : [

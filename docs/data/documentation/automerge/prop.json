@@ -9,6 +9,15 @@
     "paths" : [
       [
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge"
+      ],
+      [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction"
+      ],
+      [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Patch",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction"
       ]
     ]
   },
@@ -127,6 +136,98 @@
             }
           ],
           "type" : "paragraph"
+        },
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Automerge exposes ",
+              "type" : "text"
+            },
+            {
+              "code" : "Prop",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " as a type that represents either a ",
+              "type" : "text"
+            },
+            {
+              "code" : "String",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " based key into an Automerge ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjType\/Map",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", or an ",
+              "type" : "text"
+            },
+            {
+              "code" : "Int64",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " based index position within an Automerge ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjType\/List",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Convert ",
+              "type" : "text"
+            },
+            {
+              "code" : "Prop",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " into an ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AnyCodingKey",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " using ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AnyCodingKey\/init(_:)-6lrn3",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
         }
       ],
       "kind" : "content"
@@ -135,7 +236,8 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
-        "doc:\/\/com.github.automerge.automerge-swift\/SQ"
+        "doc:\/\/com.github.automerge.automerge-swift\/SQ",
+        "doc:\/\/com.github.automerge.automerge-swift\/s8SendableP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -154,15 +256,15 @@
     {
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ActorId",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangesAndHistory",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangeHash",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/DeleteSeq",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Patch",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PathElement"
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PathElement",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/DeleteSeq",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ActorId"
       ],
-      "title" : "Replicating Documents"
+      "title" : "Inspecting Documents as Changes"
     }
   ],
   "topicSections" : [
@@ -171,7 +273,7 @@
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Prop\/Index(_:)",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Prop\/Key(_:)"
       ],
-      "title" : "Enumeration Cases"
+      "title" : "Property types"
     },
     {
       "generated" : true,
@@ -203,7 +305,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -248,6 +350,77 @@
   "type" : "topic",
   "url" : "\/documentation\/automerge\/actorid"
 },
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/AnyCodingKey": {
+  "abstract" : [
+    {
+      "text" : "A type that maps provides a coding key value with an enumeration.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "AnyCodingKey"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AnyCodingKey",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "AnyCodingKey"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "AnyCodingKey",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/anycodingkey"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/AnyCodingKey/init(_:)-6lrn3": {
+  "abstract" : [
+    {
+      "text" : "Creates a generalized Coding Key from an Automerge Property.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "(Automerge"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge4PropO",
+      "text" : "Prop"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AnyCodingKey\/init(_:)-6lrn3",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/anycodingkey\/init(_:)-6lrn3"
+},
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/ChangeHash": {
   "abstract" : [
     {
@@ -282,6 +455,20 @@
   "type" : "topic",
   "url" : "\/documentation\/automerge\/changehash"
 },
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ChangesAndHistory": {
+  "abstract" : [
+    {
+      "text" : "Track, inspect, and synchronize the changes within Automerge documents.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangesAndHistory",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Tracking Changes and History",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/changesandhistory"
+},
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/DeleteSeq": {
   "abstract" : [
     {
@@ -315,6 +502,62 @@
   "title" : "DeleteSeq",
   "type" : "topic",
   "url" : "\/documentation\/automerge\/deleteseq"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ObjType/List": {
+  "abstract" : [
+    {
+      "text" : "A type that represents an array of Automerge values.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "List"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjType\/List",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ObjType.List",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/objtype\/list"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ObjType/Map": {
+  "abstract" : [
+    {
+      "text" : "A type that represents a dictionary that uses the type String for keys.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Map"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjType\/Map",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ObjType.Map",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/objtype\/map"
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Patch": {
   "abstract" : [
@@ -545,39 +788,10 @@
   "type" : "topic",
   "url" : "\/documentation\/automerge\/prop\/key(_:)"
 },
-"doc://com.github.automerge.automerge-swift/documentation/Automerge/SyncState": {
-  "abstract" : [
-    {
-      "text" : "A synchronisation session with another peer",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "SyncState"
-    }
-  ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "SyncState"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "SyncState",
-  "type" : "topic",
-  "url" : "\/documentation\/automerge\/syncstate"
+"doc://com.github.automerge.automerge-swift/s8SendableP": {
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
 }
 }
 }

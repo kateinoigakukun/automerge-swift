@@ -142,6 +142,17 @@
   "sections" : [
 
   ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AnyCodingKey\/init(_:)-6faed",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AnyCodingKey\/init(_:)-5azuh",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AnyCodingKey\/ROOT"
+      ],
+      "title" : "Creating an AnyCodingKey"
+    }
+  ],
   "variants" : [
     {
       "paths" : [
@@ -159,7 +170,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -203,6 +214,117 @@
   "title" : "AnyCodingKey",
   "type" : "topic",
   "url" : "\/documentation\/automerge\/anycodingkey"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/AnyCodingKey/ROOT": {
+  "abstract" : [
+    {
+      "text" : "A coding key that represents the root of a schema hierarchy.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ROOT"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge12AnyCodingKeyV",
+      "text" : "AnyCodingKey"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AnyCodingKey\/ROOT",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ROOT",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/anycodingkey\/root"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/AnyCodingKey/init(_:)-5azuh": {
+  "abstract" : [
+    {
+      "text" : "Creates a new schema path element for a keyed container using the string you provide.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AnyCodingKey\/init(_:)-5azuh",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/anycodingkey\/init(_:)-5azuh"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/AnyCodingKey/init(_:)-6faed": {
+  "abstract" : [
+    {
+      "text" : "Creates a new schema path element for an un-keyed container using the index you provide.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s6UInt64V",
+      "text" : "UInt64"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AnyCodingKey\/init(_:)-6faed",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/anycodingkey\/init(_:)-6faed"
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/AnyCodingKey/init(_:)-lfcr": {
   "abstract" : [

@@ -100,6 +100,15 @@
   "sections" : [
 
   ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Patch\/path"
+      ],
+      "title" : "Inspecting a Patch"
+    }
+  ],
   "variants" : [
     {
       "paths" : [
@@ -117,7 +126,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -198,6 +207,47 @@
   "title" : "action",
   "type" : "topic",
   "url" : "\/documentation\/automerge\/patch\/action"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Patch/path": {
+  "abstract" : [
+    {
+      "text" : "The path to the object that the update effects.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "path"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge11PathElementV",
+      "text" : "PathElement"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Patch\/path",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "path",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/patch\/path"
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/PatchAction": {
   "abstract" : [

@@ -1,4 +1,10 @@
 {
+  "abstract" : [
+    {
+      "text" : "The user info dictionary for the decoder.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -117,6 +123,15 @@
   "sections" : [
 
   ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeDecoder\/doc"
+      ],
+      "title" : "Inspecting a Decoder"
+    }
+  ],
   "variants" : [
     {
       "paths" : [
@@ -134,7 +149,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -179,9 +194,49 @@
   "type" : "topic",
   "url" : "\/documentation\/automerge\/automergedecoder"
 },
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/AutomergeDecoder/doc": {
+  "abstract" : [
+    {
+      "text" : "The instance of the an Automerge document to decode from.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "doc"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge8DocumentC",
+      "text" : "Document"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeDecoder\/doc",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "doc",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/automergedecoder\/doc"
+},
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/AutomergeDecoder/userInfo": {
   "abstract" : [
-
+    {
+      "text" : "The user info dictionary for the decoder.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

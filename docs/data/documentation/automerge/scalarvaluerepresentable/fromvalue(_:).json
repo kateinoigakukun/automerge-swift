@@ -323,6 +323,17 @@
   "sections" : [
 
   ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValueRepresentable\/toScalarValue()",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValueRepresentable\/fromScalarValue(_:)",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValueRepresentable\/ConvertError"
+      ],
+      "title" : "Converting types to Scalar Value Representations"
+    }
+  ],
   "variants" : [
     {
       "paths" : [
@@ -340,7 +351,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -354,7 +365,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/ObjType/List": {
   "abstract" : [
     {
-      "text" : "A type that represents a sequence of arbitrary Automerge values.",
+      "text" : "A type that represents an array of Automerge values.",
       "type" : "text"
     }
   ],
@@ -382,7 +393,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/ObjType/Map": {
   "abstract" : [
     {
-      "text" : "A type that represents a map that uses String as keys.",
+      "text" : "A type that represents a dictionary that uses the type String for keys.",
       "type" : "text"
     }
   ],
@@ -410,7 +421,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/ObjType/Text": {
   "abstract" : [
     {
-      "text" : "A type that represents sequence of unicode characters.",
+      "text" : "A type that represents an array of unicode characters.",
       "type" : "text"
     }
   ],
@@ -438,7 +449,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/ScalarValueRepresentable": {
   "abstract" : [
     {
-      "text" : "A type that can be represented within an Automerge document.",
+      "text" : "A type that can be represented as an individual value within an Automerge document.",
       "type" : "text"
     }
   ],
@@ -506,6 +517,82 @@
   "title" : "ConvertError",
   "type" : "topic",
   "url" : "\/documentation\/automerge\/scalarvaluerepresentable\/converterror"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ScalarValueRepresentable/fromScalarValue(_:)": {
+  "abstract" : [
+    {
+      "text" : "Converts the Automerge representation to a local type, or returns a failure.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "fromScalarValue"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge11ScalarValueO",
+      "text" : "ScalarValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s6ResultO",
+      "text" : "Result"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge24ScalarValueRepresentableP12ConvertErrorQa",
+      "text" : "ConvertError"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValueRepresentable\/fromScalarValue(_:)",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "fromScalarValue(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/scalarvaluerepresentable\/fromscalarvalue(_:)"
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/ScalarValueRepresentable/fromValue(_:)": {
   "abstract" : [
@@ -582,6 +669,44 @@
   "title" : "fromValue(_:)",
   "type" : "topic",
   "url" : "\/documentation\/automerge\/scalarvaluerepresentable\/fromvalue(_:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ScalarValueRepresentable/toScalarValue()": {
+  "abstract" : [
+    {
+      "text" : "Converts a local type into an Automerge scalar value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "toScalarValue"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge11ScalarValueO",
+      "text" : "ScalarValue"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValueRepresentable\/toScalarValue()",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "toScalarValue()",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/scalarvaluerepresentable\/toscalarvalue()"
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Value": {
   "abstract" : [

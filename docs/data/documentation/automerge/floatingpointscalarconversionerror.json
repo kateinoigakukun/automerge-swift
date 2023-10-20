@@ -104,13 +104,12 @@
       "identifiers" : [
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/BooleanScalarConversionError",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/BytesScalarConversionError",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/CounterScalarConversionError",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/IntScalarConversionError",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/StringScalarConversionError",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/TimestampScalarConversionError",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/UIntScalarConversionError"
       ],
-      "title" : "Conversion Error Types"
+      "title" : "Type Conversion Errors"
     }
   ],
   "topicSections" : [
@@ -159,7 +158,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -237,40 +236,6 @@
   "title" : "BytesScalarConversionError",
   "type" : "topic",
   "url" : "\/documentation\/automerge\/bytesscalarconversionerror"
-},
-"doc://com.github.automerge.automerge-swift/documentation/Automerge/CounterScalarConversionError": {
-  "abstract" : [
-    {
-      "text" : "A failure to convert an Automerge scalar value to or from a signer integer counter representation.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "enum"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "CounterScalarConversionError"
-    }
-  ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/CounterScalarConversionError",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "CounterScalarConversionError"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "CounterScalarConversionError",
-  "type" : "topic",
-  "url" : "\/documentation\/automerge\/counterscalarconversionerror"
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/FloatingPointScalarConversionError": {
   "abstract" : [

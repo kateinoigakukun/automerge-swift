@@ -50,11 +50,14 @@
       "identifiers" : [
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeActorId",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeChangeHash",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeCursor",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeDecodeSyncStateError",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeDoc",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeDocError",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeExpandMark",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeKeyValue",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeLoadError",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeMark",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeObjId",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeObjType",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypePatch",
@@ -66,6 +69,7 @@
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeSyncState",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeValue",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/KeyValue",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/Mark",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/Patch",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/PathElement"
       ],
@@ -73,8 +77,14 @@
     },
     {
       "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeDoc_lift(_:)",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeDoc_lower(_:)",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeExpandMark_lift(_:)",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeExpandMark_lower(_:)",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeKeyValue_lift(_:)",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeKeyValue_lower(_:)",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeMark_lift(_:)",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeMark_lower(_:)",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeObjType_lift(_:)",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeObjType_lower(_:)",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypePatchAction_lift(_:)",
@@ -87,6 +97,8 @@
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeProp_lower(_:)",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeScalarValue_lift(_:)",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeScalarValue_lower(_:)",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeSyncState_lift(_:)",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeSyncState_lower(_:)",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeValue_lift(_:)",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeValue_lower(_:)",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/root()"
@@ -97,15 +109,16 @@
       "identifiers" : [
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/ActorId",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/ChangeHash",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/Cursor",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/ObjId"
       ],
       "title" : "Type Aliases"
     },
     {
       "identifiers" : [
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/AutomergeLifecycle",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/DecodeSyncStateError",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/DocError",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/ExpandMark",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/LoadError",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/ObjType",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/PatchAction",
@@ -184,40 +197,6 @@
   "type" : "topic",
   "url" : "\/documentation\/automergeuniffi\/actorid"
 },
-"doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/AutomergeLifecycle": {
-  "abstract" : [
-    {
-      "text" : "Top level initializers and tear down methods.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "enum"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "AutomergeLifecycle"
-    }
-  ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/AutomergeLifecycle",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "AutomergeLifecycle"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "AutomergeLifecycle",
-  "type" : "topic",
-  "url" : "\/documentation\/automergeuniffi\/automergelifecycle"
-},
 "doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/ChangeHash": {
   "abstract" : [
     {
@@ -259,6 +238,48 @@
   "title" : "ChangeHash",
   "type" : "topic",
   "url" : "\/documentation\/automergeuniffi\/changehash"
+},
+"doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/Cursor": {
+  "abstract" : [
+    {
+      "text" : "Typealias from the type name used in the UDL file to the builtin type.  This",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "is needed because the UDL type name is used in function\/method signatures.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Cursor"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/Cursor",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Cursor"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Cursor",
+  "type" : "topic",
+  "url" : "\/documentation\/automergeuniffi\/cursor"
 },
 "doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/DecodeSyncStateError": {
   "abstract" : [
@@ -384,6 +405,37 @@
   "type" : "topic",
   "url" : "\/documentation\/automergeuniffi\/docprotocol"
 },
+"doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/ExpandMark": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ExpandMark"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/ExpandMark",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ExpandMark"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ExpandMark",
+  "type" : "topic",
+  "url" : "\/documentation\/automergeuniffi\/expandmark"
+},
 "doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/FfiConverterTypeActorId": {
   "abstract" : [
 
@@ -445,6 +497,37 @@
   "title" : "FfiConverterTypeChangeHash",
   "type" : "topic",
   "url" : "\/documentation\/automergeuniffi\/fficonvertertypechangehash"
+},
+"doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/FfiConverterTypeCursor": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FfiConverterTypeCursor"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeCursor",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "FfiConverterTypeCursor"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "FfiConverterTypeCursor",
+  "type" : "topic",
+  "url" : "\/documentation\/automergeuniffi\/fficonvertertypecursor"
 },
 "doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/FfiConverterTypeDecodeSyncStateError": {
   "abstract" : [
@@ -538,6 +621,225 @@
   "title" : "FfiConverterTypeDocError",
   "type" : "topic",
   "url" : "\/documentation\/automergeuniffi\/fficonvertertypedocerror"
+},
+"doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/FfiConverterTypeDoc_lift(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FfiConverterTypeDoc_lift"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sv",
+      "text" : "UnsafeMutableRawPointer"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:15AutomergeUniffi3DocC",
+      "text" : "Doc"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeDoc_lift(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FfiConverterTypeDoc_lift(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automergeuniffi\/fficonvertertypedoc_lift(_:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/FfiConverterTypeDoc_lower(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FfiConverterTypeDoc_lower"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:15AutomergeUniffi3DocC",
+      "text" : "Doc"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sv",
+      "text" : "UnsafeMutableRawPointer"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeDoc_lower(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FfiConverterTypeDoc_lower(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automergeuniffi\/fficonvertertypedoc_lower(_:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/FfiConverterTypeExpandMark": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FfiConverterTypeExpandMark"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeExpandMark",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "FfiConverterTypeExpandMark"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "FfiConverterTypeExpandMark",
+  "type" : "topic",
+  "url" : "\/documentation\/automergeuniffi\/fficonvertertypeexpandmark"
+},
+"doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/FfiConverterTypeExpandMark_lift(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FfiConverterTypeExpandMark_lift"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@S@RustBuffer",
+      "text" : "RustBuffer"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:15AutomergeUniffi10ExpandMarkO",
+      "text" : "ExpandMark"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeExpandMark_lift(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FfiConverterTypeExpandMark_lift(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automergeuniffi\/fficonvertertypeexpandmark_lift(_:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/FfiConverterTypeExpandMark_lower(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FfiConverterTypeExpandMark_lower"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:15AutomergeUniffi10ExpandMarkO",
+      "text" : "ExpandMark"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@S@RustBuffer",
+      "text" : "RustBuffer"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeExpandMark_lower(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FfiConverterTypeExpandMark_lower(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automergeuniffi\/fficonvertertypeexpandmark_lower(_:)"
 },
 "doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/FfiConverterTypeKeyValue": {
   "abstract" : [
@@ -694,6 +996,131 @@
   "title" : "FfiConverterTypeLoadError",
   "type" : "topic",
   "url" : "\/documentation\/automergeuniffi\/fficonvertertypeloaderror"
+},
+"doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/FfiConverterTypeMark": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FfiConverterTypeMark"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeMark",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "FfiConverterTypeMark"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "FfiConverterTypeMark",
+  "type" : "topic",
+  "url" : "\/documentation\/automergeuniffi\/fficonvertertypemark"
+},
+"doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/FfiConverterTypeMark_lift(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FfiConverterTypeMark_lift"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@S@RustBuffer",
+      "text" : "RustBuffer"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:15AutomergeUniffi4MarkV",
+      "text" : "Mark"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeMark_lift(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FfiConverterTypeMark_lift(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automergeuniffi\/fficonvertertypemark_lift(_:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/FfiConverterTypeMark_lower(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FfiConverterTypeMark_lower"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:15AutomergeUniffi4MarkV",
+      "text" : "Mark"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@S@RustBuffer",
+      "text" : "RustBuffer"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeMark_lower(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FfiConverterTypeMark_lower(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automergeuniffi\/fficonvertertypemark_lower(_:)"
 },
 "doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/FfiConverterTypeObjId": {
   "abstract" : [
@@ -1538,6 +1965,100 @@
   "type" : "topic",
   "url" : "\/documentation\/automergeuniffi\/fficonvertertypesyncstate"
 },
+"doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/FfiConverterTypeSyncState_lift(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FfiConverterTypeSyncState_lift"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sv",
+      "text" : "UnsafeMutableRawPointer"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:15AutomergeUniffi9SyncStateC",
+      "text" : "SyncState"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeSyncState_lift(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FfiConverterTypeSyncState_lift(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automergeuniffi\/fficonvertertypesyncstate_lift(_:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/FfiConverterTypeSyncState_lower(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FfiConverterTypeSyncState_lower"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:15AutomergeUniffi9SyncStateC",
+      "text" : "SyncState"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sv",
+      "text" : "UnsafeMutableRawPointer"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/FfiConverterTypeSyncState_lower(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FfiConverterTypeSyncState_lower(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automergeuniffi\/fficonvertertypesyncstate_lower(_:)"
+},
 "doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/FfiConverterTypeValue": {
   "abstract" : [
 
@@ -1724,6 +2245,37 @@
   "title" : "LoadError",
   "type" : "topic",
   "url" : "\/documentation\/automergeuniffi\/loaderror"
+},
+"doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/Mark": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Mark"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/AutomergeUniffi\/Mark",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Mark"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Mark",
+  "type" : "topic",
+  "url" : "\/documentation\/automergeuniffi\/mark"
 },
 "doc://com.github.automerge.automerge-swift/documentation/AutomergeUniffi/ObjId": {
   "abstract" : [

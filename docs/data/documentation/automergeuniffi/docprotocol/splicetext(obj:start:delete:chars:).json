@@ -13,7 +13,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:15AutomergeUniffi11DocProtocolP10spliceText3obj5start6delete5charsySays5UInt8VG_s6UInt64VAMSStKF",
+    "externalID" : "s:15AutomergeUniffi11DocProtocolP10spliceText3obj5start6delete5charsySays5UInt8VG_s6UInt64Vs5Int64VSStKF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -75,8 +75,8 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:s6UInt64V",
-        "text" : "UInt64"
+        "preciseIdentifier" : "s:s5Int64V",
+        "text" : "Int64"
       },
       {
         "kind" : "text",
@@ -187,8 +187,8 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s6UInt64V",
-              "text" : "UInt64"
+              "preciseIdentifier" : "s:s5Int64V",
+              "text" : "Int64"
             },
             {
               "kind" : "text",
@@ -350,8 +350,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:s6UInt64V",
-      "text" : "UInt64"
+      "preciseIdentifier" : "s:s5Int64V",
+      "text" : "Int64"
     },
     {
       "kind" : "text",

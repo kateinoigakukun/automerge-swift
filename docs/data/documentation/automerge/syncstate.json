@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "A synchronisation session with another peer",
+      "text" : "The state of a synchronisation session with another peer.",
       "type" : "text"
     }
   ],
@@ -88,6 +88,41 @@
         {
           "inlineContent" : [
             {
+              "text" : "Use ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState\/encode()",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " to generate a byte representation of the SyncState to persist it, and use ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState\/init(bytes:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " to",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "initialize a new instance from those bytes.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
               "text" : "The sync protocol is designed to run over a reliable in-order transport with",
               "type" : "text"
             },
@@ -131,23 +166,24 @@
               "type" : "reference"
             },
             {
-              "text" : ". Assuming the existence of some",
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The following code example illustrates using ",
               "type" : "text"
             },
             {
-              "text" : " ",
-              "type" : "text"
+              "code" : "SyncState",
+              "type" : "codeVoice"
             },
             {
-              "text" : "network infrastructure for sending and receiving messages on the transport a",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "loop to stay in sync might look like the following",
+              "text" : " to generate and receive one side of a network sync.",
               "type" : "text"
             }
           ],
@@ -155,8 +191,7 @@
         },
         {
           "code" : [
-            "\/\/ somehow obtain the document, or create a new one if you have no data",
-            "let doc: Document = ...",
+            "let doc = Document()",
             "let state = SyncState()",
             "repeat {",
             "   if let msg = doc.generateSyncMessage(state) {",
@@ -167,39 +202,22 @@
             "   }",
             "}"
           ],
-          "syntax" : null,
+          "syntax" : "swift",
           "type" : "codeListing"
         },
         {
           "inlineContent" : [
             {
-              "text" : "Sync states can be persisted. If you know a peer might connect to you again",
+              "text" : "For a more thorough example of sync, see ",
               "type" : "text"
             },
             {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "you can use ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState\/encode()",
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangesAndHistory",
               "isActive" : true,
               "type" : "reference"
             },
             {
-              "text" : " to save the state and ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState\/init(bytes:)",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " to decode it.",
+              "text" : ".",
               "type" : "text"
             }
           ],
@@ -231,15 +249,9 @@
     {
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ActorId",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangeHash",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/DeleteSeq",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Patch",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PathElement",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Prop"
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Sync"
       ],
-      "title" : "Replicating Documents"
+      "title" : "Synchronizing Documents"
     }
   ],
   "topicSections" : [
@@ -248,20 +260,25 @@
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState\/init()",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState\/init(bytes:)"
       ],
-      "title" : "Initializers"
+      "title" : "Creating a SyncState"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState\/encode()"
+      ],
+      "title" : "Serializing SyncState"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState\/reset()"
+      ],
+      "title" : "Resetting SyncState"
     },
     {
       "identifiers" : [
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState\/theirHeads"
       ],
-      "title" : "Instance Properties"
-    },
-    {
-      "identifiers" : [
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState\/encode()",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState\/reset()"
-      ],
-      "title" : "Instance Methods"
+      "title" : "Inspecting SyncState"
     }
   ],
   "variants" : [
@@ -281,7 +298,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -292,117 +309,25 @@
   "type" : "topic",
   "url" : "\/documentation\/automerge"
 },
-"doc://com.github.automerge.automerge-swift/documentation/Automerge/ActorId": {
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ChangesAndHistory": {
   "abstract" : [
     {
-      "text" : "The identifier for collaborators contributing to an Automerge document.",
+      "text" : "Track, inspect, and synchronize the changes within Automerge documents.",
       "type" : "text"
     }
   ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "ActorId"
-    }
-  ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ActorId",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "ActorId"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "ActorId",
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangesAndHistory",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Tracking Changes and History",
   "type" : "topic",
-  "url" : "\/documentation\/automerge\/actorid"
-},
-"doc://com.github.automerge.automerge-swift/documentation/Automerge/ChangeHash": {
-  "abstract" : [
-    {
-      "text" : "An opaque hash that represents a change within an Automerge document.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "ChangeHash"
-    }
-  ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangeHash",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "ChangeHash"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "ChangeHash",
-  "type" : "topic",
-  "url" : "\/documentation\/automerge\/changehash"
-},
-"doc://com.github.automerge.automerge-swift/documentation/Automerge/DeleteSeq": {
-  "abstract" : [
-    {
-      "text" : "A sequence of deletions.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "DeleteSeq"
-    }
-  ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/DeleteSeq",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "DeleteSeq"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "DeleteSeq",
-  "type" : "topic",
-  "url" : "\/documentation\/automerge\/deleteseq"
+  "url" : "\/documentation\/automerge\/changesandhistory"
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/generateSyncMessage(state:)": {
   "abstract" : [
     {
-      "text" : "Generate a sync message to send to the peer represented by ",
+      "text" : "Update the sync state you provide and return a sync message to send to a peer.",
       "type" : "text"
-    },
-    {
-      "code" : "state",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [
@@ -459,12 +384,8 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/receiveSyncMessage(state:message:)": {
   "abstract" : [
     {
-      "text" : "Receive a sync message from the peer represented by ",
+      "text" : "Apply the sync message to update the sync state and Automerge document with the sync message from a peer.",
       "type" : "text"
-    },
-    {
-      "code" : "state",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [
@@ -530,146 +451,24 @@
   "type" : "topic",
   "url" : "\/documentation\/automerge\/document\/receivesyncmessage(state:message:)"
 },
-"doc://com.github.automerge.automerge-swift/documentation/Automerge/Patch": {
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Sync": {
   "abstract" : [
     {
-      "text" : "A collection of updates applied to an Automerge document.",
+      "text" : "Conveniently synchronize any two documents.",
       "type" : "text"
     }
   ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Patch"
-    }
-  ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Patch",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Patch"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Patch",
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Sync",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Synchronizing Automerge Documents",
   "type" : "topic",
-  "url" : "\/documentation\/automerge\/patch"
-},
-"doc://com.github.automerge.automerge-swift/documentation/Automerge/PatchAction": {
-  "abstract" : [
-    {
-      "text" : "The type of change the library applied to an Automerge document, along with the data that changed.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "enum"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "PatchAction"
-    }
-  ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "PatchAction"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "PatchAction",
-  "type" : "topic",
-  "url" : "\/documentation\/automerge\/patchaction"
-},
-"doc://com.github.automerge.automerge-swift/documentation/Automerge/PathElement": {
-  "abstract" : [
-    {
-      "text" : "A component of the path to an object within a document.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "PathElement"
-    }
-  ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PathElement",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "PathElement"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "PathElement",
-  "type" : "topic",
-  "url" : "\/documentation\/automerge\/pathelement"
-},
-"doc://com.github.automerge.automerge-swift/documentation/Automerge/Prop": {
-  "abstract" : [
-    {
-      "text" : "A type that represents a property on an object within an Automerge document.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "enum"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Prop"
-    }
-  ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Prop",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Prop"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Prop",
-  "type" : "topic",
-  "url" : "\/documentation\/automerge\/prop"
+  "url" : "\/documentation\/automerge\/sync"
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/SyncState": {
   "abstract" : [
     {
-      "text" : "A synchronisation session with another peer",
+      "text" : "The state of a synchronisation session with another peer.",
       "type" : "text"
     }
   ],
@@ -739,7 +538,10 @@
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/SyncState/init()": {
   "abstract" : [
-
+    {
+      "text" : "Create a new, empty sync state.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -760,7 +562,10 @@
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/SyncState/init(bytes:)": {
   "abstract" : [
-
+    {
+      "text" : "Create a sync state from data.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -834,7 +639,10 @@
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/SyncState/theirHeads": {
   "abstract" : [
-
+    {
+      "text" : "The heads last reported by a peer.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

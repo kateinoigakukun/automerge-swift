@@ -1,20 +1,8 @@
 {
   "abstract" : [
     {
-      "text" : "The length of the list ",
+      "text" : "Returns the historical length of the array, dictionary, or text object and point in time you specify.",
       "type" : "text"
-    },
-    {
-      "code" : "obj",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " as at ",
-      "type" : "text"
-    },
-    {
-      "code" : "heads",
-      "type" : "codeVoice"
     }
   ],
   "hierarchy" : {
@@ -189,6 +177,48 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The identifier of an array, dictionary, or text object.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "obj"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The set of ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangeHash",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " that represents a point of time in the history the document.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "heads"
+        }
+      ]
     }
   ],
   "schemaVersion" : {
@@ -229,7 +259,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -277,32 +307,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document": {
   "abstract" : [
     {
-      "text" : "The entry point to automerge, a ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : " presents a key\/value interface to",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "the data it contains; as well as methods for loading and saving documents, and",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "taking part in the sync protocol.",
+      "text" : "An Automerge document that provides an interface to the document-structured data it contains.",
       "type" : "text"
     }
   ],
@@ -336,28 +341,16 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/getAllAt(obj:key:heads:)": {
   "abstract" : [
     {
-      "text" : "Get all the possibly conflicting values for ",
+      "text" : "Get the the historical set of possibly conflicting values of the key you provide, in the dictionary object and",
       "type" : "text"
     },
     {
-      "code" : "key",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " in map ",
+      "text" : " ",
       "type" : "text"
     },
     {
-      "code" : "obj",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " as at ",
+      "text" : "point in time you specify.",
       "type" : "text"
-    },
-    {
-      "code" : "heads",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [
@@ -474,28 +467,8 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/getAt(obj:key:heads:)": {
   "abstract" : [
     {
-      "text" : "Get the value at ",
+      "text" : "Get the historical value of the key you provide, in the dictionary object and point in time you specify.",
       "type" : "text"
-    },
-    {
-      "code" : "key",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " in map ",
-      "type" : "text"
-    },
-    {
-      "code" : "obj",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " as at ",
-      "type" : "text"
-    },
-    {
-      "code" : "heads",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [
@@ -603,20 +576,8 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/keysAt(obj:heads:)": {
   "abstract" : [
     {
-      "text" : "Get all the keys that were in the map ",
+      "text" : "Get a historical list of the keys available for the dictionary object and point in time you specify.",
       "type" : "text"
-    },
-    {
-      "code" : "obj",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " as at ",
-      "type" : "text"
-    },
-    {
-      "code" : "heads",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [
@@ -699,20 +660,8 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/lengthAt(obj:heads:)": {
   "abstract" : [
     {
-      "text" : "The length of the list ",
+      "text" : "Returns the historical length of the array, dictionary, or text object and point in time you specify.",
       "type" : "text"
-    },
-    {
-      "code" : "obj",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " as at ",
-      "type" : "text"
-    },
-    {
-      "code" : "heads",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [
@@ -791,20 +740,8 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/mapEntriesAt(obj:heads:)": {
   "abstract" : [
     {
-      "text" : "Get the (key,value) entries in the map ",
+      "text" : "Get a historical list of the keys and values from the dictionary object and point in time you specify.",
       "type" : "text"
-    },
-    {
-      "code" : "obj",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " as at ",
-      "type" : "text"
-    },
-    {
-      "code" : "heads",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [
@@ -904,20 +841,8 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/valuesAt(obj:heads:)": {
   "abstract" : [
     {
-      "text" : "Get the values in the map or list ",
+      "text" : "Get a historical list of the values for the array or dictionary object and point in time you specify.",
       "type" : "text"
-    },
-    {
-      "code" : "obj",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " as at ",
-      "type" : "text"
-    },
-    {
-      "code" : "heads",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [

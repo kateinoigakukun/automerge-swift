@@ -1,12 +1,8 @@
 {
   "abstract" : [
     {
-      "text" : "Encode any changes made since ",
+      "text" : "Encode and return any changes made to the document between now and the point in time you specify.",
       "type" : "text"
-    },
-    {
-      "code" : "heads",
-      "type" : "codeVoice"
     }
   ],
   "hierarchy" : {
@@ -164,17 +160,45 @@
       "kind" : "declarations"
     },
     {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The set of ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangeHash",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : " that represents a point of time in the history the document.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "heads"
+        }
+      ]
+    },
+    {
       "content" : [
         {
-          "anchor" : "discussion",
+          "anchor" : "return-value",
           "level" : 2,
-          "text" : "Discussion",
+          "text" : "Return Value",
           "type" : "heading"
         },
         {
           "inlineContent" : [
             {
-              "text" : "Returns: encoded changes suitable for sending over the network and",
+              "text" : "Encoded changes suitable for sending over the network and",
               "type" : "text"
             },
             {
@@ -189,6 +213,10 @@
               "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/applyEncodedChanges(encoded:)",
               "isActive" : true,
               "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
             }
           ],
           "type" : "paragraph"
@@ -238,7 +266,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -286,32 +314,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document": {
   "abstract" : [
     {
-      "text" : "The entry point to automerge, a ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : " presents a key\/value interface to",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "the data it contains; as well as methods for loading and saving documents, and",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "taking part in the sync protocol.",
+      "text" : "An Automerge document that provides an interface to the document-structured data it contains.",
       "type" : "text"
     }
   ],
@@ -345,7 +348,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/applyEncodedChanges(encoded:)": {
   "abstract" : [
     {
-      "text" : "Apply encoded changes to this document",
+      "text" : "Apply encoded changes to the document.",
       "type" : "text"
     }
   ],
@@ -398,7 +401,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/applyEncodedChangesWithPatches(encoded:)": {
   "abstract" : [
     {
-      "text" : "Apply encoded changes to this document",
+      "text" : "Apply encoded changes to this document, returning patches that represent the changes made to the document.",
       "type" : "text"
     }
   ],
@@ -464,12 +467,8 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/encodeChangesSince(heads:)": {
   "abstract" : [
     {
-      "text" : "Encode any changes made since ",
+      "text" : "Encode and return any changes made to the document between now and the point in time you specify.",
       "type" : "text"
-    },
-    {
-      "code" : "heads",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [
@@ -539,12 +538,8 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/encodeNewChanges()": {
   "abstract" : [
     {
-      "text" : "Encode any changes since the last call to ",
+      "text" : "Returns the binary encoding of the changes since the last call to this method.",
       "type" : "text"
-    },
-    {
-      "code" : "encodeNewChanges",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [
@@ -580,7 +575,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/fork()": {
   "abstract" : [
     {
-      "text" : "Fork the document",
+      "text" : "Fork the document.",
       "type" : "text"
     }
   ],
@@ -617,12 +612,8 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/forkAt(heads:)": {
   "abstract" : [
     {
-      "text" : "Fork the document as at ",
+      "text" : "Fork the document at the point in time you specify.",
       "type" : "text"
-    },
-    {
-      "code" : "heads",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [
@@ -692,12 +683,8 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/merge(other:)": {
   "abstract" : [
     {
-      "text" : "Merge this document with ",
+      "text" : "Merge this document with another.",
       "type" : "text"
-    },
-    {
-      "code" : "other",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [
@@ -749,7 +736,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/mergeWithPatches(other:)": {
   "abstract" : [
     {
-      "text" : "Merge this document with other returning patches",
+      "text" : "Merge this document with other, returning a list of patches applied by the merge.",
       "type" : "text"
     }
   ],
@@ -815,7 +802,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/save()": {
   "abstract" : [
     {
-      "text" : "Encode this document in a compressed binary format",
+      "text" : "Encode the Automerge document in a compressed binary format.",
       "type" : "text"
     }
   ],

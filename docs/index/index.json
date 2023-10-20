@@ -8,25 +8,169 @@
             "type" : "groupMarker"
           },
           {
-            "path" : "\/documentation\/automerge\/addressbookexample",
-            "title" : "Address Book Example",
-            "type" : "article"
-          },
-          {
             "children" : [
               {
                 "title" : "Creating or loading a document",
                 "type" : "groupMarker"
               },
               {
-                "path" : "\/documentation\/automerge\/document\/init()",
-                "title" : "init()",
+                "path" : "\/documentation\/automerge\/document\/init(loglevel:)",
+                "title" : "init(logLevel: LogVerbosity)",
                 "type" : "init"
               },
               {
-                "path" : "\/documentation\/automerge\/document\/init(_:)",
-                "title" : "init(Data) throws",
+                "path" : "\/documentation\/automerge\/document\/init(_:loglevel:)",
+                "title" : "init(Data, logLevel: LogVerbosity) throws",
                 "type" : "init"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Log levels",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/logverbosity\/erroronly",
+                    "title" : "case errorOnly",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/logverbosity\/debug",
+                    "title" : "case debug",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/logverbosity\/tracing",
+                    "title" : "case tracing",
+                    "type" : "case"
+                  },
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/logverbosity\/_(_:_:)-5qdhi",
+                    "title" : "static func < (LogVerbosity, LogVerbosity) -> Bool",
+                    "type" : "op"
+                  },
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/logverbosity\/init(rawvalue:)",
+                    "title" : "init?(rawValue: Int)",
+                    "type" : "init"
+                  },
+                  {
+                    "title" : "Default Implementations",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Operators",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/logverbosity\/'...(_:)-1o73a",
+                        "title" : "static func ... (Self) -> PartialRangeFrom<Self>",
+                        "type" : "op"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/logverbosity\/'...(_:)-nira",
+                        "title" : "static func ... (Self) -> PartialRangeThrough<Self>",
+                        "type" : "op"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/logverbosity\/'...(_:_:)",
+                        "title" : "static func ... (Self, Self) -> ClosedRange<Self>",
+                        "type" : "op"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/logverbosity\/'.._(_:)",
+                        "title" : "static func ..< (Self) -> PartialRangeUpTo<Self>",
+                        "type" : "op"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/logverbosity\/'.._(_:_:)",
+                        "title" : "static func ..< (Self, Self) -> Range<Self>",
+                        "type" : "op"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/logverbosity\/_(_:_:)-1i3hg",
+                        "title" : "static func > (Self, Self) -> Bool",
+                        "type" : "op"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/logverbosity\/_=(_:_:)-329ct",
+                        "title" : "static func <= (Self, Self) -> Bool",
+                        "type" : "op"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/logverbosity\/_=(_:_:)-86dq6",
+                        "title" : "static func >= (Self, Self) -> Bool",
+                        "type" : "op"
+                      }
+                    ],
+                    "path" : "\/documentation\/automerge\/logverbosity\/comparable-implementations",
+                    "title" : "Comparable Implementations",
+                    "type" : "symbol"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Operators",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/logverbosity\/!=(_:_:)",
+                        "title" : "static func != (Self, Self) -> Bool",
+                        "type" : "op"
+                      }
+                    ],
+                    "path" : "\/documentation\/automerge\/logverbosity\/equatable-implementations",
+                    "title" : "Equatable Implementations",
+                    "type" : "symbol"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Instance Properties",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/logverbosity\/hashvalue",
+                        "title" : "var hashValue: Int",
+                        "type" : "property"
+                      },
+                      {
+                        "title" : "Instance Methods",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/logverbosity\/hash(into:)",
+                        "title" : "func hash(into: inout Hasher)",
+                        "type" : "method"
+                      }
+                    ],
+                    "path" : "\/documentation\/automerge\/logverbosity\/rawrepresentable-implementations",
+                    "title" : "RawRepresentable Implementations",
+                    "type" : "symbol"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/logverbosity",
+                "title" : "LogVerbosity",
+                "type" : "enum"
+              },
+              {
+                "title" : "Transfering Documents",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/document\/transferrepresentation",
+                "title" : "static var transferRepresentation: some TransferRepresentation",
+                "type" : "property"
               },
               {
                 "title" : "Inspecting Documents",
@@ -88,6 +232,11 @@
               {
                 "path" : "\/documentation\/automerge\/document\/path(obj:)",
                 "title" : "func path(obj: ObjId) throws -> [PathElement]",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automerge\/document\/lookuppath(path:)",
+                "title" : "func lookupPath(path: String) throws -> ObjId?",
                 "type" : "method"
               },
               {
@@ -193,7 +342,7 @@
               },
               {
                 "path" : "\/documentation\/automerge\/document\/splice(obj:start:delete:values:)",
-                "title" : "func splice(obj: ObjId, start: UInt64, delete: UInt64, values: [ScalarValue]) throws",
+                "title" : "func splice(obj: ObjId, start: UInt64, delete: Int64, values: [ScalarValue]) throws",
                 "type" : "method"
               },
               {
@@ -211,12 +360,46 @@
                 "type" : "method"
               },
               {
+                "path" : "\/documentation\/automerge\/document\/marks(obj:)",
+                "title" : "func marks(obj: ObjId) throws -> [Mark]",
+                "type" : "method"
+              },
+              {
                 "title" : "Updating Text values",
                 "type" : "groupMarker"
               },
               {
                 "path" : "\/documentation\/automerge\/document\/splicetext(obj:start:delete:value:)",
-                "title" : "func spliceText(obj: ObjId, start: UInt64, delete: UInt64, value: String?) throws",
+                "title" : "func spliceText(obj: ObjId, start: UInt64, delete: Int64, value: String?) throws",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automerge\/document\/mark(obj:start:end:expand:name:value:)",
+                "title" : "func mark(obj: ObjId, start: UInt64, end: UInt64, expand: ExpandMark, name: String, value: ScalarValue) throws",
+                "type" : "method"
+              },
+              {
+                "title" : "Setting and Reading cursors",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/document\/cursor(obj:position:)",
+                "title" : "func cursor(obj: ObjId, position: UInt64) throws -> Cursor",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automerge\/document\/cursorat(obj:position:heads:)",
+                "title" : "func cursorAt(obj: ObjId, position: UInt64, heads: Set<ChangeHash>) throws -> Cursor",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automerge\/document\/cursorposition(obj:cursor:)",
+                "title" : "func cursorPosition(obj: ObjId, cursor: Cursor) throws -> UInt64",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automerge\/document\/cursorpositionat(obj:cursor:heads:)",
+                "title" : "func cursorPositionAt(obj: ObjId, cursor: Cursor, heads: Set<ChangeHash>) throws -> UInt64",
                 "type" : "method"
               },
               {
@@ -240,6 +423,11 @@
               {
                 "path" : "\/documentation\/automerge\/document\/heads()",
                 "title" : "func heads() -> Set<ChangeHash>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automerge\/document\/gethistory()",
+                "title" : "func getHistory() -> [ChangeHash]",
                 "type" : "method"
               },
               {
@@ -315,6 +503,11 @@
                 "type" : "method"
               },
               {
+                "path" : "\/documentation\/automerge\/document\/marksat(obj:heads:)",
+                "title" : "func marksAt(obj: ObjId, heads: Set<ChangeHash>) throws -> [Mark]",
+                "type" : "method"
+              },
+              {
                 "title" : "Saving, forking, and merging documents",
                 "type" : "groupMarker"
               },
@@ -383,13 +576,24 @@
                 "type" : "method"
               },
               {
-                "title" : "Instance Methods",
+                "title" : "Default Implementations",
                 "type" : "groupMarker"
               },
               {
-                "path" : "\/documentation\/automerge\/document\/lookuppath(path:)",
-                "title" : "func lookupPath(path: String) throws -> ObjId?",
-                "type" : "method"
+                "children" : [
+                  {
+                    "title" : "Type Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/document\/transferrepresentation",
+                    "title" : "static var transferRepresentation: some TransferRepresentation",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/document\/transferable-implementations",
+                "title" : "Transferable Implementations",
+                "type" : "symbol"
               }
             ],
             "path" : "\/documentation\/automerge\/document",
@@ -397,276 +601,14 @@
             "type" : "class"
           },
           {
-            "title" : "Representing Objects and Values",
-            "type" : "groupMarker"
+            "path" : "\/documentation\/automerge\/fiveminutequickstart",
+            "title" : "Five Minute Quick Start",
+            "type" : "article"
           },
           {
-            "children" : [
-              {
-                "title" : "Enumeration Cases",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/automerge\/objtype\/list",
-                "title" : "case List",
-                "type" : "case"
-              },
-              {
-                "path" : "\/documentation\/automerge\/objtype\/map",
-                "title" : "case Map",
-                "type" : "case"
-              },
-              {
-                "path" : "\/documentation\/automerge\/objtype\/text",
-                "title" : "case Text",
-                "type" : "case"
-              },
-              {
-                "title" : "Default Implementations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Instance Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/objtype\/debugdescription",
-                    "title" : "var debugDescription: String",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/automerge\/objtype\/customdebugstringconvertible-implementations",
-                "title" : "CustomDebugStringConvertible Implementations",
-                "type" : "symbol"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Operators",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/objtype\/!=(_:_:)",
-                    "title" : "static func != (Self, Self) -> Bool",
-                    "type" : "op"
-                  }
-                ],
-                "path" : "\/documentation\/automerge\/objtype\/equatable-implementations",
-                "title" : "Equatable Implementations",
-                "type" : "symbol"
-              }
-            ],
-            "path" : "\/documentation\/automerge\/objtype",
-            "title" : "ObjType",
-            "type" : "enum"
-          },
-          {
-            "children" : [
-              {
-                "title" : "Type Properties",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/automerge\/objid\/root",
-                "title" : "static let ROOT: ObjId",
-                "type" : "property"
-              },
-              {
-                "title" : "Default Implementations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Instance Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/objid\/debugdescription",
-                    "title" : "var debugDescription: String",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/automerge\/objid\/customdebugstringconvertible-implementations",
-                "title" : "CustomDebugStringConvertible Implementations",
-                "type" : "symbol"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Operators",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/objid\/!=(_:_:)",
-                    "title" : "static func != (Self, Self) -> Bool",
-                    "type" : "op"
-                  }
-                ],
-                "path" : "\/documentation\/automerge\/objid\/equatable-implementations",
-                "title" : "Equatable Implementations",
-                "type" : "symbol"
-              }
-            ],
-            "path" : "\/documentation\/automerge\/objid",
-            "title" : "ObjId",
-            "type" : "struct"
-          },
-          {
-            "children" : [
-              {
-                "title" : "Enumeration Cases",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/automerge\/value\/object(_:_:)",
-                "title" : "case Object(ObjId, ObjType)",
-                "type" : "case"
-              },
-              {
-                "path" : "\/documentation\/automerge\/value\/scalar(_:)",
-                "title" : "case Scalar(ScalarValue)",
-                "type" : "case"
-              },
-              {
-                "title" : "Default Implementations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Instance Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/value\/debugdescription",
-                    "title" : "var debugDescription: String",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/automerge\/value\/customdebugstringconvertible-implementations",
-                "title" : "CustomDebugStringConvertible Implementations",
-                "type" : "symbol"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Operators",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/value\/!=(_:_:)",
-                    "title" : "static func != (Self, Self) -> Bool",
-                    "type" : "op"
-                  }
-                ],
-                "path" : "\/documentation\/automerge\/value\/equatable-implementations",
-                "title" : "Equatable Implementations",
-                "type" : "symbol"
-              }
-            ],
-            "path" : "\/documentation\/automerge\/value",
-            "title" : "Value",
-            "type" : "enum"
-          },
-          {
-            "children" : [
-              {
-                "title" : "Enumeration Cases",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/automerge\/scalarvalue\/boolean(_:)",
-                "title" : "case Boolean(Bool)",
-                "type" : "case"
-              },
-              {
-                "path" : "\/documentation\/automerge\/scalarvalue\/bytes(_:)",
-                "title" : "case Bytes(Data)",
-                "type" : "case"
-              },
-              {
-                "path" : "\/documentation\/automerge\/scalarvalue\/counter(_:)",
-                "title" : "case Counter(Int64)",
-                "type" : "case"
-              },
-              {
-                "path" : "\/documentation\/automerge\/scalarvalue\/f64(_:)",
-                "title" : "case F64(Double)",
-                "type" : "case"
-              },
-              {
-                "path" : "\/documentation\/automerge\/scalarvalue\/int(_:)",
-                "title" : "case Int(Int64)",
-                "type" : "case"
-              },
-              {
-                "path" : "\/documentation\/automerge\/scalarvalue\/null",
-                "title" : "case Null",
-                "type" : "case"
-              },
-              {
-                "path" : "\/documentation\/automerge\/scalarvalue\/string(_:)",
-                "title" : "case String(String)",
-                "type" : "case"
-              },
-              {
-                "path" : "\/documentation\/automerge\/scalarvalue\/timestamp(_:)",
-                "title" : "case Timestamp(Int64)",
-                "type" : "case"
-              },
-              {
-                "path" : "\/documentation\/automerge\/scalarvalue\/uint(_:)",
-                "title" : "case Uint(UInt64)",
-                "type" : "case"
-              },
-              {
-                "path" : "\/documentation\/automerge\/scalarvalue\/unknown(typecode:data:)",
-                "title" : "case Unknown(typeCode: UInt8, data: Data)",
-                "type" : "case"
-              },
-              {
-                "title" : "Default Implementations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Instance Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/scalarvalue\/description",
-                    "title" : "var description: String",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/automerge\/scalarvalue\/customstringconvertible-implementations",
-                "title" : "CustomStringConvertible Implementations",
-                "type" : "symbol"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Operators",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/scalarvalue\/!=(_:_:)",
-                    "title" : "static func != (Self, Self) -> Bool",
-                    "type" : "op"
-                  }
-                ],
-                "path" : "\/documentation\/automerge\/scalarvalue\/equatable-implementations",
-                "title" : "Equatable Implementations",
-                "type" : "symbol"
-              }
-            ],
-            "path" : "\/documentation\/automerge\/scalarvalue",
-            "title" : "ScalarValue",
-            "type" : "enum"
+            "path" : "\/documentation\/automerge\/automergetype",
+            "title" : "Importing the Automerge Type in your app",
+            "type" : "article"
           },
           {
             "title" : "Reading and Writing Codable Types",
@@ -675,25 +617,202 @@
           {
             "children" : [
               {
-                "title" : "Initializers",
+                "title" : "Creating an Encoder",
                 "type" : "groupMarker"
               },
               {
-                "path" : "\/documentation\/automerge\/automergeencoder\/init(doc:strategy:cautiouswrite:)",
-                "title" : "init(doc: Document, strategy: SchemaStrategy, cautiousWrite: Bool)",
+                "path" : "\/documentation\/automerge\/automergeencoder\/init(doc:strategy:cautiouswrite:reportingloglevel:)",
+                "title" : "init(doc: Document, strategy: SchemaStrategy, cautiousWrite: Bool, reportingLoglevel: LogVerbosity)",
                 "type" : "init"
               },
               {
-                "title" : "Instance Properties",
-                "type" : "groupMarker"
+                "children" : [
+                  {
+                    "title" : "Encoding Strategies",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/schemastrategy\/createwhenneeded",
+                    "title" : "case createWhenNeeded",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/schemastrategy\/readonly",
+                    "title" : "case readonly",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/schemastrategy\/override",
+                    "title" : "case override",
+                    "type" : "case"
+                  },
+                  {
+                    "title" : "Default Implementations",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Operators",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/schemastrategy\/!=(_:_:)",
+                        "title" : "static func != (Self, Self) -> Bool",
+                        "type" : "op"
+                      }
+                    ],
+                    "path" : "\/documentation\/automerge\/schemastrategy\/equatable-implementations",
+                    "title" : "Equatable Implementations",
+                    "type" : "symbol"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/schemastrategy",
+                "title" : "SchemaStrategy",
+                "type" : "enum"
               },
               {
-                "path" : "\/documentation\/automerge\/automergeencoder\/userinfo",
-                "title" : "var userInfo: [CodingUserInfoKey : Any]",
-                "type" : "property"
+                "children" : [
+                  {
+                    "title" : "Log levels",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/logverbosity\/erroronly",
+                    "title" : "case errorOnly",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/logverbosity\/debug",
+                    "title" : "case debug",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/logverbosity\/tracing",
+                    "title" : "case tracing",
+                    "type" : "case"
+                  },
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/logverbosity\/_(_:_:)-5qdhi",
+                    "title" : "static func < (LogVerbosity, LogVerbosity) -> Bool",
+                    "type" : "op"
+                  },
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/logverbosity\/init(rawvalue:)",
+                    "title" : "init?(rawValue: Int)",
+                    "type" : "init"
+                  },
+                  {
+                    "title" : "Default Implementations",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Operators",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/logverbosity\/'...(_:)-1o73a",
+                        "title" : "static func ... (Self) -> PartialRangeFrom<Self>",
+                        "type" : "op"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/logverbosity\/'...(_:)-nira",
+                        "title" : "static func ... (Self) -> PartialRangeThrough<Self>",
+                        "type" : "op"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/logverbosity\/'...(_:_:)",
+                        "title" : "static func ... (Self, Self) -> ClosedRange<Self>",
+                        "type" : "op"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/logverbosity\/'.._(_:)",
+                        "title" : "static func ..< (Self) -> PartialRangeUpTo<Self>",
+                        "type" : "op"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/logverbosity\/'.._(_:_:)",
+                        "title" : "static func ..< (Self, Self) -> Range<Self>",
+                        "type" : "op"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/logverbosity\/_(_:_:)-1i3hg",
+                        "title" : "static func > (Self, Self) -> Bool",
+                        "type" : "op"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/logverbosity\/_=(_:_:)-329ct",
+                        "title" : "static func <= (Self, Self) -> Bool",
+                        "type" : "op"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/logverbosity\/_=(_:_:)-86dq6",
+                        "title" : "static func >= (Self, Self) -> Bool",
+                        "type" : "op"
+                      }
+                    ],
+                    "path" : "\/documentation\/automerge\/logverbosity\/comparable-implementations",
+                    "title" : "Comparable Implementations",
+                    "type" : "symbol"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Operators",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/logverbosity\/!=(_:_:)",
+                        "title" : "static func != (Self, Self) -> Bool",
+                        "type" : "op"
+                      }
+                    ],
+                    "path" : "\/documentation\/automerge\/logverbosity\/equatable-implementations",
+                    "title" : "Equatable Implementations",
+                    "type" : "symbol"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Instance Properties",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/logverbosity\/hashvalue",
+                        "title" : "var hashValue: Int",
+                        "type" : "property"
+                      },
+                      {
+                        "title" : "Instance Methods",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/logverbosity\/hash(into:)",
+                        "title" : "func hash(into: inout Hasher)",
+                        "type" : "method"
+                      }
+                    ],
+                    "path" : "\/documentation\/automerge\/logverbosity\/rawrepresentable-implementations",
+                    "title" : "RawRepresentable Implementations",
+                    "type" : "symbol"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/logverbosity",
+                "title" : "LogVerbosity",
+                "type" : "enum"
               },
               {
-                "title" : "Instance Methods",
+                "title" : "Encoding",
                 "type" : "groupMarker"
               },
               {
@@ -710,6 +829,35 @@
                 "path" : "\/documentation\/automerge\/automergeencoder\/encode(_:at:)",
                 "title" : "func encode<T>(T, at: [CodingKey]) throws",
                 "type" : "method"
+              },
+              {
+                "title" : "Inspecting an Encoder",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/automergeencoder\/doc",
+                "title" : "let doc: Document",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/automerge\/automergeencoder\/schemastrategy",
+                "title" : "var schemaStrategy: SchemaStrategy",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/automerge\/automergeencoder\/cautiouswrite",
+                "title" : "var cautiousWrite: Bool",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/automerge\/automergeencoder\/loglevel",
+                "title" : "let logLevel: LogVerbosity",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/automerge\/automergeencoder\/userinfo",
+                "title" : "var userInfo: [CodingUserInfoKey : Any]",
+                "type" : "property"
               }
             ],
             "path" : "\/documentation\/automerge\/automergeencoder",
@@ -719,7 +867,7 @@
           {
             "children" : [
               {
-                "title" : "Initializers",
+                "title" : "Creating a Decoder",
                 "type" : "groupMarker"
               },
               {
@@ -728,26 +876,7 @@
                 "type" : "init"
               },
               {
-                "title" : "Instance Properties",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/automerge\/automergedecoder\/codingpath",
-                "title" : "var codingPath: [CodingKey]",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/automerge\/automergedecoder\/doc",
-                "title" : "let doc: Document",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/automerge\/automergedecoder\/userinfo",
-                "title" : "var userInfo: [CodingUserInfoKey : Any]",
-                "type" : "property"
-              },
-              {
-                "title" : "Instance Methods",
+                "title" : "Decoding",
                 "type" : "groupMarker"
               },
               {
@@ -759,6 +888,20 @@
                 "path" : "\/documentation\/automerge\/automergedecoder\/decode(_:from:)",
                 "title" : "func decode<T>(T.Type, from: [CodingKey]) throws -> T",
                 "type" : "method"
+              },
+              {
+                "title" : "Inspecting a Decoder",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/automergedecoder\/doc",
+                "title" : "let doc: Document",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/automerge\/automergedecoder\/userinfo",
+                "title" : "var userInfo: [CodingUserInfoKey : Any]",
+                "type" : "property"
               }
             ],
             "path" : "\/documentation\/automerge\/automergedecoder",
@@ -768,12 +911,198 @@
           {
             "children" : [
               {
+                "title" : "Encoding Strategies",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/schemastrategy\/createwhenneeded",
+                "title" : "case createWhenNeeded",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/schemastrategy\/readonly",
+                "title" : "case readonly",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/schemastrategy\/override",
+                "title" : "case override",
+                "type" : "case"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/schemastrategy\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/schemastrategy\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/automerge\/schemastrategy",
+            "title" : "SchemaStrategy",
+            "type" : "enum"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Log levels",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/logverbosity\/erroronly",
+                "title" : "case errorOnly",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/logverbosity\/debug",
+                "title" : "case debug",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/logverbosity\/tracing",
+                "title" : "case tracing",
+                "type" : "case"
+              },
+              {
+                "title" : "Operators",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/logverbosity\/_(_:_:)-5qdhi",
+                "title" : "static func < (LogVerbosity, LogVerbosity) -> Bool",
+                "type" : "op"
+              },
+              {
                 "title" : "Initializers",
                 "type" : "groupMarker"
               },
               {
-                "path" : "\/documentation\/automerge\/anycodingkey\/init(_:)-5azuh",
-                "title" : "init(String)",
+                "path" : "\/documentation\/automerge\/logverbosity\/init(rawvalue:)",
+                "title" : "init?(rawValue: Int)",
+                "type" : "init"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/logverbosity\/'...(_:)-1o73a",
+                    "title" : "static func ... (Self) -> PartialRangeFrom<Self>",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/logverbosity\/'...(_:)-nira",
+                    "title" : "static func ... (Self) -> PartialRangeThrough<Self>",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/logverbosity\/'...(_:_:)",
+                    "title" : "static func ... (Self, Self) -> ClosedRange<Self>",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/logverbosity\/'.._(_:)",
+                    "title" : "static func ..< (Self) -> PartialRangeUpTo<Self>",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/logverbosity\/'.._(_:_:)",
+                    "title" : "static func ..< (Self, Self) -> Range<Self>",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/logverbosity\/_(_:_:)-1i3hg",
+                    "title" : "static func > (Self, Self) -> Bool",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/logverbosity\/_=(_:_:)-329ct",
+                    "title" : "static func <= (Self, Self) -> Bool",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/logverbosity\/_=(_:_:)-86dq6",
+                    "title" : "static func >= (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/logverbosity\/comparable-implementations",
+                "title" : "Comparable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/logverbosity\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/logverbosity\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/logverbosity\/hashvalue",
+                    "title" : "var hashValue: Int",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/logverbosity\/hash(into:)",
+                    "title" : "func hash(into: inout Hasher)",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/logverbosity\/rawrepresentable-implementations",
+                "title" : "RawRepresentable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/automerge\/logverbosity",
+            "title" : "LogVerbosity",
+            "type" : "enum"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Creating an AnyCodingKey",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/anycodingkey\/init(_:)-lfcr",
+                "title" : "init(some CodingKey)",
                 "type" : "init"
               },
               {
@@ -782,13 +1111,9 @@
                 "type" : "init"
               },
               {
-                "path" : "\/documentation\/automerge\/anycodingkey\/init(_:)-lfcr",
-                "title" : "init(some CodingKey)",
+                "path" : "\/documentation\/automerge\/anycodingkey\/init(_:)-5azuh",
+                "title" : "init(String)",
                 "type" : "init"
-              },
-              {
-                "title" : "Type Properties",
-                "type" : "groupMarker"
               },
               {
                 "path" : "\/documentation\/automerge\/anycodingkey\/root",
@@ -796,7 +1121,21 @@
                 "type" : "property"
               },
               {
-                "title" : "Type Methods",
+                "title" : "Converting Automerge types into AnyCodingKey",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/anycodingkey\/init(_:)-uo0",
+                "title" : "init(Automerge.PathElement)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/automerge\/anycodingkey\/init(_:)-6lrn3",
+                "title" : "init(Automerge.Prop)",
+                "type" : "init"
+              },
+              {
+                "title" : "Parsing a string into a path of AnyCodingKey",
                 "type" : "groupMarker"
               },
               {
@@ -902,29 +1241,75 @@
             "type" : "struct"
           },
           {
+            "title" : "Collaborating with Text",
+            "type" : "groupMarker"
+          },
+          {
             "children" : [
               {
-                "title" : "Initializers",
+                "title" : "Creating AutomergeText",
                 "type" : "groupMarker"
               },
               {
-                "path" : "\/documentation\/automerge\/counter\/init(_:)-7fbpz",
-                "title" : "init(Int64)",
+                "path" : "\/documentation\/automerge\/automergetext\/init(_:)",
+                "title" : "init(String)",
                 "type" : "init"
               },
               {
-                "path" : "\/documentation\/automerge\/counter\/init(_:)-8t7n4",
-                "title" : "init(Int)",
+                "path" : "\/documentation\/automerge\/automergetext\/init(_:doc:path:)",
+                "title" : "init(String, doc: Document, path: String) throws",
                 "type" : "init"
               },
               {
-                "title" : "Instance Properties",
+                "path" : "\/documentation\/automerge\/automergetext\/init(doc:objid:)",
+                "title" : "init(doc: Document, objId: ObjId) throws",
+                "type" : "init"
+              },
+              {
+                "title" : "Linking a new AutomergeText into an Automerge Document",
                 "type" : "groupMarker"
               },
               {
-                "path" : "\/documentation\/automerge\/counter\/value",
-                "title" : "var value: Int",
+                "path" : "\/documentation\/automerge\/automergetext\/bind(doc:path:)",
+                "title" : "func bind(doc: Document, path: String) throws",
+                "type" : "method"
+              },
+              {
+                "title" : "Retrieving a binding for the text",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/automergetext\/textbinding()",
+                "title" : "func textBinding() -> Binding<String>",
+                "type" : "method"
+              },
+              {
+                "title" : "Inspecting an AutomergeText instance",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/automergetext\/isbound",
+                "title" : "var isBound: Bool",
                 "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/automerge\/automergetext\/value",
+                "title" : "var value: String",
+                "type" : "property"
+              },
+              {
+                "title" : "Encoding and Decoding AutomergeText",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/automergetext\/encode(to:)",
+                "title" : "func encode(to: Encoder) throws",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automerge\/automergetext\/init(from:)",
+                "title" : "init(from: Decoder) throws",
+                "type" : "init"
               },
               {
                 "title" : "Default Implementations",
@@ -933,17 +1318,317 @@
               {
                 "children" : [
                   {
-                    "title" : "Initializers",
+                    "title" : "Instance Properties",
                     "type" : "groupMarker"
                   },
                   {
-                    "path" : "\/documentation\/automerge\/counter\/init(from:)",
-                    "title" : "init(from: Decoder) throws",
-                    "type" : "init"
+                    "path" : "\/documentation\/automerge\/automergetext\/description",
+                    "title" : "var description: String",
+                    "type" : "property"
                   }
                 ],
-                "path" : "\/documentation\/automerge\/counter\/decodable-implementations",
-                "title" : "Decodable Implementations",
+                "path" : "\/documentation\/automerge\/automergetext\/customstringconvertible-implementations",
+                "title" : "CustomStringConvertible Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/automergetext\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/automergetext\/==(_:_:)",
+                    "title" : "static func == (AutomergeText, AutomergeText) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/automergetext\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/automergetext\/hash(into:)",
+                    "title" : "func hash(into: inout Hasher)",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/automergetext\/hashable-implementations",
+                "title" : "Hashable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/automergetext\/objectwillchange",
+                    "title" : "var objectWillChange: ObservableObjectPublisher",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/automergetext\/observableobject-implementations",
+                "title" : "ObservableObject Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/automerge\/automergetext",
+            "title" : "AutomergeText",
+            "type" : "class"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/cursor\/description",
+                    "title" : "var description: String",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/cursor\/customstringconvertible-implementations",
+                "title" : "CustomStringConvertible Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/cursor\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/cursor\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/automerge\/cursor",
+            "title" : "Cursor",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Creating a new Mark",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/mark\/name",
+                "title" : "let name: String",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/automerge\/mark\/start",
+                "title" : "let start: UInt64",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/automerge\/mark\/end",
+                "title" : "let end: UInt64",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/automerge\/mark\/value",
+                "title" : "let value: Value",
+                "type" : "property"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/mark\/init(start:end:name:value:)",
+                "title" : "init(start: UInt64, end: UInt64, name: String, value: Value)",
+                "type" : "init"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/mark\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/mark\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/automerge\/mark",
+            "title" : "Mark",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Mark Expansion Configurations",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/expandmark\/before",
+                "title" : "case before",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/expandmark\/after",
+                "title" : "case after",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/expandmark\/both",
+                "title" : "case both",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/expandmark\/none",
+                "title" : "case none",
+                "type" : "case"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/expandmark\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/expandmark\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/automerge\/expandmark",
+            "title" : "ExpandMark",
+            "type" : "enum"
+          },
+          {
+            "title" : "Collaborating with Counters",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/counter\/init(_:)",
+                "title" : "init(Int)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/automerge\/counter\/init(_:doc:path:)",
+                "title" : "init(Int, doc: Document, path: String) throws",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/automerge\/counter\/init(doc:objid:key:)",
+                "title" : "init(doc: Document, objId: ObjId, key: any CodingKey) throws",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/automerge\/counter\/init(from:)",
+                "title" : "init(from: Decoder) throws",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/counter\/isbound",
+                "title" : "var isBound: Bool",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/automerge\/counter\/value",
+                "title" : "var value: Int",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/counter\/bind(doc:path:)",
+                "title" : "func bind(doc: Document, path: String) throws",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automerge\/counter\/encode(to:)",
+                "title" : "func encode(to: Encoder) throws",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automerge\/counter\/increment(by:)",
+                "title" : "func increment(by: Int)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automerge\/counter\/valuebinding()",
+                "title" : "func valueBinding() -> Binding<Int>",
+                "type" : "method"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/counter\/description",
+                    "title" : "var description: String",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/counter\/customstringconvertible-implementations",
+                "title" : "CustomStringConvertible Implementations",
                 "type" : "symbol"
               },
               {
@@ -955,6 +1640,11 @@
                   {
                     "path" : "\/documentation\/automerge\/counter\/!=(_:_:)",
                     "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/counter\/==(_:_:)",
+                    "title" : "static func == (Counter, Counter) -> Bool",
                     "type" : "op"
                   }
                 ],
@@ -969,66 +1659,173 @@
                     "type" : "groupMarker"
                   },
                   {
-                    "path" : "\/documentation\/automerge\/counter\/toscalarvalue()",
-                    "title" : "func toScalarValue() -> ScalarValue",
-                    "type" : "method"
-                  },
-                  {
-                    "title" : "Type Aliases",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/counter\/converterror",
-                    "title" : "Counter.ConvertError",
-                    "type" : "typealias"
-                  },
-                  {
-                    "title" : "Type Methods",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/counter\/fromscalarvalue(_:)",
-                    "title" : "static func fromScalarValue(ScalarValue) -> Result<Counter, CounterScalarConversionError>",
-                    "type" : "method"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/counter\/fromvalue(_:)",
-                    "title" : "static func fromValue(Value) -> Result<Counter, CounterScalarConversionError>",
+                    "path" : "\/documentation\/automerge\/counter\/hash(into:)",
+                    "title" : "func hash(into: inout Hasher)",
                     "type" : "method"
                   }
                 ],
-                "path" : "\/documentation\/automerge\/counter\/scalarvaluerepresentable-implementations",
-                "title" : "ScalarValueRepresentable Implementations",
+                "path" : "\/documentation\/automerge\/counter\/hashable-implementations",
+                "title" : "Hashable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/counter\/objectwillchange",
+                    "title" : "var objectWillChange: ObservableObjectPublisher",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/counter\/observableobject-implementations",
+                "title" : "ObservableObject Implementations",
                 "type" : "symbol"
               }
             ],
             "path" : "\/documentation\/automerge\/counter",
             "title" : "Counter",
-            "type" : "struct"
+            "type" : "class"
+          },
+          {
+            "title" : "Synchronizing Documents",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/automerge\/sync",
+            "title" : "Synchronizing Automerge Documents",
+            "type" : "article"
           },
           {
             "children" : [
               {
-                "title" : "Initializers",
+                "title" : "Creating a SyncState",
                 "type" : "groupMarker"
               },
               {
-                "path" : "\/documentation\/automerge\/text\/init(_:)",
-                "title" : "init(String)",
+                "path" : "\/documentation\/automerge\/syncstate\/init()",
+                "title" : "init()",
                 "type" : "init"
               },
               {
-                "path" : "\/documentation\/automerge\/text\/init(from:)",
-                "title" : "init(from: Decoder) throws",
+                "path" : "\/documentation\/automerge\/syncstate\/init(bytes:)",
+                "title" : "init(bytes: Data) throws",
                 "type" : "init"
               },
               {
-                "title" : "Instance Properties",
+                "title" : "Serializing SyncState",
                 "type" : "groupMarker"
               },
               {
-                "path" : "\/documentation\/automerge\/text\/value",
-                "title" : "var value: String",
+                "path" : "\/documentation\/automerge\/syncstate\/encode()",
+                "title" : "func encode() -> Data",
+                "type" : "method"
+              },
+              {
+                "title" : "Resetting SyncState",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/syncstate\/reset()",
+                "title" : "func reset()",
+                "type" : "method"
+              },
+              {
+                "title" : "Inspecting SyncState",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/syncstate\/theirheads",
+                "title" : "var theirHeads: Set<ChangeHash>?",
+                "type" : "property"
+              }
+            ],
+            "path" : "\/documentation\/automerge\/syncstate",
+            "title" : "SyncState",
+            "type" : "struct"
+          },
+          {
+            "title" : "Representing Objects and Values",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/automerge\/modelingdata",
+            "title" : "Modeling Data with Automerge",
+            "type" : "article"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Types of Automerge objects",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/objtype\/list",
+                "title" : "case List",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/objtype\/map",
+                "title" : "case Map",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/objtype\/text",
+                "title" : "case Text",
+                "type" : "case"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/objtype\/debugdescription",
+                    "title" : "var debugDescription: String",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/objtype\/customdebugstringconvertible-implementations",
+                "title" : "CustomDebugStringConvertible Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/objtype\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/objtype\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/automerge\/objtype",
+            "title" : "ObjType",
+            "type" : "enum"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Built-in Object Ids",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/objid\/root",
+                "title" : "static let ROOT: ObjId",
                 "type" : "property"
               },
               {
@@ -1042,12 +1839,166 @@
                     "type" : "groupMarker"
                   },
                   {
-                    "path" : "\/documentation\/automerge\/text\/description",
+                    "path" : "\/documentation\/automerge\/objid\/debugdescription",
+                    "title" : "var debugDescription: String",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/objid\/customdebugstringconvertible-implementations",
+                "title" : "CustomDebugStringConvertible Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/objid\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/objid\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/automerge\/objid",
+            "title" : "ObjId",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Automerge Values",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/value\/object(_:_:)",
+                "title" : "case Object(ObjId, ObjType)",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/value\/scalar(_:)",
+                "title" : "case Scalar(ScalarValue)",
+                "type" : "case"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/value\/debugdescription",
+                    "title" : "var debugDescription: String",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/value\/customdebugstringconvertible-implementations",
+                "title" : "CustomDebugStringConvertible Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/value\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/value\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/automerge\/value",
+            "title" : "Value",
+            "type" : "enum"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Automerge Primitives",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/scalarvalue\/null",
+                "title" : "case Null",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/scalarvalue\/boolean(_:)",
+                "title" : "case Boolean(Bool)",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/scalarvalue\/uint(_:)",
+                "title" : "case Uint(UInt64)",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/scalarvalue\/int(_:)",
+                "title" : "case Int(Int64)",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/scalarvalue\/f64(_:)",
+                "title" : "case F64(Double)",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/scalarvalue\/string(_:)",
+                "title" : "case String(String)",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/scalarvalue\/bytes(_:)",
+                "title" : "case Bytes(Data)",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/scalarvalue\/timestamp(_:)",
+                "title" : "case Timestamp(Int64)",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/scalarvalue\/counter(_:)",
+                "title" : "case Counter(Int64)",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/scalarvalue\/unknown(typecode:data:)",
+                "title" : "case Unknown(typeCode: UInt8, data: Data)",
+                "type" : "case"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/scalarvalue\/description",
                     "title" : "var description: String",
                     "type" : "property"
                   }
                 ],
-                "path" : "\/documentation\/automerge\/text\/customstringconvertible-implementations",
+                "path" : "\/documentation\/automerge\/scalarvalue\/customstringconvertible-implementations",
                 "title" : "CustomStringConvertible Implementations",
                 "type" : "symbol"
               },
@@ -1058,39 +2009,805 @@
                     "type" : "groupMarker"
                   },
                   {
-                    "path" : "\/documentation\/automerge\/text\/!=(_:_:)",
+                    "path" : "\/documentation\/automerge\/scalarvalue\/!=(_:_:)",
                     "title" : "static func != (Self, Self) -> Bool",
                     "type" : "op"
                   }
                 ],
-                "path" : "\/documentation\/automerge\/text\/equatable-implementations",
+                "path" : "\/documentation\/automerge\/scalarvalue\/equatable-implementations",
                 "title" : "Equatable Implementations",
                 "type" : "symbol"
               }
             ],
-            "path" : "\/documentation\/automerge\/text",
-            "title" : "Text",
+            "path" : "\/documentation\/automerge\/scalarvalue",
+            "title" : "ScalarValue",
+            "type" : "enum"
+          },
+          {
+            "path" : "\/documentation\/automerge\/addressbookexample",
+            "title" : "Address Book Example",
+            "type" : "article"
+          },
+          {
+            "title" : "Inspecting Documents as Changes",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/automerge\/changesandhistory",
+            "title" : "Tracking Changes and History",
+            "type" : "article"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Inspecting a ChangeHash",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/changehash\/debugdescription",
+                "title" : "var debugDescription: String",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/changehash\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/changehash\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/automerge\/changehash",
+            "title" : "ChangeHash",
             "type" : "struct"
           },
           {
             "children" : [
               {
-                "title" : "Enumeration Cases",
+                "title" : "Inspecting a Patch",
                 "type" : "groupMarker"
               },
               {
-                "path" : "\/documentation\/automerge\/schemastrategy\/createwhenneeded",
-                "title" : "case createWhenNeeded",
+                "path" : "\/documentation\/automerge\/patch\/action",
+                "title" : "let action: PatchAction",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/automerge\/patch\/path",
+                "title" : "let path: [PathElement]",
+                "type" : "property"
+              },
+              {
+                "title" : "Supporting Types",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Types of Patches",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/patchaction\/conflict(_:_:)",
+                    "title" : "case Conflict(ObjId, Prop)",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/patchaction\/deletemap(_:_:)",
+                    "title" : "case DeleteMap(ObjId, String)",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/patchaction\/deleteseq(_:)",
+                    "title" : "case DeleteSeq(DeleteSeq)",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/patchaction\/increment(_:_:_:)",
+                    "title" : "case Increment(ObjId, Prop, Int64)",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/patchaction\/insert(obj:index:values:marks:)",
+                    "title" : "case Insert(obj: ObjId, index: UInt64, values: [Value], marks: [String : Value])",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/patchaction\/marks(_:_:)",
+                    "title" : "case Marks(ObjId, [Mark])",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/patchaction\/put(_:_:_:)",
+                    "title" : "case Put(ObjId, Prop, Value)",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/patchaction\/splicetext(obj:index:value:marks:)",
+                    "title" : "case SpliceText(obj: ObjId, index: UInt64, value: String, marks: [String : Value])",
+                    "type" : "case"
+                  },
+                  {
+                    "title" : "Supporting Types",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Property types",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/prop\/index(_:)",
+                        "title" : "case Index(UInt64)",
+                        "type" : "case"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/prop\/key(_:)",
+                        "title" : "case Key(String)",
+                        "type" : "case"
+                      },
+                      {
+                        "title" : "Default Implementations",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "children" : [
+                          {
+                            "title" : "Operators",
+                            "type" : "groupMarker"
+                          },
+                          {
+                            "path" : "\/documentation\/automerge\/prop\/!=(_:_:)",
+                            "title" : "static func != (Self, Self) -> Bool",
+                            "type" : "op"
+                          }
+                        ],
+                        "path" : "\/documentation\/automerge\/prop\/equatable-implementations",
+                        "title" : "Equatable Implementations",
+                        "type" : "symbol"
+                      }
+                    ],
+                    "path" : "\/documentation\/automerge\/prop",
+                    "title" : "Prop",
+                    "type" : "enum"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Automerge Values",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/value\/object(_:_:)",
+                        "title" : "case Object(ObjId, ObjType)",
+                        "type" : "case"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/value\/scalar(_:)",
+                        "title" : "case Scalar(ScalarValue)",
+                        "type" : "case"
+                      },
+                      {
+                        "title" : "Default Implementations",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "children" : [
+                          {
+                            "title" : "Instance Properties",
+                            "type" : "groupMarker"
+                          },
+                          {
+                            "path" : "\/documentation\/automerge\/value\/debugdescription",
+                            "title" : "var debugDescription: String",
+                            "type" : "property"
+                          }
+                        ],
+                        "path" : "\/documentation\/automerge\/value\/customdebugstringconvertible-implementations",
+                        "title" : "CustomDebugStringConvertible Implementations",
+                        "type" : "symbol"
+                      },
+                      {
+                        "children" : [
+                          {
+                            "title" : "Operators",
+                            "type" : "groupMarker"
+                          },
+                          {
+                            "path" : "\/documentation\/automerge\/value\/!=(_:_:)",
+                            "title" : "static func != (Self, Self) -> Bool",
+                            "type" : "op"
+                          }
+                        ],
+                        "path" : "\/documentation\/automerge\/value\/equatable-implementations",
+                        "title" : "Equatable Implementations",
+                        "type" : "symbol"
+                      }
+                    ],
+                    "path" : "\/documentation\/automerge\/value",
+                    "title" : "Value",
+                    "type" : "enum"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Creating a new Delete Sequence",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/deleteseq\/init(obj:index:length:)",
+                        "title" : "init(obj: ObjId, index: UInt64, length: UInt64)",
+                        "type" : "init"
+                      },
+                      {
+                        "title" : "Inspecting a Delete Sequence",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/deleteseq\/obj",
+                        "title" : "let obj: ObjId",
+                        "type" : "property"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/deleteseq\/index",
+                        "title" : "let index: UInt64",
+                        "type" : "property"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/deleteseq\/length",
+                        "title" : "let length: UInt64",
+                        "type" : "property"
+                      },
+                      {
+                        "title" : "Default Implementations",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "children" : [
+                          {
+                            "title" : "Operators",
+                            "type" : "groupMarker"
+                          },
+                          {
+                            "path" : "\/documentation\/automerge\/deleteseq\/!=(_:_:)",
+                            "title" : "static func != (Self, Self) -> Bool",
+                            "type" : "op"
+                          }
+                        ],
+                        "path" : "\/documentation\/automerge\/deleteseq\/equatable-implementations",
+                        "title" : "Equatable Implementations",
+                        "type" : "symbol"
+                      }
+                    ],
+                    "path" : "\/documentation\/automerge\/deleteseq",
+                    "title" : "DeleteSeq",
+                    "type" : "struct"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Creating a new Mark",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/mark\/name",
+                        "title" : "let name: String",
+                        "type" : "property"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/mark\/start",
+                        "title" : "let start: UInt64",
+                        "type" : "property"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/mark\/end",
+                        "title" : "let end: UInt64",
+                        "type" : "property"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/mark\/value",
+                        "title" : "let value: Value",
+                        "type" : "property"
+                      },
+                      {
+                        "title" : "Initializers",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/mark\/init(start:end:name:value:)",
+                        "title" : "init(start: UInt64, end: UInt64, name: String, value: Value)",
+                        "type" : "init"
+                      },
+                      {
+                        "title" : "Default Implementations",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "children" : [
+                          {
+                            "title" : "Operators",
+                            "type" : "groupMarker"
+                          },
+                          {
+                            "path" : "\/documentation\/automerge\/mark\/!=(_:_:)",
+                            "title" : "static func != (Self, Self) -> Bool",
+                            "type" : "op"
+                          }
+                        ],
+                        "path" : "\/documentation\/automerge\/mark\/equatable-implementations",
+                        "title" : "Equatable Implementations",
+                        "type" : "symbol"
+                      }
+                    ],
+                    "path" : "\/documentation\/automerge\/mark",
+                    "title" : "Mark",
+                    "type" : "struct"
+                  },
+                  {
+                    "title" : "Default Implementations",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Operators",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/patchaction\/!=(_:_:)",
+                        "title" : "static func != (Self, Self) -> Bool",
+                        "type" : "op"
+                      }
+                    ],
+                    "path" : "\/documentation\/automerge\/patchaction\/equatable-implementations",
+                    "title" : "Equatable Implementations",
+                    "type" : "symbol"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/patchaction",
+                "title" : "PatchAction",
+                "type" : "enum"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Inspecting a Path Element",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/pathelement\/obj",
+                    "title" : "let obj: ObjId",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/pathelement\/prop",
+                    "title" : "let prop: Prop",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/pathelement\/init(obj:prop:)",
+                    "title" : "init(obj: ObjId, prop: Prop)",
+                    "type" : "init"
+                  },
+                  {
+                    "title" : "Default Implementations",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Operators",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/pathelement\/!=(_:_:)",
+                        "title" : "static func != (Self, Self) -> Bool",
+                        "type" : "op"
+                      }
+                    ],
+                    "path" : "\/documentation\/automerge\/pathelement\/equatable-implementations",
+                    "title" : "Equatable Implementations",
+                    "type" : "symbol"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/pathelement",
+                "title" : "PathElement",
+                "type" : "struct"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/patch\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/patch\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/automerge\/patch",
+            "title" : "Patch",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Types of Patches",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/patchaction\/conflict(_:_:)",
+                "title" : "case Conflict(ObjId, Prop)",
                 "type" : "case"
               },
               {
-                "path" : "\/documentation\/automerge\/schemastrategy\/override",
-                "title" : "case override",
+                "path" : "\/documentation\/automerge\/patchaction\/deletemap(_:_:)",
+                "title" : "case DeleteMap(ObjId, String)",
                 "type" : "case"
               },
               {
-                "path" : "\/documentation\/automerge\/schemastrategy\/readonly",
-                "title" : "case readonly",
+                "path" : "\/documentation\/automerge\/patchaction\/deleteseq(_:)",
+                "title" : "case DeleteSeq(DeleteSeq)",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/patchaction\/increment(_:_:_:)",
+                "title" : "case Increment(ObjId, Prop, Int64)",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/patchaction\/insert(obj:index:values:marks:)",
+                "title" : "case Insert(obj: ObjId, index: UInt64, values: [Value], marks: [String : Value])",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/patchaction\/marks(_:_:)",
+                "title" : "case Marks(ObjId, [Mark])",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/patchaction\/put(_:_:_:)",
+                "title" : "case Put(ObjId, Prop, Value)",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/patchaction\/splicetext(obj:index:value:marks:)",
+                "title" : "case SpliceText(obj: ObjId, index: UInt64, value: String, marks: [String : Value])",
+                "type" : "case"
+              },
+              {
+                "title" : "Supporting Types",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Property types",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/prop\/index(_:)",
+                    "title" : "case Index(UInt64)",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/prop\/key(_:)",
+                    "title" : "case Key(String)",
+                    "type" : "case"
+                  },
+                  {
+                    "title" : "Default Implementations",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Operators",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/prop\/!=(_:_:)",
+                        "title" : "static func != (Self, Self) -> Bool",
+                        "type" : "op"
+                      }
+                    ],
+                    "path" : "\/documentation\/automerge\/prop\/equatable-implementations",
+                    "title" : "Equatable Implementations",
+                    "type" : "symbol"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/prop",
+                "title" : "Prop",
+                "type" : "enum"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Automerge Values",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/value\/object(_:_:)",
+                    "title" : "case Object(ObjId, ObjType)",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/value\/scalar(_:)",
+                    "title" : "case Scalar(ScalarValue)",
+                    "type" : "case"
+                  },
+                  {
+                    "title" : "Default Implementations",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Instance Properties",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/value\/debugdescription",
+                        "title" : "var debugDescription: String",
+                        "type" : "property"
+                      }
+                    ],
+                    "path" : "\/documentation\/automerge\/value\/customdebugstringconvertible-implementations",
+                    "title" : "CustomDebugStringConvertible Implementations",
+                    "type" : "symbol"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Operators",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/value\/!=(_:_:)",
+                        "title" : "static func != (Self, Self) -> Bool",
+                        "type" : "op"
+                      }
+                    ],
+                    "path" : "\/documentation\/automerge\/value\/equatable-implementations",
+                    "title" : "Equatable Implementations",
+                    "type" : "symbol"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/value",
+                "title" : "Value",
+                "type" : "enum"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Creating a new Delete Sequence",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/deleteseq\/init(obj:index:length:)",
+                    "title" : "init(obj: ObjId, index: UInt64, length: UInt64)",
+                    "type" : "init"
+                  },
+                  {
+                    "title" : "Inspecting a Delete Sequence",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/deleteseq\/obj",
+                    "title" : "let obj: ObjId",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/deleteseq\/index",
+                    "title" : "let index: UInt64",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/deleteseq\/length",
+                    "title" : "let length: UInt64",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Default Implementations",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Operators",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/deleteseq\/!=(_:_:)",
+                        "title" : "static func != (Self, Self) -> Bool",
+                        "type" : "op"
+                      }
+                    ],
+                    "path" : "\/documentation\/automerge\/deleteseq\/equatable-implementations",
+                    "title" : "Equatable Implementations",
+                    "type" : "symbol"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/deleteseq",
+                "title" : "DeleteSeq",
+                "type" : "struct"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Creating a new Mark",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/mark\/name",
+                    "title" : "let name: String",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/mark\/start",
+                    "title" : "let start: UInt64",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/mark\/end",
+                    "title" : "let end: UInt64",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/mark\/value",
+                    "title" : "let value: Value",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/mark\/init(start:end:name:value:)",
+                    "title" : "init(start: UInt64, end: UInt64, name: String, value: Value)",
+                    "type" : "init"
+                  },
+                  {
+                    "title" : "Default Implementations",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Operators",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/automerge\/mark\/!=(_:_:)",
+                        "title" : "static func != (Self, Self) -> Bool",
+                        "type" : "op"
+                      }
+                    ],
+                    "path" : "\/documentation\/automerge\/mark\/equatable-implementations",
+                    "title" : "Equatable Implementations",
+                    "type" : "symbol"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/mark",
+                "title" : "Mark",
+                "type" : "struct"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/patchaction\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/patchaction\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/automerge\/patchaction",
+            "title" : "PatchAction",
+            "type" : "enum"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Inspecting a Path Element",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/pathelement\/obj",
+                "title" : "let obj: ObjId",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/automerge\/pathelement\/prop",
+                "title" : "let prop: Prop",
+                "type" : "property"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/pathelement\/init(obj:prop:)",
+                "title" : "init(obj: ObjId, prop: Prop)",
+                "type" : "init"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/pathelement\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/pathelement\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/automerge\/pathelement",
+            "title" : "PathElement",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Property types",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/prop\/index(_:)",
+                "title" : "case Index(UInt64)",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automerge\/prop\/key(_:)",
+                "title" : "case Key(String)",
                 "type" : "case"
               },
               {
@@ -1104,19 +2821,156 @@
                     "type" : "groupMarker"
                   },
                   {
-                    "path" : "\/documentation\/automerge\/schemastrategy\/!=(_:_:)",
+                    "path" : "\/documentation\/automerge\/prop\/!=(_:_:)",
                     "title" : "static func != (Self, Self) -> Bool",
                     "type" : "op"
                   }
                 ],
-                "path" : "\/documentation\/automerge\/schemastrategy\/equatable-implementations",
+                "path" : "\/documentation\/automerge\/prop\/equatable-implementations",
                 "title" : "Equatable Implementations",
                 "type" : "symbol"
               }
             ],
-            "path" : "\/documentation\/automerge\/schemastrategy",
-            "title" : "SchemaStrategy",
+            "path" : "\/documentation\/automerge\/prop",
+            "title" : "Prop",
             "type" : "enum"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Creating a new Delete Sequence",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/deleteseq\/init(obj:index:length:)",
+                "title" : "init(obj: ObjId, index: UInt64, length: UInt64)",
+                "type" : "init"
+              },
+              {
+                "title" : "Inspecting a Delete Sequence",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/deleteseq\/obj",
+                "title" : "let obj: ObjId",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/automerge\/deleteseq\/index",
+                "title" : "let index: UInt64",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/automerge\/deleteseq\/length",
+                "title" : "let length: UInt64",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/deleteseq\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/deleteseq\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/automerge\/deleteseq",
+            "title" : "DeleteSeq",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/actorid\/description",
+                    "title" : "var description: String",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/actorid\/customstringconvertible-implementations",
+                "title" : "CustomStringConvertible Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/actorid\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/actorid\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/automerge\/actorid",
+            "title" : "ActorId",
+            "type" : "struct"
+          },
+          {
+            "title" : "Converting Scalar Values to Local Types",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Converting types to Scalar Value Representations",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automerge\/scalarvaluerepresentable\/toscalarvalue()",
+                "title" : "func toScalarValue() -> ScalarValue",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automerge\/scalarvaluerepresentable\/fromscalarvalue(_:)",
+                "title" : "static func fromScalarValue(ScalarValue) -> Result<Self, ConvertError>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automerge\/scalarvaluerepresentable\/fromvalue(_:)",
+                "title" : "static func fromValue(Value) -> Result<Self, ConvertError>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automerge\/scalarvaluerepresentable\/converterror",
+                "title" : "ConvertError",
+                "type" : "associatedtype"
+              }
+            ],
+            "path" : "\/documentation\/automerge\/scalarvaluerepresentable",
+            "title" : "ScalarValueRepresentable",
+            "type" : "protocol"
+          },
+          {
+            "title" : "Codable Errors",
+            "type" : "groupMarker"
           },
           {
             "children" : [
@@ -1346,94 +3200,145 @@
             "type" : "enum"
           },
           {
-            "title" : "Converting Scalar Values to Local Types",
-            "type" : "groupMarker"
-          },
-          {
             "children" : [
               {
-                "title" : "Associated Types",
+                "title" : "Operators",
                 "type" : "groupMarker"
               },
               {
-                "path" : "\/documentation\/automerge\/scalarvaluerepresentable\/converterror",
-                "title" : "ConvertError",
-                "type" : "associatedtype"
+                "path" : "\/documentation\/automerge\/bindingerror\/==(_:_:)",
+                "title" : "static func == (BindingError, BindingError) -> Bool",
+                "type" : "op"
               },
               {
-                "title" : "Instance Methods",
+                "title" : "Enumeration Cases",
                 "type" : "groupMarker"
               },
               {
-                "path" : "\/documentation\/automerge\/scalarvaluerepresentable\/toscalarvalue()",
-                "title" : "func toScalarValue() -> ScalarValue",
-                "type" : "method"
+                "path" : "\/documentation\/automerge\/bindingerror\/invalidpath(_:)",
+                "title" : "case InvalidPath(String)",
+                "type" : "case"
               },
               {
-                "title" : "Type Methods",
-                "type" : "groupMarker"
+                "path" : "\/documentation\/automerge\/bindingerror\/notcounter",
+                "title" : "case NotCounter",
+                "type" : "case"
               },
               {
-                "path" : "\/documentation\/automerge\/scalarvaluerepresentable\/fromscalarvalue(_:)",
-                "title" : "static func fromScalarValue(ScalarValue) -> Result<Self, ConvertError>",
-                "type" : "method"
+                "path" : "\/documentation\/automerge\/bindingerror\/nottext",
+                "title" : "case NotText",
+                "type" : "case"
               },
               {
-                "path" : "\/documentation\/automerge\/scalarvaluerepresentable\/fromvalue(_:)",
-                "title" : "static func fromValue(Value) -> Result<Self, ConvertError>",
-                "type" : "method"
-              }
-            ],
-            "path" : "\/documentation\/automerge\/scalarvaluerepresentable",
-            "title" : "ScalarValueRepresentable",
-            "type" : "protocol"
-          },
-          {
-            "title" : "Replicating Documents",
-            "type" : "groupMarker"
-          },
-          {
-            "children" : [
-              {
-                "title" : "Initializers",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/automerge\/syncstate\/init()",
-                "title" : "init()",
-                "type" : "init"
-              },
-              {
-                "path" : "\/documentation\/automerge\/syncstate\/init(bytes:)",
-                "title" : "init(bytes: Data) throws",
-                "type" : "init"
+                "path" : "\/documentation\/automerge\/bindingerror\/unbound",
+                "title" : "case Unbound",
+                "type" : "case"
               },
               {
                 "title" : "Instance Properties",
                 "type" : "groupMarker"
               },
               {
-                "path" : "\/documentation\/automerge\/syncstate\/theirheads",
-                "title" : "var theirHeads: Set<ChangeHash>?",
+                "path" : "\/documentation\/automerge\/bindingerror\/errordescription",
+                "title" : "var errorDescription: String?",
                 "type" : "property"
               },
               {
-                "title" : "Instance Methods",
+                "title" : "Default Implementations",
                 "type" : "groupMarker"
               },
               {
-                "path" : "\/documentation\/automerge\/syncstate\/encode()",
-                "title" : "func encode() -> Data",
-                "type" : "method"
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/bindingerror\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/bindingerror\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
               },
               {
-                "path" : "\/documentation\/automerge\/syncstate\/reset()",
-                "title" : "func reset()",
-                "type" : "method"
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/bindingerror\/localizeddescription",
+                    "title" : "var localizedDescription: String",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/bindingerror\/error-implementations",
+                "title" : "Error Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/bindingerror\/failurereason",
+                    "title" : "var failureReason: String?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/bindingerror\/helpanchor",
+                    "title" : "var helpAnchor: String?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/bindingerror\/recoverysuggestion",
+                    "title" : "var recoverySuggestion: String?",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/bindingerror\/localizederror-implementations",
+                "title" : "LocalizedError Implementations",
+                "type" : "symbol"
               }
             ],
-            "path" : "\/documentation\/automerge\/syncstate",
-            "title" : "SyncState",
+            "path" : "\/documentation\/automerge\/bindingerror",
+            "title" : "BindingError",
+            "type" : "enum"
+          },
+          {
+            "title" : "Document Errors",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automerge\/decodesyncstateerror\/localizeddescription",
+                    "title" : "var localizedDescription: String",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/automerge\/decodesyncstateerror\/error-implementations",
+                "title" : "Error Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/automerge\/decodesyncstateerror",
+            "title" : "DecodeSyncStateError",
             "type" : "struct"
           },
           {
@@ -1449,322 +3354,76 @@
                     "type" : "groupMarker"
                   },
                   {
-                    "path" : "\/documentation\/automerge\/actorid\/description",
-                    "title" : "var description: String",
+                    "path" : "\/documentation\/automerge\/docerror\/localizeddescription",
+                    "title" : "var localizedDescription: String",
                     "type" : "property"
                   }
                 ],
-                "path" : "\/documentation\/automerge\/actorid\/customstringconvertible-implementations",
-                "title" : "CustomStringConvertible Implementations",
-                "type" : "symbol"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Operators",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/actorid\/!=(_:_:)",
-                    "title" : "static func != (Self, Self) -> Bool",
-                    "type" : "op"
-                  }
-                ],
-                "path" : "\/documentation\/automerge\/actorid\/equatable-implementations",
-                "title" : "Equatable Implementations",
+                "path" : "\/documentation\/automerge\/docerror\/error-implementations",
+                "title" : "Error Implementations",
                 "type" : "symbol"
               }
             ],
-            "path" : "\/documentation\/automerge\/actorid",
-            "title" : "ActorId",
+            "path" : "\/documentation\/automerge\/docerror",
+            "title" : "DocError",
             "type" : "struct"
           },
           {
             "children" : [
               {
-                "title" : "Instance Properties",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/automerge\/changehash\/debugdescription",
-                "title" : "var debugDescription: String",
-                "type" : "property"
-              },
-              {
                 "title" : "Default Implementations",
                 "type" : "groupMarker"
               },
               {
                 "children" : [
                   {
-                    "title" : "Operators",
+                    "title" : "Instance Properties",
                     "type" : "groupMarker"
                   },
                   {
-                    "path" : "\/documentation\/automerge\/changehash\/!=(_:_:)",
-                    "title" : "static func != (Self, Self) -> Bool",
-                    "type" : "op"
+                    "path" : "\/documentation\/automerge\/loaderror\/localizeddescription",
+                    "title" : "var localizedDescription: String",
+                    "type" : "property"
                   }
                 ],
-                "path" : "\/documentation\/automerge\/changehash\/equatable-implementations",
-                "title" : "Equatable Implementations",
+                "path" : "\/documentation\/automerge\/loaderror\/error-implementations",
+                "title" : "Error Implementations",
                 "type" : "symbol"
               }
             ],
-            "path" : "\/documentation\/automerge\/changehash",
-            "title" : "ChangeHash",
+            "path" : "\/documentation\/automerge\/loaderror",
+            "title" : "LoadError",
             "type" : "struct"
           },
           {
             "children" : [
               {
-                "title" : "Initializers",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/automerge\/deleteseq\/init(obj:index:length:)",
-                "title" : "init(obj: ObjId, index: UInt64, length: UInt64)",
-                "type" : "init"
-              },
-              {
-                "title" : "Instance Properties",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/automerge\/deleteseq\/index",
-                "title" : "let index: UInt64",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/automerge\/deleteseq\/length",
-                "title" : "let length: UInt64",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/automerge\/deleteseq\/obj",
-                "title" : "let obj: ObjId",
-                "type" : "property"
-              },
-              {
                 "title" : "Default Implementations",
                 "type" : "groupMarker"
               },
               {
                 "children" : [
                   {
-                    "title" : "Operators",
+                    "title" : "Instance Properties",
                     "type" : "groupMarker"
                   },
                   {
-                    "path" : "\/documentation\/automerge\/deleteseq\/!=(_:_:)",
-                    "title" : "static func != (Self, Self) -> Bool",
-                    "type" : "op"
+                    "path" : "\/documentation\/automerge\/receivesyncerror\/localizeddescription",
+                    "title" : "var localizedDescription: String",
+                    "type" : "property"
                   }
                 ],
-                "path" : "\/documentation\/automerge\/deleteseq\/equatable-implementations",
-                "title" : "Equatable Implementations",
+                "path" : "\/documentation\/automerge\/receivesyncerror\/error-implementations",
+                "title" : "Error Implementations",
                 "type" : "symbol"
               }
             ],
-            "path" : "\/documentation\/automerge\/deleteseq",
-            "title" : "DeleteSeq",
+            "path" : "\/documentation\/automerge\/receivesyncerror",
+            "title" : "ReceiveSyncError",
             "type" : "struct"
           },
           {
-            "children" : [
-              {
-                "title" : "Instance Properties",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/automerge\/patch\/action",
-                "title" : "let action: PatchAction",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/automerge\/patch\/path",
-                "title" : "let path: [PathElement]",
-                "type" : "property"
-              },
-              {
-                "title" : "Default Implementations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Operators",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/patch\/!=(_:_:)",
-                    "title" : "static func != (Self, Self) -> Bool",
-                    "type" : "op"
-                  }
-                ],
-                "path" : "\/documentation\/automerge\/patch\/equatable-implementations",
-                "title" : "Equatable Implementations",
-                "type" : "symbol"
-              }
-            ],
-            "path" : "\/documentation\/automerge\/patch",
-            "title" : "Patch",
-            "type" : "struct"
-          },
-          {
-            "children" : [
-              {
-                "title" : "Enumeration Cases",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/automerge\/patchaction\/deletemap(_:_:)",
-                "title" : "case DeleteMap(ObjId, String)",
-                "type" : "case"
-              },
-              {
-                "path" : "\/documentation\/automerge\/patchaction\/deleteseq(_:)",
-                "title" : "case DeleteSeq(DeleteSeq)",
-                "type" : "case"
-              },
-              {
-                "path" : "\/documentation\/automerge\/patchaction\/increment(_:_:_:)",
-                "title" : "case Increment(ObjId, Prop, Int64)",
-                "type" : "case"
-              },
-              {
-                "path" : "\/documentation\/automerge\/patchaction\/insert(_:_:_:)",
-                "title" : "case Insert(ObjId, UInt64, [Value])",
-                "type" : "case"
-              },
-              {
-                "path" : "\/documentation\/automerge\/patchaction\/put(_:_:_:)",
-                "title" : "case Put(ObjId, Prop, Value)",
-                "type" : "case"
-              },
-              {
-                "path" : "\/documentation\/automerge\/patchaction\/splicetext(_:_:_:)",
-                "title" : "case SpliceText(ObjId, UInt64, String)",
-                "type" : "case"
-              },
-              {
-                "title" : "Default Implementations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Operators",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/patchaction\/!=(_:_:)",
-                    "title" : "static func != (Self, Self) -> Bool",
-                    "type" : "op"
-                  }
-                ],
-                "path" : "\/documentation\/automerge\/patchaction\/equatable-implementations",
-                "title" : "Equatable Implementations",
-                "type" : "symbol"
-              }
-            ],
-            "path" : "\/documentation\/automerge\/patchaction",
-            "title" : "PatchAction",
-            "type" : "enum"
-          },
-          {
-            "children" : [
-              {
-                "title" : "Initializers",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/automerge\/pathelement\/init(obj:prop:)",
-                "title" : "init(obj: ObjId, prop: Prop)",
-                "type" : "init"
-              },
-              {
-                "title" : "Instance Properties",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/automerge\/pathelement\/obj",
-                "title" : "let obj: ObjId",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/automerge\/pathelement\/prop",
-                "title" : "let prop: Prop",
-                "type" : "property"
-              },
-              {
-                "title" : "Default Implementations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Operators",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/pathelement\/!=(_:_:)",
-                    "title" : "static func != (Self, Self) -> Bool",
-                    "type" : "op"
-                  }
-                ],
-                "path" : "\/documentation\/automerge\/pathelement\/equatable-implementations",
-                "title" : "Equatable Implementations",
-                "type" : "symbol"
-              }
-            ],
-            "path" : "\/documentation\/automerge\/pathelement",
-            "title" : "PathElement",
-            "type" : "struct"
-          },
-          {
-            "children" : [
-              {
-                "title" : "Enumeration Cases",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/automerge\/prop\/index(_:)",
-                "title" : "case Index(UInt64)",
-                "type" : "case"
-              },
-              {
-                "path" : "\/documentation\/automerge\/prop\/key(_:)",
-                "title" : "case Key(String)",
-                "type" : "case"
-              },
-              {
-                "title" : "Default Implementations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Operators",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/prop\/!=(_:_:)",
-                    "title" : "static func != (Self, Self) -> Bool",
-                    "type" : "op"
-                  }
-                ],
-                "path" : "\/documentation\/automerge\/prop\/equatable-implementations",
-                "title" : "Equatable Implementations",
-                "type" : "symbol"
-              }
-            ],
-            "path" : "\/documentation\/automerge\/prop",
-            "title" : "Prop",
-            "type" : "enum"
-          },
-          {
-            "title" : "Conversion Error Types",
+            "title" : "Type Conversion Errors",
             "type" : "groupMarker"
           },
           {
@@ -1917,82 +3576,6 @@
             ],
             "path" : "\/documentation\/automerge\/bytesscalarconversionerror",
             "title" : "BytesScalarConversionError",
-            "type" : "enum"
-          },
-          {
-            "children" : [
-              {
-                "title" : "Enumeration Cases",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/automerge\/counterscalarconversionerror\/notcounterscalarvalue(_:)",
-                "title" : "case notCounterScalarValue(ScalarValue)",
-                "type" : "case"
-              },
-              {
-                "path" : "\/documentation\/automerge\/counterscalarconversionerror\/notcountervalue(_:)",
-                "title" : "case notCounterValue(Value)",
-                "type" : "case"
-              },
-              {
-                "title" : "Instance Properties",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/automerge\/counterscalarconversionerror\/errordescription",
-                "title" : "var errorDescription: String?",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/automerge\/counterscalarconversionerror\/failurereason",
-                "title" : "var failureReason: String?",
-                "type" : "property"
-              },
-              {
-                "title" : "Default Implementations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Instance Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/counterscalarconversionerror\/localizeddescription",
-                    "title" : "var localizedDescription: String",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/automerge\/counterscalarconversionerror\/error-implementations",
-                "title" : "Error Implementations",
-                "type" : "symbol"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Instance Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/counterscalarconversionerror\/helpanchor",
-                    "title" : "var helpAnchor: String?",
-                    "type" : "property"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/counterscalarconversionerror\/recoverysuggestion",
-                    "title" : "var recoverySuggestion: String?",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/automerge\/counterscalarconversionerror\/localizederror-implementations",
-                "title" : "LocalizedError Implementations",
-                "type" : "symbol"
-              }
-            ],
-            "path" : "\/documentation\/automerge\/counterscalarconversionerror",
-            "title" : "CounterScalarConversionError",
             "type" : "enum"
           },
           {
@@ -2374,118 +3957,6 @@
             "path" : "\/documentation\/automerge\/uintscalarconversionerror",
             "title" : "UIntScalarConversionError",
             "type" : "enum"
-          },
-          {
-            "title" : "Error Types",
-            "type" : "groupMarker"
-          },
-          {
-            "children" : [
-              {
-                "title" : "Default Implementations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Instance Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/decodesyncstateerror\/localizeddescription",
-                    "title" : "var localizedDescription: String",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/automerge\/decodesyncstateerror\/error-implementations",
-                "title" : "Error Implementations",
-                "type" : "symbol"
-              }
-            ],
-            "path" : "\/documentation\/automerge\/decodesyncstateerror",
-            "title" : "DecodeSyncStateError",
-            "type" : "struct"
-          },
-          {
-            "children" : [
-              {
-                "title" : "Default Implementations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Instance Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/docerror\/localizeddescription",
-                    "title" : "var localizedDescription: String",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/automerge\/docerror\/error-implementations",
-                "title" : "Error Implementations",
-                "type" : "symbol"
-              }
-            ],
-            "path" : "\/documentation\/automerge\/docerror",
-            "title" : "DocError",
-            "type" : "struct"
-          },
-          {
-            "children" : [
-              {
-                "title" : "Default Implementations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Instance Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/loaderror\/localizeddescription",
-                    "title" : "var localizedDescription: String",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/automerge\/loaderror\/error-implementations",
-                "title" : "Error Implementations",
-                "type" : "symbol"
-              }
-            ],
-            "path" : "\/documentation\/automerge\/loaderror",
-            "title" : "LoadError",
-            "type" : "struct"
-          },
-          {
-            "children" : [
-              {
-                "title" : "Default Implementations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Instance Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/automerge\/receivesyncerror\/localizeddescription",
-                    "title" : "var localizedDescription: String",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/automerge\/receivesyncerror\/error-implementations",
-                "title" : "Error Implementations",
-                "type" : "symbol"
-              }
-            ],
-            "path" : "\/documentation\/automerge\/receivesyncerror",
-            "title" : "ReceiveSyncError",
-            "type" : "struct"
           }
         ],
         "path" : "\/documentation\/automerge",
@@ -2526,6 +3997,31 @@
               {
                 "path" : "\/documentation\/automergeuniffi\/doc\/applyencodedchangeswithpatches(changes:)",
                 "title" : "func applyEncodedChangesWithPatches(changes: [UInt8]) throws -> [Patch]",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/doc\/changes()",
+                "title" : "func changes() -> [ChangeHash]",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/doc\/cursor(obj:position:)",
+                "title" : "func cursor(obj: ObjId, position: UInt64) throws -> Cursor",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/doc\/cursorat(obj:position:heads:)",
+                "title" : "func cursorAt(obj: ObjId, position: UInt64, heads: [ChangeHash]) throws -> Cursor",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/doc\/cursorposition(obj:cursor:)",
+                "title" : "func cursorPosition(obj: ObjId, cursor: Cursor) throws -> UInt64",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/doc\/cursorpositionat(obj:cursor:heads:)",
+                "title" : "func cursorPositionAt(obj: ObjId, cursor: Cursor, heads: [ChangeHash]) throws -> UInt64",
                 "type" : "method"
               },
               {
@@ -2659,6 +4155,21 @@
                 "type" : "method"
               },
               {
+                "path" : "\/documentation\/automergeuniffi\/doc\/mark(obj:start:end:expand:name:value:)",
+                "title" : "func mark(obj: ObjId, start: UInt64, end: UInt64, expand: ExpandMark, name: String, value: ScalarValue) throws",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/doc\/marks(obj:)",
+                "title" : "func marks(obj: ObjId) throws -> [Mark]",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/doc\/marksat(obj:heads:)",
+                "title" : "func marksAt(obj: ObjId, heads: [ChangeHash]) throws -> [Mark]",
+                "type" : "method"
+              },
+              {
                 "path" : "\/documentation\/automergeuniffi\/doc\/merge(other:)",
                 "title" : "func merge(other: Doc) throws",
                 "type" : "method"
@@ -2720,12 +4231,12 @@
               },
               {
                 "path" : "\/documentation\/automergeuniffi\/doc\/splice(obj:start:delete:values:)",
-                "title" : "func splice(obj: ObjId, start: UInt64, delete: UInt64, values: [ScalarValue]) throws",
+                "title" : "func splice(obj: ObjId, start: UInt64, delete: Int64, values: [ScalarValue]) throws",
                 "type" : "method"
               },
               {
                 "path" : "\/documentation\/automergeuniffi\/doc\/splicetext(obj:start:delete:chars:)",
-                "title" : "func spliceText(obj: ObjId, start: UInt64, delete: UInt64, chars: String) throws",
+                "title" : "func spliceText(obj: ObjId, start: UInt64, delete: Int64, chars: String) throws",
                 "type" : "method"
               },
               {
@@ -2834,6 +4345,31 @@
               {
                 "path" : "\/documentation\/automergeuniffi\/docprotocol\/applyencodedchangeswithpatches(changes:)",
                 "title" : "func applyEncodedChangesWithPatches(changes: [UInt8]) throws -> [Patch]",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/docprotocol\/changes()",
+                "title" : "func changes() -> [ChangeHash]",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/docprotocol\/cursor(obj:position:)",
+                "title" : "func cursor(obj: ObjId, position: UInt64) throws -> Cursor",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/docprotocol\/cursorat(obj:position:heads:)",
+                "title" : "func cursorAt(obj: ObjId, position: UInt64, heads: [ChangeHash]) throws -> Cursor",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/docprotocol\/cursorposition(obj:cursor:)",
+                "title" : "func cursorPosition(obj: ObjId, cursor: Cursor) throws -> UInt64",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/docprotocol\/cursorpositionat(obj:cursor:heads:)",
+                "title" : "func cursorPositionAt(obj: ObjId, cursor: Cursor, heads: [ChangeHash]) throws -> UInt64",
                 "type" : "method"
               },
               {
@@ -2967,6 +4503,21 @@
                 "type" : "method"
               },
               {
+                "path" : "\/documentation\/automergeuniffi\/docprotocol\/mark(obj:start:end:expand:name:value:)",
+                "title" : "func mark(obj: ObjId, start: UInt64, end: UInt64, expand: ExpandMark, name: String, value: ScalarValue) throws",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/docprotocol\/marks(obj:)",
+                "title" : "func marks(obj: ObjId) throws -> [Mark]",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/docprotocol\/marksat(obj:heads:)",
+                "title" : "func marksAt(obj: ObjId, heads: [ChangeHash]) throws -> [Mark]",
+                "type" : "method"
+              },
+              {
                 "path" : "\/documentation\/automergeuniffi\/docprotocol\/merge(other:)",
                 "title" : "func merge(other: Doc) throws",
                 "type" : "method"
@@ -3028,12 +4579,12 @@
               },
               {
                 "path" : "\/documentation\/automergeuniffi\/docprotocol\/splice(obj:start:delete:values:)",
-                "title" : "func splice(obj: ObjId, start: UInt64, delete: UInt64, values: [ScalarValue]) throws",
+                "title" : "func splice(obj: ObjId, start: UInt64, delete: Int64, values: [ScalarValue]) throws",
                 "type" : "method"
               },
               {
                 "path" : "\/documentation\/automergeuniffi\/docprotocol\/splicetext(obj:start:delete:chars:)",
-                "title" : "func spliceText(obj: ObjId, start: UInt64, delete: UInt64, chars: String) throws",
+                "title" : "func spliceText(obj: ObjId, start: UInt64, delete: Int64, chars: String) throws",
                 "type" : "method"
               },
               {
@@ -3160,6 +4711,37 @@
                 "type" : "groupMarker"
               },
               {
+                "path" : "\/documentation\/automergeuniffi\/fficonvertertypecursor\/lift(_:)",
+                "title" : "static func lift(RustBuffer) throws -> Cursor",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/fficonvertertypecursor\/lower(_:)",
+                "title" : "static func lower(Cursor) -> RustBuffer",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/fficonvertertypecursor\/read(from:)",
+                "title" : "static func read(from: inout (data: Data, offset: Data.Index)) throws -> Cursor",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/fficonvertertypecursor\/write(_:into:)",
+                "title" : "static func write(Cursor, into: inout [UInt8])",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/automergeuniffi\/fficonvertertypecursor",
+            "title" : "FfiConverterTypeCursor",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Type Methods",
+                "type" : "groupMarker"
+              },
+              {
                 "path" : "\/documentation\/automergeuniffi\/fficonvertertypedecodesyncstateerror\/read(from:)",
                 "title" : "static func read(from: inout (data: Data, offset: Data.Index)) throws -> DecodeSyncStateError",
                 "type" : "method"
@@ -3233,6 +4815,27 @@
                 "type" : "groupMarker"
               },
               {
+                "path" : "\/documentation\/automergeuniffi\/fficonvertertypeexpandmark\/read(from:)",
+                "title" : "static func read(from: inout (data: Data, offset: Data.Index)) throws -> ExpandMark",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/fficonvertertypeexpandmark\/write(_:into:)",
+                "title" : "static func write(ExpandMark, into: inout [UInt8])",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/automergeuniffi\/fficonvertertypeexpandmark",
+            "title" : "FfiConverterTypeExpandMark",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Type Methods",
+                "type" : "groupMarker"
+              },
+              {
                 "path" : "\/documentation\/automergeuniffi\/fficonvertertypekeyvalue\/read(from:)",
                 "title" : "static func read(from: inout (data: Data, offset: Data.Index)) throws -> KeyValue",
                 "type" : "method"
@@ -3266,6 +4869,27 @@
             ],
             "path" : "\/documentation\/automergeuniffi\/fficonvertertypeloaderror",
             "title" : "FfiConverterTypeLoadError",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Type Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/fficonvertertypemark\/read(from:)",
+                "title" : "static func read(from: inout (data: Data, offset: Data.Index)) throws -> Mark",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/fficonvertertypemark\/write(_:into:)",
+                "title" : "static func write(Mark, into: inout [UInt8])",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/automergeuniffi\/fficonvertertypemark",
+            "title" : "FfiConverterTypeMark",
             "type" : "struct"
           },
           {
@@ -3576,6 +5200,87 @@
                 "type" : "groupMarker"
               },
               {
+                "path" : "\/documentation\/automergeuniffi\/mark\/init(start:end:name:value:)",
+                "title" : "init(start: UInt64, end: UInt64, name: String, value: Value)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/mark\/end",
+                "title" : "var end: UInt64",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/mark\/name",
+                "title" : "var name: String",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/mark\/start",
+                "title" : "var start: UInt64",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/mark\/value",
+                "title" : "var value: Value",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automergeuniffi\/mark\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/automergeuniffi\/mark\/==(_:_:)",
+                    "title" : "static func == (Mark, Mark) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/automergeuniffi\/mark\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automergeuniffi\/mark\/hash(into:)",
+                    "title" : "func hash(into: inout Hasher)",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/automergeuniffi\/mark\/hashable-implementations",
+                "title" : "Hashable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/automergeuniffi\/mark",
+            "title" : "Mark",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
                 "path" : "\/documentation\/automergeuniffi\/patch\/init(path:action:)",
                 "title" : "init(path: [PathElement], action: PatchAction)",
                 "type" : "init"
@@ -3716,6 +5421,26 @@
             "type" : "groupMarker"
           },
           {
+            "path" : "\/documentation\/automergeuniffi\/fficonvertertypedoc_lift(_:)",
+            "title" : "func FfiConverterTypeDoc_lift(UnsafeMutableRawPointer) throws -> Doc",
+            "type" : "func"
+          },
+          {
+            "path" : "\/documentation\/automergeuniffi\/fficonvertertypedoc_lower(_:)",
+            "title" : "func FfiConverterTypeDoc_lower(Doc) -> UnsafeMutableRawPointer",
+            "type" : "func"
+          },
+          {
+            "path" : "\/documentation\/automergeuniffi\/fficonvertertypeexpandmark_lift(_:)",
+            "title" : "func FfiConverterTypeExpandMark_lift(RustBuffer) throws -> ExpandMark",
+            "type" : "func"
+          },
+          {
+            "path" : "\/documentation\/automergeuniffi\/fficonvertertypeexpandmark_lower(_:)",
+            "title" : "func FfiConverterTypeExpandMark_lower(ExpandMark) -> RustBuffer",
+            "type" : "func"
+          },
+          {
             "path" : "\/documentation\/automergeuniffi\/fficonvertertypekeyvalue_lift(_:)",
             "title" : "func FfiConverterTypeKeyValue_lift(RustBuffer) throws -> KeyValue",
             "type" : "func"
@@ -3723,6 +5448,16 @@
           {
             "path" : "\/documentation\/automergeuniffi\/fficonvertertypekeyvalue_lower(_:)",
             "title" : "func FfiConverterTypeKeyValue_lower(KeyValue) -> RustBuffer",
+            "type" : "func"
+          },
+          {
+            "path" : "\/documentation\/automergeuniffi\/fficonvertertypemark_lift(_:)",
+            "title" : "func FfiConverterTypeMark_lift(RustBuffer) throws -> Mark",
+            "type" : "func"
+          },
+          {
+            "path" : "\/documentation\/automergeuniffi\/fficonvertertypemark_lower(_:)",
+            "title" : "func FfiConverterTypeMark_lower(Mark) -> RustBuffer",
             "type" : "func"
           },
           {
@@ -3786,6 +5521,16 @@
             "type" : "func"
           },
           {
+            "path" : "\/documentation\/automergeuniffi\/fficonvertertypesyncstate_lift(_:)",
+            "title" : "func FfiConverterTypeSyncState_lift(UnsafeMutableRawPointer) throws -> SyncState",
+            "type" : "func"
+          },
+          {
+            "path" : "\/documentation\/automergeuniffi\/fficonvertertypesyncstate_lower(_:)",
+            "title" : "func FfiConverterTypeSyncState_lower(SyncState) -> UnsafeMutableRawPointer",
+            "type" : "func"
+          },
+          {
             "path" : "\/documentation\/automergeuniffi\/fficonvertertypevalue_lift(_:)",
             "title" : "func FfiConverterTypeValue_lift(RustBuffer) throws -> Value",
             "type" : "func"
@@ -3815,6 +5560,11 @@
             "type" : "typealias"
           },
           {
+            "path" : "\/documentation\/automergeuniffi\/cursor",
+            "title" : "Cursor",
+            "type" : "typealias"
+          },
+          {
             "path" : "\/documentation\/automergeuniffi\/objid",
             "title" : "ObjId",
             "type" : "typealias"
@@ -3822,11 +5572,6 @@
           {
             "title" : "Enumerations",
             "type" : "groupMarker"
-          },
-          {
-            "path" : "\/documentation\/automergeuniffi\/automergelifecycle",
-            "title" : "AutomergeLifecycle",
-            "type" : "enum"
           },
           {
             "children" : [
@@ -3944,6 +5689,57 @@
                 "type" : "groupMarker"
               },
               {
+                "path" : "\/documentation\/automergeuniffi\/expandmark\/after",
+                "title" : "case after",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/expandmark\/before",
+                "title" : "case before",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/expandmark\/both",
+                "title" : "case both",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/expandmark\/none",
+                "title" : "case none",
+                "type" : "case"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/automergeuniffi\/expandmark\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/automergeuniffi\/expandmark\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/automergeuniffi\/expandmark",
+            "title" : "ExpandMark",
+            "type" : "enum"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
                 "path" : "\/documentation\/automergeuniffi\/loaderror\/internal(message:)",
                 "title" : "case Internal(message: String)",
                 "type" : "case"
@@ -4042,6 +5838,11 @@
                 "type" : "groupMarker"
               },
               {
+                "path" : "\/documentation\/automergeuniffi\/patchaction\/conflict(obj:prop:)",
+                "title" : "case conflict(obj: ObjId, prop: Prop)",
+                "type" : "case"
+              },
+              {
                 "path" : "\/documentation\/automergeuniffi\/patchaction\/deletemap(obj:key:)",
                 "title" : "case deleteMap(obj: ObjId, key: String)",
                 "type" : "case"
@@ -4057,8 +5858,13 @@
                 "type" : "case"
               },
               {
-                "path" : "\/documentation\/automergeuniffi\/patchaction\/insert(obj:index:values:)",
-                "title" : "case insert(obj: ObjId, index: UInt64, values: [Value])",
+                "path" : "\/documentation\/automergeuniffi\/patchaction\/insert(obj:index:values:marks:)",
+                "title" : "case insert(obj: ObjId, index: UInt64, values: [Value], marks: [String : Value])",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/automergeuniffi\/patchaction\/marks(obj:marks:)",
+                "title" : "case marks(obj: ObjId, marks: [Mark])",
                 "type" : "case"
               },
               {
@@ -4067,8 +5873,8 @@
                 "type" : "case"
               },
               {
-                "path" : "\/documentation\/automergeuniffi\/patchaction\/splicetext(obj:index:value:)",
-                "title" : "case spliceText(obj: ObjId, index: UInt64, value: String)",
+                "path" : "\/documentation\/automergeuniffi\/patchaction\/splicetext(obj:index:value:marks:)",
+                "title" : "case spliceText(obj: ObjId, index: UInt64, value: String, marks: [String : Value])",
                 "type" : "case"
               },
               {

@@ -727,9 +727,13 @@
     {
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document"
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ModelingData",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjType",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjId",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Value",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue"
       ],
-      "title" : "Essentials"
+      "title" : "Representing Objects and Values"
     }
   ]
 , 
@@ -737,7 +741,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -748,90 +752,11 @@
   "type" : "topic",
   "url" : "\/documentation\/automerge"
 },
-"doc://com.github.automerge.automerge-swift/documentation/Automerge/Document": {
-  "abstract" : [
-    {
-      "text" : "The entry point to automerge, a ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : " presents a key\/value interface to",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "the data it contains; as well as methods for loading and saving documents, and",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "taking part in the sync protocol.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "class"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Document"
-    }
-  ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Document"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Document",
-  "type" : "topic",
-  "url" : "\/documentation\/automerge\/document"
-},
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/putObject(obj:key:ty:)": {
   "abstract" : [
     {
-      "text" : "Set or update ",
+      "text" : "Set or update an object within a dictionary object you specify.",
       "type" : "text"
-    },
-    {
-      "code" : "key",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " in map ",
-      "type" : "text"
-    },
-    {
-      "code" : "obj",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " to a new instance of ",
-      "type" : "text"
-    },
-    {
-      "code" : "ty",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [
@@ -923,6 +848,20 @@
   "type" : "topic",
   "url" : "\/documentation\/automerge\/document\/putobject(obj:key:ty:)"
 },
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ModelingData": {
+  "abstract" : [
+    {
+      "text" : "Store, read, share, and synchronize complex data in an Automerge document.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ModelingData",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Modeling Data with Automerge",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/modelingdata"
+},
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/ObjId": {
   "abstract" : [
     {
@@ -1002,10 +941,44 @@
   "type" : "topic",
   "url" : "\/documentation\/automerge\/objid\/root"
 },
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ObjType": {
+  "abstract" : [
+    {
+      "text" : "A type that represents an Automerge object.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ObjType"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjType",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ObjType"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ObjType",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/objtype"
+},
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/ObjType/List": {
   "abstract" : [
     {
-      "text" : "A type that represents a sequence of arbitrary Automerge values.",
+      "text" : "A type that represents an array of Automerge values.",
       "type" : "text"
     }
   ],
@@ -1033,7 +1006,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/ObjType/Map": {
   "abstract" : [
     {
-      "text" : "A type that represents a map that uses String as keys.",
+      "text" : "A type that represents a dictionary that uses the type String for keys.",
       "type" : "text"
     }
   ],
@@ -1057,6 +1030,40 @@
   "title" : "ObjType.Map",
   "type" : "topic",
   "url" : "\/documentation\/automerge\/objtype\/map"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ScalarValue": {
+  "abstract" : [
+    {
+      "text" : "A type that represents a primitive Automerge value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ScalarValue"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ScalarValue",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ScalarValue"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ScalarValue",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/scalarvalue"
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/ScalarValue/String(_:)": {
   "abstract" : [
@@ -1098,6 +1105,40 @@
   "title" : "ScalarValue.String(_:)",
   "type" : "topic",
   "url" : "\/documentation\/automerge\/scalarvalue\/string(_:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Value": {
+  "abstract" : [
+    {
+      "text" : "A type that represents a value or object managed by Automerge.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Value"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Value",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Value"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Value",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/value"
 },
 "https://github.com/automerge/automerge/issues/528": {
   "identifier" : "https:\/\/github.com\/automerge\/automerge\/issues\/528",

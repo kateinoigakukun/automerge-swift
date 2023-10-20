@@ -1,12 +1,8 @@
 {
   "abstract" : [
     {
-      "text" : "Get all the values in the map or list ",
+      "text" : "Get a list of all the current values for the array or dictionary object you specify.",
       "type" : "text"
-    },
-    {
-      "code" : "obj",
-      "type" : "codeVoice"
     }
   ],
   "hierarchy" : {
@@ -155,17 +151,36 @@
       "kind" : "declarations"
     },
     {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The identifier of an array or dictionary object.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "obj"
+        }
+      ]
+    },
+    {
       "content" : [
         {
-          "anchor" : "discussion",
+          "anchor" : "return-value",
           "level" : 2,
-          "text" : "Discussion",
+          "text" : "Return Value",
           "type" : "heading"
         },
         {
           "inlineContent" : [
             {
-              "text" : "For a list this just returns the contents of the list, for a map this",
+              "text" : "For an array object, the list of all current values.",
               "type" : "text"
             },
             {
@@ -173,7 +188,7 @@
               "type" : "text"
             },
             {
-              "text" : "returns the values (and not the keys).",
+              "text" : "For a dictionary object, the list of the values for all the keys.",
               "type" : "text"
             }
           ],
@@ -219,7 +234,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -233,32 +248,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document": {
   "abstract" : [
     {
-      "text" : "The entry point to automerge, a ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : " presents a key\/value interface to",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "the data it contains; as well as methods for loading and saving documents, and",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "taking part in the sync protocol.",
+      "text" : "An Automerge document that provides an interface to the document-structured data it contains.",
       "type" : "text"
     }
   ],
@@ -292,20 +282,8 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/get(obj:index:)": {
   "abstract" : [
     {
-      "text" : "Get the value at ",
+      "text" : "Get the value at the index position you provide from the array object you specify.",
       "type" : "text"
-    },
-    {
-      "code" : "index",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " from the list ",
-      "type" : "text"
-    },
-    {
-      "code" : "obj",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [
@@ -387,20 +365,8 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/getAll(obj:index:)": {
   "abstract" : [
     {
-      "text" : "Get all the possibly conflicting values at ",
+      "text" : "Get the set of possibly conflicting values at the index you provide for the array object you specify.",
       "type" : "text"
-    },
-    {
-      "code" : "index",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " in the list ",
-      "type" : "text"
-    },
-    {
-      "code" : "obj",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [
@@ -491,12 +457,8 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/length(obj:)": {
   "abstract" : [
     {
-      "text" : "The length of the list ",
+      "text" : "Returns the current length of the array, dictionary, or text object you specify.",
       "type" : "text"
-    },
-    {
-      "code" : "obj",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [
@@ -549,12 +511,8 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/values(obj:)": {
   "abstract" : [
     {
-      "text" : "Get all the values in the map or list ",
+      "text" : "Get a list of all the current values for the array or dictionary object you specify.",
       "type" : "text"
-    },
-    {
-      "code" : "obj",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [

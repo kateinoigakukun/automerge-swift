@@ -9,6 +9,10 @@
     "paths" : [
       [
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge"
+      ],
+      [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Patch"
       ]
     ]
   },
@@ -126,6 +130,187 @@
             }
           ],
           "type" : "paragraph"
+        },
+        {
+          "anchor" : "Overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "PathElement is a unique location identifer within an Automerge document.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "An individual element is made up of the property ",
+              "type" : "text"
+            },
+            {
+              "code" : "obj",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " (an ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjId",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ") and ",
+              "type" : "text"
+            },
+            {
+              "code" : "prop",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " (a ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Prop",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ").",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "An array of ",
+              "type" : "text"
+            },
+            {
+              "code" : "PathElement",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " provides an Automerge document specific path to tracing to a specific schema location.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "An array of ",
+              "type" : "text"
+            },
+            {
+              "code" : "PathElement",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " is returned by ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/path(obj:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Use ",
+              "type" : "text"
+            },
+            {
+              "code" : "stringPath()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " on an array of ",
+              "type" : "text"
+            },
+            {
+              "code" : "PathElement",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " to convert it into a String.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The format of this string is matched to the method ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/lookupPath(path:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " to look up the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjId",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " within the Automerge document.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The following code snippet illustrates getting an array of ",
+              "type" : "text"
+            },
+            {
+              "code" : "PathElement",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and converting it into a String:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "let doc = Document()",
+            "let exampleList = try doc.putObject(obj: ObjId.ROOT, key: \"example\", ty: .List)",
+            "let listItem = try doc.insertObject(obj: exampleList, index: 0, ty: .Map)",
+            "",
+            "let path = try doc.path(obj: listItem)",
+            "let stringFromPath = path.stringPath()",
+            "",
+            "print(stringFromPath)",
+            "\/\/ .example.[0]"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
         }
       ],
       "kind" : "content"
@@ -153,30 +338,30 @@
     {
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ActorId",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangesAndHistory",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangeHash",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/DeleteSeq",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Patch",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Prop"
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Prop",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/DeleteSeq",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ActorId"
       ],
-      "title" : "Replicating Documents"
+      "title" : "Inspecting Documents as Changes"
     }
   ],
   "topicSections" : [
     {
       "identifiers" : [
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PathElement\/init(obj:prop:)"
-      ],
-      "title" : "Initializers"
-    },
-    {
-      "identifiers" : [
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PathElement\/obj",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PathElement\/prop"
       ],
-      "title" : "Instance Properties"
+      "title" : "Inspecting a Path Element"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PathElement\/init(obj:prop:)"
+      ],
+      "title" : "Initializers"
     },
     {
       "generated" : true,
@@ -208,7 +393,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -287,6 +472,20 @@
   "type" : "topic",
   "url" : "\/documentation\/automerge\/changehash"
 },
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ChangesAndHistory": {
+  "abstract" : [
+    {
+      "text" : "Track, inspect, and synchronize the changes within Automerge documents.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangesAndHistory",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Tracking Changes and History",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/changesandhistory"
+},
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/DeleteSeq": {
   "abstract" : [
     {
@@ -320,6 +519,172 @@
   "title" : "DeleteSeq",
   "type" : "topic",
   "url" : "\/documentation\/automerge\/deleteseq"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/lookupPath(path:)": {
+  "abstract" : [
+    {
+      "text" : "Looks up the objectId represented by the schema path string you provide.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "lookupPath"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "path"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge5ObjIdV",
+      "text" : "ObjId"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/lookupPath(path:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "lookupPath(path:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/document\/lookuppath(path:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/path(obj:)": {
+  "abstract" : [
+    {
+      "text" : "Get the path to an object within the document.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "path"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "obj"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge5ObjIdV",
+      "text" : "ObjId"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge11PathElementV",
+      "text" : "PathElement"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/path(obj:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "path(obj:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/document\/path(obj:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ObjId": {
+  "abstract" : [
+    {
+      "text" : "The unique internal identifier for an object stored in an Automerge document.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ObjId"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ObjId",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ObjId"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ObjId",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/objid"
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/ObjId/ROOT": {
   "abstract" : [
@@ -638,40 +1003,6 @@
   "title" : "Prop",
   "type" : "topic",
   "url" : "\/documentation\/automerge\/prop"
-},
-"doc://com.github.automerge.automerge-swift/documentation/Automerge/SyncState": {
-  "abstract" : [
-    {
-      "text" : "A synchronisation session with another peer",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "SyncState"
-    }
-  ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "SyncState"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "SyncState",
-  "type" : "topic",
-  "url" : "\/documentation\/automerge\/syncstate"
 }
 }
 }

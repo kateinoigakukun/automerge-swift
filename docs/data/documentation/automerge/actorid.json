@@ -159,15 +159,15 @@
     {
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangesAndHistory",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangeHash",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/DeleteSeq",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Patch",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PathElement",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Prop"
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Prop",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/DeleteSeq"
       ],
-      "title" : "Replicating Documents"
+      "title" : "Inspecting Documents as Changes"
     }
   ],
   "topicSections" : [
@@ -207,7 +207,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -308,6 +308,20 @@
   "type" : "topic",
   "url" : "\/documentation\/automerge\/changehash"
 },
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ChangesAndHistory": {
+  "abstract" : [
+    {
+      "text" : "Track, inspect, and synchronize the changes within Automerge documents.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangesAndHistory",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Tracking Changes and History",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/changesandhistory"
+},
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/DeleteSeq": {
   "abstract" : [
     {
@@ -345,32 +359,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document": {
   "abstract" : [
     {
-      "text" : "The entry point to automerge, a ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : " presents a key\/value interface to",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "the data it contains; as well as methods for loading and saving documents, and",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "taking part in the sync protocol.",
+      "text" : "An Automerge document that provides an interface to the document-structured data it contains.",
       "type" : "text"
     }
   ],
@@ -536,40 +525,6 @@
   "title" : "Prop",
   "type" : "topic",
   "url" : "\/documentation\/automerge\/prop"
-},
-"doc://com.github.automerge.automerge-swift/documentation/Automerge/SyncState": {
-  "abstract" : [
-    {
-      "text" : "A synchronisation session with another peer",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "SyncState"
-    }
-  ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "SyncState"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "SyncState",
-  "type" : "topic",
-  "url" : "\/documentation\/automerge\/syncstate"
 },
 "doc://com.github.automerge.automerge-swift/s23CustomStringConvertibleP": {
   "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/s23CustomStringConvertibleP",

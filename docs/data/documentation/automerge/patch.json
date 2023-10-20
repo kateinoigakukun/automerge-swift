@@ -148,7 +148,7 @@
         {
           "inlineContent" : [
             {
-              "text" : "You can inspect these patches to identify the objects updated within the Automerge document, in order to react",
+              "text" : "You can inspect these patches to identify the objects updated within the Automerge document,",
               "type" : "text"
             },
             {
@@ -156,7 +156,7 @@
               "type" : "text"
             },
             {
-              "text" : "accordingly within your code.",
+              "text" : "in order to react accordingly within your code.",
               "type" : "text"
             },
             {
@@ -164,7 +164,7 @@
               "type" : "text"
             },
             {
-              "text" : "A common use case for inspecting patches is to recalculate derived data that is using Automerge as an authoritative",
+              "text" : "A common use case for inspecting patches is to recalculate derived data that is using",
               "type" : "text"
             },
             {
@@ -172,7 +172,7 @@
               "type" : "text"
             },
             {
-              "text" : "source.",
+              "text" : "Automerge as an authoritative source.",
               "type" : "text"
             }
           ],
@@ -204,15 +204,15 @@
     {
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ActorId",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangesAndHistory",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangeHash",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/DeleteSeq",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PathElement",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Prop"
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Prop",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/DeleteSeq",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ActorId"
       ],
-      "title" : "Replicating Documents"
+      "title" : "Inspecting Documents as Changes"
     }
   ],
   "topicSections" : [
@@ -221,7 +221,14 @@
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Patch\/action",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Patch\/path"
       ],
-      "title" : "Instance Properties"
+      "title" : "Inspecting a Patch"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PathElement"
+      ],
+      "title" : "Supporting Types"
     },
     {
       "generated" : true,
@@ -253,7 +260,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -332,6 +339,20 @@
   "type" : "topic",
   "url" : "\/documentation\/automerge\/changehash"
 },
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ChangesAndHistory": {
+  "abstract" : [
+    {
+      "text" : "Track, inspect, and synchronize the changes within Automerge documents.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangesAndHistory",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Tracking Changes and History",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/changesandhistory"
+},
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/DeleteSeq": {
   "abstract" : [
     {
@@ -369,7 +390,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/applyEncodedChangesWithPatches(encoded:)": {
   "abstract" : [
     {
-      "text" : "Apply encoded changes to this document",
+      "text" : "Apply encoded changes to this document, returning patches that represent the changes made to the document.",
       "type" : "text"
     }
   ],
@@ -435,7 +456,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/mergeWithPatches(other:)": {
   "abstract" : [
     {
-      "text" : "Merge this document with other returning patches",
+      "text" : "Merge this document with other, returning a list of patches applied by the merge.",
       "type" : "text"
     }
   ],
@@ -501,15 +522,15 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/receiveSyncMessageWithPatches(state:message:)": {
   "abstract" : [
     {
-      "text" : "Receive a sync message from the peer represented by ",
+      "text" : "Apply the sync message to update the sync state and Automerge document with the sync message from a peer,",
       "type" : "text"
     },
     {
-      "code" : "state",
-      "type" : "codeVoice"
+      "text" : " ",
+      "type" : "text"
     },
     {
-      "text" : ", returning patches",
+      "text" : "returning a list of patches applied.",
       "type" : "text"
     }
   ],
@@ -813,40 +834,6 @@
   "title" : "Prop",
   "type" : "topic",
   "url" : "\/documentation\/automerge\/prop"
-},
-"doc://com.github.automerge.automerge-swift/documentation/Automerge/SyncState": {
-  "abstract" : [
-    {
-      "text" : "A synchronisation session with another peer",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "SyncState"
-    }
-  ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "SyncState"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "SyncState",
-  "type" : "topic",
-  "url" : "\/documentation\/automerge\/syncstate"
 }
 }
 }

@@ -1,4 +1,10 @@
 {
+  "abstract" : [
+    {
+      "text" : "Create a sync state from data.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -99,6 +105,54 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The data that represents a serialized sync state.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "bytes"
+        }
+      ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Serialize a sync state using ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState\/encode()",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -108,6 +162,15 @@
   },
   "sections" : [
 
+  ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState\/init()"
+      ],
+      "title" : "Creating a SyncState"
+    }
   ],
   "variants" : [
     {
@@ -126,7 +189,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -140,7 +203,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/SyncState": {
   "abstract" : [
     {
-      "text" : "A synchronisation session with another peer",
+      "text" : "The state of a synchronisation session with another peer.",
       "type" : "text"
     }
   ],
@@ -171,9 +234,73 @@
   "type" : "topic",
   "url" : "\/documentation\/automerge\/syncstate"
 },
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/SyncState/encode()": {
+  "abstract" : [
+    {
+      "text" : "Serialize this sync state",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "encode"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation4DataV",
+      "text" : "Data"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState\/encode()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "encode()",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/syncstate\/encode()"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/SyncState/init()": {
+  "abstract" : [
+    {
+      "text" : "Create a new, empty sync state.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState\/init()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init()",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/syncstate\/init()"
+},
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/SyncState/init(bytes:)": {
   "abstract" : [
-
+    {
+      "text" : "Create a sync state from data.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

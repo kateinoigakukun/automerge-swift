@@ -1,12 +1,8 @@
 {
   "abstract" : [
     {
-      "text" : "Splice into the list ",
+      "text" : "Splice characters into the text object you specify.",
       "type" : "text"
-    },
-    {
-      "code" : "obj",
-      "type" : "codeVoice"
     }
   ],
   "hierarchy" : {
@@ -23,7 +19,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:9Automerge8DocumentC10spliceText3obj5start6delete5valueyAA5ObjIdV_s6UInt64VALSSSgtKF",
+    "externalID" : "s:9Automerge8DocumentC10spliceText3obj5start6delete5valueyAA5ObjIdV_s6UInt64Vs5Int64VSSSgtKF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -85,8 +81,8 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:s6UInt64V",
-        "text" : "UInt64"
+        "preciseIdentifier" : "s:s5Int64V",
+        "text" : "Int64"
       },
       {
         "kind" : "text",
@@ -196,8 +192,8 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:s6UInt64V",
-              "text" : "UInt64"
+              "preciseIdentifier" : "s:s5Int64V",
+              "text" : "Int64"
             },
             {
               "kind" : "text",
@@ -237,7 +233,7 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "The list to insert into",
+                  "text" : "The identifier of the text object to update.",
                   "type" : "text"
                 }
               ],
@@ -251,7 +247,7 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "the index to begin inserting at IN UNICODE CODE POINTS",
+                  "text" : "The index position, in UTF-8 code points, where the function begins inserting or deleting.",
                   "type" : "text"
                 }
               ],
@@ -265,7 +261,31 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "the number of elements to delete IN UNICODE CODE POINTS",
+                  "text" : "The number of UTF-8 code points to delete from the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "start",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " index.",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "If negative, the function deletes characters preceding ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "start",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " index, rather than following it.",
                   "type" : "text"
                 }
               ],
@@ -279,7 +299,15 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "the characters to insert",
+                  "text" : "The characters to insert after the ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "start",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " index.",
                   "type" : "text"
                 }
               ],
@@ -293,15 +321,39 @@
     {
       "content" : [
         {
-          "anchor" : "Indexes",
-          "level" : 1,
-          "text" : "Indexes",
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
           "type" : "heading"
         },
         {
           "inlineContent" : [
             {
-              "text" : "Swift string indexes represent grapheme clusters, but automerge works",
+              "text" : "With ",
+              "type" : "text"
+            },
+            {
+              "code" : "spliceText",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : ", the ",
+              "type" : "text"
+            },
+            {
+              "code" : "start",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " and ",
+              "type" : "text"
+            },
+            {
+              "code" : "delete",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " parameters represent UTF-8",
               "type" : "text"
             },
             {
@@ -309,7 +361,7 @@
               "type" : "text"
             },
             {
-              "text" : "in terms of UTF-8 code points. The indices to this method are utf-8",
+              "text" : "code point indexes. Swift string indexes represent grapheme clusters, but Automerge works",
               "type" : "text"
             },
             {
@@ -317,7 +369,7 @@
               "type" : "text"
             },
             {
-              "text" : "code point indices. This means if you receive indices from other parts",
+              "text" : "in terms of UTF-8 code points. This means if you receive indices from other parts",
               "type" : "text"
             },
             {
@@ -325,7 +377,32 @@
               "type" : "text"
             },
             {
-              "text" : "of the application which are swift string indices you will need to",
+              "text" : "of the application which are swift string indices you need to convert them.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "It can be convenient to access the ",
+              "type" : "text"
+            },
+            {
+              "code" : "UTF8View",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " of the String through it’s ",
+              "type" : "text"
+            },
+            {
+              "code" : "utf8",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " property,",
               "type" : "text"
             },
             {
@@ -333,7 +410,51 @@
               "type" : "text"
             },
             {
-              "text" : "convert them.",
+              "text" : "or if you have a ",
+              "type" : "text"
+            },
+            {
+              "code" : "String.Index",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " type,  you can convert that into a",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "code" : "String.UTF8View.Index",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " position using ",
+              "type" : "text"
+            },
+            {
+              "code" : "samePosition",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " on the index with",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "a reference to the UTF-8 view of the string through its ",
+              "type" : "text"
+            },
+            {
+              "code" : "utf8",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " property.",
               "type" : "text"
             }
           ],
@@ -350,6 +471,15 @@
   },
   "sections" : [
 
+  ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/mark(obj:start:end:expand:name:value:)"
+      ],
+      "title" : "Updating Text values"
+    }
   ],
   "variants" : [
     {
@@ -368,7 +498,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -382,32 +512,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document": {
   "abstract" : [
     {
-      "text" : "The entry point to automerge, a ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : " presents a key\/value interface to",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "the data it contains; as well as methods for loading and saving documents, and",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "taking part in the sync protocol.",
+      "text" : "An Automerge document that provides an interface to the document-structured data it contains.",
       "type" : "text"
     }
   ],
@@ -438,15 +543,149 @@
   "type" : "topic",
   "url" : "\/documentation\/automerge\/document"
 },
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/mark(obj:start:end:expand:name:value:)": {
+  "abstract" : [
+    {
+      "text" : "Add or remove a mark to a given range of text",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "mark"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "obj"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge5ObjIdV",
+      "text" : "ObjId"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "start"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s6UInt64V",
+      "text" : "UInt64"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "end"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s6UInt64V",
+      "text" : "UInt64"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "expand"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge10ExpandMarkO",
+      "text" : "ExpandMark"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "value"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge11ScalarValueO",
+      "text" : "ScalarValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Document\/mark(obj:start:end:expand:name:value:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "mark(obj:start:end:expand:name:value:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/document\/mark(obj:start:end:expand:name:value:)"
+},
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Document/spliceText(obj:start:delete:value:)": {
   "abstract" : [
     {
-      "text" : "Splice into the list ",
+      "text" : "Splice characters into the text object you specify.",
       "type" : "text"
-    },
-    {
-      "code" : "obj",
-      "type" : "codeVoice"
     }
   ],
   "fragments" : [
@@ -510,8 +749,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:s6UInt64V",
-      "text" : "UInt64"
+      "preciseIdentifier" : "s:s5Int64V",
+      "text" : "Int64"
     },
     {
       "kind" : "text",

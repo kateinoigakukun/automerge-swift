@@ -9,6 +9,10 @@
     "paths" : [
       [
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge"
+      ],
+      [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Patch"
       ]
     ]
   },
@@ -100,28 +104,39 @@
     {
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ActorId",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangesAndHistory",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangeHash",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/DeleteSeq",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Patch",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PathElement",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Prop"
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Prop",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/DeleteSeq",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ActorId"
       ],
-      "title" : "Replicating Documents"
+      "title" : "Inspecting Documents as Changes"
     }
   ],
   "topicSections" : [
     {
       "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction\/Conflict(_:_:)",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction\/DeleteMap(_:_:)",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction\/DeleteSeq(_:)",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction\/Increment(_:_:_:)",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction\/Insert(_:_:_:)",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction\/Insert(obj:index:values:marks:)",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction\/Marks(_:_:)",
         "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction\/Put(_:_:_:)",
-        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction\/SpliceText(_:_:_:)"
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction\/SpliceText(obj:index:value:marks:)"
       ],
-      "title" : "Enumeration Cases"
+      "title" : "Types of Patches"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Prop",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Value",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/DeleteSeq",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Mark"
+      ],
+      "title" : "Supporting Types"
     },
     {
       "generated" : true,
@@ -153,7 +168,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -232,6 +247,20 @@
   "type" : "topic",
   "url" : "\/documentation\/automerge\/changehash"
 },
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/ChangesAndHistory": {
+  "abstract" : [
+    {
+      "text" : "Track, inspect, and synchronize the changes within Automerge documents.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/ChangesAndHistory",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Tracking Changes and History",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/changesandhistory"
+},
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/DeleteSeq": {
   "abstract" : [
     {
@@ -265,6 +294,40 @@
   "title" : "DeleteSeq",
   "type" : "topic",
   "url" : "\/documentation\/automerge\/deleteseq"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Mark": {
+  "abstract" : [
+    {
+      "text" : "A type that represents a marked range of text.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Mark"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Mark",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Mark"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Mark",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/mark"
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/Patch": {
   "abstract" : [
@@ -333,6 +396,56 @@
   "title" : "PatchAction",
   "type" : "topic",
   "url" : "\/documentation\/automerge\/patchaction"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/PatchAction/Conflict(_:_:)": {
+  "abstract" : [
+    {
+      "text" : "Flag that a property within an object is conflicted.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Conflict"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge5ObjIdV",
+      "text" : "ObjId"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge4PropO",
+      "text" : "Prop"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction\/Conflict(_:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "PatchAction.Conflict(_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/patchaction\/conflict(_:_:)"
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/PatchAction/DeleteMap(_:_:)": {
   "abstract" : [
@@ -495,10 +608,10 @@
   "type" : "topic",
   "url" : "\/documentation\/automerge\/patchaction\/increment(_:_:_:)"
 },
-"doc://com.github.automerge.automerge-swift/documentation/Automerge/PatchAction/Insert(_:_:_:)": {
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/PatchAction/Insert(obj:index:values:marks:)": {
   "abstract" : [
     {
-      "text" : "Insert a collection of values at the index you provide for the identified object.",
+      "text" : "Insert a collection of values at the index you provide for the identified object with the given marks",
       "type" : "text"
     }
   ],
@@ -520,6 +633,14 @@
       "text" : "("
     },
     {
+      "kind" : "externalParam",
+      "text" : "obj"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:9Automerge5ObjIdV",
       "text" : "ObjId"
@@ -529,13 +650,55 @@
       "text" : ", "
     },
     {
+      "kind" : "externalParam",
+      "text" : "index"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:s6UInt64V",
       "text" : "UInt64"
     },
     {
       "kind" : "text",
-      "text" : ", ["
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "values"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge5ValueO",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : "], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "marks"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
     },
     {
       "kind" : "typeIdentifier",
@@ -547,12 +710,62 @@
       "text" : "])"
     }
   ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction\/Insert(_:_:_:)",
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction\/Insert(obj:index:values:marks:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "PatchAction.Insert(_:_:_:)",
+  "title" : "PatchAction.Insert(obj:index:values:marks:)",
   "type" : "topic",
-  "url" : "\/documentation\/automerge\/patchaction\/insert(_:_:_:)"
+  "url" : "\/documentation\/automerge\/patchaction\/insert(obj:index:values:marks:)"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/PatchAction/Marks(_:_:)": {
+  "abstract" : [
+    {
+      "text" : "Add marks to a text object.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Marks"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge5ObjIdV",
+      "text" : "ObjId"
+    },
+    {
+      "kind" : "text",
+      "text" : ", ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge4MarkV",
+      "text" : "Mark"
+    },
+    {
+      "kind" : "text",
+      "text" : "])"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction\/Marks(_:_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "PatchAction.Marks(_:_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/patchaction\/marks(_:_:)"
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/PatchAction/Put(_:_:_:)": {
   "abstract" : [
@@ -613,7 +826,7 @@
   "type" : "topic",
   "url" : "\/documentation\/automerge\/patchaction\/put(_:_:_:)"
 },
-"doc://com.github.automerge.automerge-swift/documentation/Automerge/PatchAction/SpliceText(_:_:_:)": {
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/PatchAction/SpliceText(obj:index:value:marks:)": {
   "abstract" : [
     {
       "text" : "Splices characters into and\/or removes characters from the identified object at a given position within it.",
@@ -638,6 +851,14 @@
       "text" : "("
     },
     {
+      "kind" : "externalParam",
+      "text" : "obj"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:9Automerge5ObjIdV",
       "text" : "ObjId"
@@ -645,6 +866,14 @@
     {
       "kind" : "text",
       "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "index"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
     },
     {
       "kind" : "typeIdentifier",
@@ -656,21 +885,55 @@
       "text" : ", "
     },
     {
+      "kind" : "externalParam",
+      "text" : "value"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:SS",
       "text" : "String"
     },
     {
       "kind" : "text",
-      "text" : ")"
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "marks"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge5ValueO",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : "])"
     }
   ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction\/SpliceText(_:_:_:)",
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/PatchAction\/SpliceText(obj:index:value:marks:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "PatchAction.SpliceText(_:_:_:)",
+  "title" : "PatchAction.SpliceText(obj:index:value:marks:)",
   "type" : "topic",
-  "url" : "\/documentation\/automerge\/patchaction\/splicetext(_:_:_:)"
+  "url" : "\/documentation\/automerge\/patchaction\/splicetext(obj:index:value:marks:)"
 },
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/PathElement": {
   "abstract" : [
@@ -740,17 +1003,17 @@
   "type" : "topic",
   "url" : "\/documentation\/automerge\/prop"
 },
-"doc://com.github.automerge.automerge-swift/documentation/Automerge/SyncState": {
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/Value": {
   "abstract" : [
     {
-      "text" : "A synchronisation session with another peer",
+      "text" : "A type that represents a value or object managed by Automerge.",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "struct"
+      "text" : "enum"
     },
     {
       "kind" : "text",
@@ -758,21 +1021,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "SyncState"
+      "text" : "Value"
     }
   ],
-  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/SyncState",
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/Value",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "SyncState"
+      "text" : "Value"
     }
   ],
   "role" : "symbol",
-  "title" : "SyncState",
+  "title" : "Value",
   "type" : "topic",
-  "url" : "\/documentation\/automerge\/syncstate"
+  "url" : "\/documentation\/automerge\/value"
 }
 }
 }

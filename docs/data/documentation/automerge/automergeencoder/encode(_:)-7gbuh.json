@@ -1,4 +1,10 @@
 {
+  "abstract" : [
+    {
+      "text" : "Encodes a value you provide into the encoder’s Automerge document.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -156,6 +162,25 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The value to encode.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "value"
+        }
+      ]
     }
   ],
   "schemaVersion" : {
@@ -165,6 +190,16 @@
   },
   "sections" : [
 
+  ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeEncoder\/encode(_:)-3sde1",
+        "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeEncoder\/encode(_:at:)"
+      ],
+      "title" : "Encoding"
+    }
   ],
   "variants" : [
     {
@@ -183,7 +218,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge": {
   "abstract" : [
     {
-      "text" : "A library which provides fast implementations of several different CRDTs, a compact compression format for these CRDTs, and a sync protocol for efficiently transmitting those changes over the network.",
+      "text" : "Create, Update, and Synchronize data for collaborative applications.",
       "type" : "text"
     }
   ],
@@ -197,7 +232,7 @@
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/AutomergeEncoder": {
   "abstract" : [
     {
-      "text" : "An encoder that stores codable-conforming types into an Automerge document.",
+      "text" : "An encoder that stores types that conform to the codable protocol into an Automerge document.",
       "type" : "text"
     }
   ],
@@ -228,9 +263,65 @@
   "type" : "topic",
   "url" : "\/documentation\/automerge\/automergeencoder"
 },
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/AutomergeEncoder/encode(_:)-3sde1": {
+  "abstract" : [
+    {
+      "text" : "Encodes an optional value you provide into the encoder’s Automerge document.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "encode"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge0A7EncoderV6encodeyyxSgKSERzlF1TL_xmfp",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeEncoder\/encode(_:)-3sde1",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "encode(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/automergeencoder\/encode(_:)-3sde1"
+},
 "doc://com.github.automerge.automerge-swift/documentation/Automerge/AutomergeEncoder/encode(_:)-7gbuh": {
   "abstract" : [
-
+    {
+      "text" : "Encodes a value you provide into the encoder’s Automerge document.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -277,6 +368,76 @@
   "title" : "encode(_:)",
   "type" : "topic",
   "url" : "\/documentation\/automerge\/automergeencoder\/encode(_:)-7gbuh"
+},
+"doc://com.github.automerge.automerge-swift/documentation/Automerge/AutomergeEncoder/encode(_:at:)": {
+  "abstract" : [
+    {
+      "text" : "Encodes a value you provide into a specific location within the encoder’s Automerge document.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "encode"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:9Automerge0A7EncoderV6encode_2atyx_Says9CodingKey_pGtKSERzlF1TL_xmfp",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "at"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s9CodingKeyP",
+      "text" : "CodingKey"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/com.github.automerge.automerge-swift\/documentation\/Automerge\/AutomergeEncoder\/encode(_:at:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "encode(_:at:)",
+  "type" : "topic",
+  "url" : "\/documentation\/automerge\/automergeencoder\/encode(_:at:)"
 }
 }
 }
